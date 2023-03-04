@@ -469,3 +469,247 @@ Processing by BatchController#index as HTML
 Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.4ms | Allocations: 11442)
 
 
+Started GET "/batch/1" for ::1 at 2023-03-04 16:09:46 +1100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BatchController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBatch Load (0.4ms)[0m  [1m[34mSELECT "batches".* FROM "batches" WHERE "batches"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/batch_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering batch/show.html.erb within layouts/application
+  Rendered batch/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 324)
+  Rendered layout layouts/application.html.erb (Duration: 54.2ms | Allocations: 44539)
+Completed 200 OK in 70ms (Views: 56.0ms | ActiveRecord: 6.6ms | Allocations: 54421)
+
+
+Started GET "/batch/1" for ::1 at 2023-03-04 16:09:46 +1100
+Processing by BatchController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBatch Load (0.3ms)[0m  [1m[34mSELECT "batches".* FROM "batches" WHERE "batches"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/batch_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering batch/show.html.erb within layouts/application
+  Rendered batch/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 14)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 8869)
+Completed 200 OK in 20ms (Views: 14.4ms | ActiveRecord: 0.3ms | Allocations: 9756)
+
+
+Started GET "/batch/1" for ::1 at 2023-03-04 16:09:51 +1100
+Processing by BatchController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBatch Load (0.3ms)[0m  [1m[34mSELECT "batches".* FROM "batches" WHERE "batches"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/batch_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering batch/show.html.erb within layouts/application
+  Rendered batch/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 136)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 9286)
+Completed 200 OK in 18ms (Views: 14.7ms | ActiveRecord: 0.3ms | Allocations: 10631)
+
+
+Started GET "/batch/2" for ::1 at 2023-03-04 16:09:56 +1100
+Processing by BatchController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBatch Load (0.3ms)[0m  [1m[34mSELECT "batches".* FROM "batches" WHERE "batches"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/batch_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering batch/show.html.erb within layouts/application
+  Rendered batch/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 8673)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.3ms | Allocations: 9511)
+
+
+Started GET "/batch/3" for ::1 at 2023-03-04 16:09:58 +1100
+Processing by BatchController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBatch Load (0.3ms)[0m  [1m[34mSELECT "batches".* FROM "batches" WHERE "batches"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/batch_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering batch/show.html.erb within layouts/application
+  Rendered batch/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 8682)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.3ms | Allocations: 9436)
+
+
+Started GET "/batch/4" for ::1 at 2023-03-04 16:10:00 +1100
+Processing by BatchController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBatch Load (0.6ms)[0m  [1m[34mSELECT "batches".* FROM "batches" WHERE "batches"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/batch_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering batch/show.html.erb within layouts/application
+  Rendered batch/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 8671)
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 0.6ms | Allocations: 9409)
+
+
+Started GET "/batch/5" for ::1 at 2023-03-04 16:10:02 +1100
+Processing by BatchController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBatch Load (0.2ms)[0m  [1m[34mSELECT "batches".* FROM "batches" WHERE "batches"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/batch_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering batch/show.html.erb within layouts/application
+  Rendered batch/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 8677)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.2ms | Allocations: 9415)
+
+
+Started GET "/batch/6" for ::1 at 2023-03-04 16:10:03 +1100
+Processing by BatchController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBatch Load (0.2ms)[0m  [1m[34mSELECT "batches".* FROM "batches" WHERE "batches"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/batch_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering batch/show.html.erb within layouts/application
+  Rendered batch/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 44.5ms | Allocations: 8671)
+Completed 200 OK in 49ms (Views: 47.5ms | ActiveRecord: 0.2ms | Allocations: 9409)
+
+
+Started GET "/" for ::1 at 2023-03-04 16:10:14 +1100
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 261)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 9204)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 9957)
+
+
+Started GET "/batch" for ::1 at 2023-03-04 16:10:20 +1100
+Processing by BatchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering batch/index.html.erb within layouts/application
+  [1m[36mBatch Load (0.3ms)[0m  [1m[34mSELECT "batches".* FROM "batches"[0m
+  ↳ app/views/batch/index.html.erb:3
+  Rendered batch/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1382)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 10072)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.3ms | Allocations: 10420)
+
+
+Started GET "/batch" for ::1 at 2023-03-04 16:10:55 +1100
+Processing by BatchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering batch/index.html.erb within layouts/application
+  [1m[36mBatch Load (0.3ms)[0m  [1m[34mSELECT "batches".* FROM "batches"[0m
+  ↳ app/views/batch/index.html.erb:3
+  Rendered batch/index.html.erb within layouts/application (Duration: 16.1ms | Allocations: 12331)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 12428)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.3ms | Allocations: 13241)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"batch", :id=>nil}, missing required keys: [:id]):
+    1: <h1>Index</h1>
+    2: 
+    3: <% @batches.each do |batch| %>
+    4:   <div><%= link_to batch.name, batch_path(params[:id]) %></div>
+    5: <% end %>
+  
+app/views/batch/index.html.erb:4
+app/views/batch/index.html.erb:3
+Started GET "/batch" for ::1 at 2023-03-04 16:11:01 +1100
+Processing by BatchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering batch/index.html.erb within layouts/application
+  [1m[36mBatch Load (0.3ms)[0m  [1m[34mSELECT "batches".* FROM "batches"[0m
+  ↳ app/views/batch/index.html.erb:3
+  Rendered batch/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2962)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 12378)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.3ms | Allocations: 13214)
+
+
+Started GET "/batch/id" for ::1 at 2023-03-04 16:11:02 +1100
+Processing by BatchController#show as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mBatch Load (0.3ms)[0m  [1m[34mSELECT "batches".* FROM "batches" WHERE "batches"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/batch_controller.rb:7:in `show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 982)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Batch with 'id'=id):
+  
+app/controllers/batch_controller.rb:7:in `show'
+Started GET "/batch" for ::1 at 2023-03-04 16:11:04 +1100
+Processing by BatchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering batch/index.html.erb within layouts/application
+  [1m[36mBatch Load (0.3ms)[0m  [1m[34mSELECT "batches".* FROM "batches"[0m
+  ↳ app/views/batch/index.html.erb:3
+  Rendered batch/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2647)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 11618)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.3ms | Allocations: 11889)
+
+
+Started GET "/batch" for ::1 at 2023-03-04 16:11:10 +1100
+Processing by BatchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering batch/index.html.erb within layouts/application
+  [1m[36mBatch Load (0.7ms)[0m  [1m[34mSELECT "batches".* FROM "batches"[0m
+  ↳ app/views/batch/index.html.erb:3
+  Rendered batch/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 6105)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 6190)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.7ms | Allocations: 6971)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `id' for #<ActionView::Base:0x0000000000d890>
+
+@output_buffer.safe_append='  <div>'.freeze;@output_buffer.append=( link_to batch.name, batch_path(id) );@output_buffer.safe_append='</div>
+                                                                                                   ^^
+Did you mean?  @@id):
+    1: <h1>Index</h1>
+    2: 
+    3: <% @batches.each do |batch| %>
+    4:   <div><%= link_to batch.name, batch_path(id) %></div>
+    5: <% end %>
+  
+app/views/batch/index.html.erb:4
+app/views/batch/index.html.erb:3
+Started GET "/batch" for ::1 at 2023-03-04 16:11:18 +1100
+Processing by BatchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering batch/index.html.erb within layouts/application
+  [1m[36mBatch Load (0.3ms)[0m  [1m[34mSELECT "batches".* FROM "batches"[0m
+  ↳ app/views/batch/index.html.erb:3
+  Rendered batch/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2810)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 12244)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.3ms | Allocations: 13075)
+
+
+Started GET "/batch/1" for ::1 at 2023-03-04 16:11:19 +1100
+Processing by BatchController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBatch Load (0.2ms)[0m  [1m[34mSELECT "batches".* FROM "batches" WHERE "batches"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/batch_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering batch/show.html.erb within layouts/application
+  Rendered batch/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 99)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 8778)
+Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 0.2ms | Allocations: 9619)
+
+
+Started GET "/batch/2" for ::1 at 2023-03-04 16:11:21 +1100
+Processing by BatchController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBatch Load (0.3ms)[0m  [1m[34mSELECT "batches".* FROM "batches" WHERE "batches"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/batch_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering batch/show.html.erb within layouts/application
+  Rendered batch/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 8692)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.3ms | Allocations: 9432)
+
+
+Started GET "/batch/3" for ::1 at 2023-03-04 16:11:23 +1100
+Processing by BatchController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBatch Load (0.2ms)[0m  [1m[34mSELECT "batches".* FROM "batches" WHERE "batches"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/batch_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering batch/show.html.erb within layouts/application
+  Rendered batch/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 8689)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.2ms | Allocations: 9429)
+
+

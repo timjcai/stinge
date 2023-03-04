@@ -1,5 +1,5 @@
 <h1>Index</h1>
 
 <% @batches.each do |batch| %>
-  <div><%= batch.name %></div>
+  <div><%= link_to batch.name, batch_path(batch.id) %></div>
 <% end %>
