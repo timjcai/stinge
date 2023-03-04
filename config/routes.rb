@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   get 'batch', to: 'batch#index', as: "batches"
-
+  get 'batch/:id', to: 'batch#show', as: "batch"
 
 end
