@@ -1,0 +1,2 @@
+class PriceChart < ApplicationRecord
+end
