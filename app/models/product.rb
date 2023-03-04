@@ -1,3 +1,3 @@
 class Product < ApplicationRecord
-  belongs_to :price_chart
+  belongs_to :batch
 end
