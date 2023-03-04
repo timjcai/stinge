@@ -301,3 +301,171 @@ Processing by BatchController#index as HTML
 Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 1.2ms | Allocations: 11176)
 
 
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (1.4ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bananas"], ["description", nil], ["created_at", "2023-03-04 05:06:18.236527"], ["updated_at", "2023-03-04 05:06:18.236527"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.2ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Hass Avocados"], ["description", nil], ["created_at", "2023-03-04 05:06:18.240514"], ["updated_at", "2023-03-04 05:06:18.240514"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.2ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Strawberries Prepacked"], ["description", nil], ["created_at", "2023-03-04 05:06:18.242153"], ["updated_at", "2023-03-04 05:06:18.242153"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.2ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Blueberries Prepacked"], ["description", nil], ["created_at", "2023-03-04 05:06:18.243646"], ["updated_at", "2023-03-04 05:06:18.243646"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Raspberries"], ["description", nil], ["created_at", "2023-03-04 05:06:18.245027"], ["updated_at", "2023-03-04 05:06:18.245027"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "White Seedless Grapes"], ["description", nil], ["created_at", "2023-03-04 05:06:18.246439"], ["updated_at", "2023-03-04 05:06:18.246439"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lebanese Cucumbers"], ["description", nil], ["created_at", "2023-03-04 05:06:18.247851"], ["updated_at", "2023-03-04 05:06:18.247851"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.2ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Greenhouse Truss Tomatoes"], ["description", nil], ["created_at", "2023-03-04 05:06:18.249248"], ["updated_at", "2023-03-04 05:06:18.249248"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.3ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Blackberries"], ["description", nil], ["created_at", "2023-03-04 05:06:18.250919"], ["updated_at", "2023-03-04 05:06:18.250919"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.2ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Red Cherries"], ["description", nil], ["created_at", "2023-03-04 05:06:18.252529"], ["updated_at", "2023-03-04 05:06:18.252529"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Grape Perino Tomatoes Prepacked"], ["description", nil], ["created_at", "2023-03-04 05:06:18.253870"], ["updated_at", "2023-03-04 05:06:18.253870"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Carrots"], ["description", nil], ["created_at", "2023-03-04 05:06:18.255240"], ["updated_at", "2023-03-04 05:06:18.255240"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Broccoli"], ["description", nil], ["created_at", "2023-03-04 05:06:18.256557"], ["updated_at", "2023-03-04 05:06:18.256557"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.2ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Yellow Nectarines"], ["description", nil], ["created_at", "2023-03-04 05:06:18.257948"], ["updated_at", "2023-03-04 05:06:18.257948"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.2ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "White Nectarines"], ["description", nil], ["created_at", "2023-03-04 05:06:18.259261"], ["updated_at", "2023-03-04 05:06:18.259261"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.2ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Honey Gold Mangoes Medium"], ["description", nil], ["created_at", "2023-03-04 05:06:18.261904"], ["updated_at", "2023-03-04 05:06:18.261904"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Brown Onions"], ["description", nil], ["created_at", "2023-03-04 05:06:18.263345"], ["updated_at", "2023-03-04 05:06:18.263345"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.2ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Red Capsicum"], ["description", nil], ["created_at", "2023-03-04 05:06:18.264773"], ["updated_at", "2023-03-04 05:06:18.264773"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "White Peaches"], ["description", nil], ["created_at", "2023-03-04 05:06:18.266164"], ["updated_at", "2023-03-04 05:06:18.266164"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Seedless Watermelon Cut"], ["description", nil], ["created_at", "2023-03-04 05:06:18.267484"], ["updated_at", "2023-03-04 05:06:18.267484"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.2ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Yellow Peaches"], ["description", nil], ["created_at", "2023-03-04 05:06:18.268784"], ["updated_at", "2023-03-04 05:06:18.268784"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Red Onions"], ["description", nil], ["created_at", "2023-03-04 05:06:18.270239"], ["updated_at", "2023-03-04 05:06:18.270239"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.2ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Medium Lemons"], ["description", nil], ["created_at", "2023-03-04 05:06:18.271855"], ["updated_at", "2023-03-04 05:06:18.271855"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Iceberg Lettuce"], ["description", nil], ["created_at", "2023-03-04 05:06:18.273211"], ["updated_at", "2023-03-04 05:06:18.273211"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Brown Onions"], ["description", nil], ["created_at", "2023-03-04 05:06:18.274588"], ["updated_at", "2023-03-04 05:06:18.274588"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.2ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Continental Cucumbers"], ["description", nil], ["created_at", "2023-03-04 05:06:18.275959"], ["updated_at", "2023-03-04 05:06:18.275959"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sweet Corn Prepacked"], ["description", nil], ["created_at", "2023-03-04 05:06:18.277335"], ["updated_at", "2023-03-04 05:06:18.277335"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Pink Lady Apples"], ["description", nil], ["created_at", "2023-03-04 05:06:18.278681"], ["updated_at", "2023-03-04 05:06:18.278681"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Green Zucchini"], ["description", nil], ["created_at", "2023-03-04 05:06:18.279994"], ["updated_at", "2023-03-04 05:06:18.279994"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.3ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Spring Onions"], ["description", nil], ["created_at", "2023-03-04 05:06:18.281361"], ["updated_at", "2023-03-04 05:06:18.281361"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sweet Corn"], ["description", nil], ["created_at", "2023-03-04 05:06:18.282908"], ["updated_at", "2023-03-04 05:06:18.282908"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Baby Cucumbers"], ["description", nil], ["created_at", "2023-03-04 05:06:18.284236"], ["updated_at", "2023-03-04 05:06:18.284236"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Medium Navel Oranges"], ["description", nil], ["created_at", "2023-03-04 05:06:18.285537"], ["updated_at", "2023-03-04 05:06:18.285537"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Carrots"], ["description", nil], ["created_at", "2023-03-04 05:06:18.286774"], ["updated_at", "2023-03-04 05:06:18.286774"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sweet Gold Potatoes"], ["description", nil], ["created_at", "2023-03-04 05:06:18.288027"], ["updated_at", "2023-03-04 05:06:18.288027"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.3ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Kids Pack Bananas"], ["description", nil], ["created_at", "2023-03-04 05:06:18.289456"], ["updated_at", "2023-03-04 05:06:18.289456"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.2ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lychees"], ["description", nil], ["created_at", "2023-03-04 05:06:18.291066"], ["updated_at", "2023-03-04 05:06:18.291066"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Baby Broccoli"], ["description", nil], ["created_at", "2023-03-04 05:06:18.292507"], ["updated_at", "2023-03-04 05:06:18.292507"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.2ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Creme Gold Washed Potatoes"], ["description", nil], ["created_at", "2023-03-04 05:06:18.293918"], ["updated_at", "2023-03-04 05:06:18.293918"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Fresh Loose Cup"], ["description", nil], ["created_at", "2023-03-04 05:06:18.295244"], ["updated_at", "2023-03-04 05:06:18.295244"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.2ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Granny Smith Medium Apples"], ["description", nil], ["created_at", "2023-03-04 05:06:18.296486"], ["updated_at", "2023-03-04 05:06:18.296486"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sleeved Herbs Coriander"], ["description", nil], ["created_at", "2023-03-04 05:06:18.297866"], ["updated_at", "2023-03-04 05:06:18.297866"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.2ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Creme Royale Brushed Potatoes loose"], ["description", nil], ["created_at", "2023-03-04 05:06:18.299108"], ["updated_at", "2023-03-04 05:06:18.299108"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.2ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Field Tomatoes"], ["description", nil], ["created_at", "2023-03-04 05:06:18.300884"], ["updated_at", "2023-03-04 05:06:18.300884"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.2ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Garlic loose"], ["description", nil], ["created_at", "2023-03-04 05:06:18.302606"], ["updated_at", "2023-03-04 05:06:18.302606"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Roma Tomatoes"], ["description", nil], ["created_at", "2023-03-04 05:06:18.303927"], ["updated_at", "2023-03-04 05:06:18.303927"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.2ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Medium Calypso Mangoes"], ["description", nil], ["created_at", "2023-03-04 05:06:18.305175"], ["updated_at", "2023-03-04 05:06:18.305175"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBatch Create (0.1ms)[0m  [1m[32mINSERT INTO "batches" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Baby Cos Lettuce"], ["description", nil], ["created_at", "2023-03-04 05:06:18.306458"], ["updated_at", "2023-03-04 05:06:18.306458"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/batch" for ::1 at 2023-03-04 16:06:34 +1100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BatchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering batch/index.html.erb within layouts/application
+  [1m[36mBatch Load (0.9ms)[0m  [1m[34mSELECT "batches".* FROM "batches"[0m
+  ↳ app/views/batch/index.html.erb:3
+  Rendered batch/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 5694)
+  Rendered layout layouts/application.html.erb (Duration: 62.7ms | Allocations: 49844)
+Completed 200 OK in 68ms (Views: 59.0ms | ActiveRecord: 5.3ms | Allocations: 53252)
+
+
+Started GET "/batch" for ::1 at 2023-03-04 16:06:46 +1100
+Processing by BatchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering batch/index.html.erb within layouts/application
+  [1m[36mBatch Load (0.4ms)[0m  [1m[34mSELECT "batches".* FROM "batches"[0m
+  ↳ app/views/batch/index.html.erb:3
+  Rendered batch/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1413)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 10562)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.4ms | Allocations: 11442)
+
+
