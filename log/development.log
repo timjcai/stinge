@@ -271,3 +271,33 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 59ms (Views: 55.9ms | ActiveRecord: 0.0ms | Allocations: 48366)
 
 
+Started GET "/" for ::1 at 2023-03-04 15:21:03 +1100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 282)
+  Rendered layout layouts/application.html.erb (Duration: 52.9ms | Allocations: 44361)
+Completed 200 OK in 58ms (Views: 54.9ms | ActiveRecord: 0.0ms | Allocations: 47310)
+
+
+Started GET "/" for ::1 at 2023-03-04 15:21:44 +1100
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 265)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 9408)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 10277)
+
+
+Started GET "/batch" for ::1 at 2023-03-04 15:21:44 +1100
+Processing by BatchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering batch/index.html.erb within layouts/application
+  [1m[36mBatch Load (1.2ms)[0m  [1m[34mSELECT "batches".* FROM "batches"[0m
+  ↳ app/views/batch/index.html.erb:3
+  Rendered batch/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 981)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 9934)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 1.2ms | Allocations: 11176)
+
+
