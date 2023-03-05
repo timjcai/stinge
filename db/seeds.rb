@@ -10,7 +10,7 @@
 # temporary seedfile
 require 'csv'
 
-filepath = '/Users/timcai/Desktop/github/repos/stinge/veggie_names.csv'
+filepath = '../scraper/veggie_names.csv'
 
 veg_array = CSV.parse(File.read(filepath)).flatten
 
