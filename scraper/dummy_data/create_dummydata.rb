@@ -24,9 +24,11 @@ def init_fake_prices(array)
   entry
 end
 
-entire_price_dataset = init_fake_prices(date_array)
+init_fake_prices(date_array)
 
 # use below if saving to CSV (or testing)
+
+
 # price_path = "scraper/dummy_data/data/dummy_data.csv"
 
 # def save_csv(filepath, array)
