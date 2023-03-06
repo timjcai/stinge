@@ -10,14 +10,14 @@
 # temporary seedfile
 require 'csv'
 
-filepath = '../scraper/veggie_names.csv'
+filepath = 'scraper/veggie_names.csv'
 
 veg_array = CSV.parse(File.read(filepath)).flatten
 
-def initbatches(array)
+def initproducts(array)
   array.each do |item|
-    p Batch.create(name: item)
+    p Product.create(name: item)
   end
 end
 
-initbatches(veg_array)
+initproducts(veg_array)
