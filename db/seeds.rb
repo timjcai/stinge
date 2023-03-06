@@ -17,19 +17,19 @@ filepath = 'scraper/veggie_names.csv'
 
 veg_array = CSV.parse(File.read(filepath)).flatten
 
-def initbatches(array)
+def initproducts(array)
   array.each do |item|
     p StoreProduct.create(name: item)
   end
 end
 
-# initbatches(veg_array)
+p initproducts(veg_array)
 
 # price generator
 
 def price_generator
   price_range = (200..700).to_a
-  return price_range.sample/100.00
+  return price_range.sample / 100.00
 end
 
 # date
@@ -65,6 +65,17 @@ def init_store_generator(array)
   end
 end
 
-init_store_generator(stores)
+p init_store_generator(stores)
 
 # store_product generator
+
+def init_store_product_generator(array)
+  array.each do |item|
+    @product = Product.where(name: item)
+    p @storeproduct = StoreProduct.create(brand_name:"coles", product_name: item, products_id: @product.id)
+    @prices = init_fake_prices(date_array)
+    p PriceChart.create(date: @prices[0], price: @prices[1], store_products_id: @storeproduct.id, measurement: 100, measurement_type: 'g', standard_measurement_ratio: '100g')
+  end
+end
+
+init_store_product_generator(veg_array)

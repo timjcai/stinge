@@ -1762,3 +1762,8 @@ FOREIGN KEY ("products_id")
   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mStore Load (1.2ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
   [1m[36mStore Load (0.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (2.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = $1[0m  [["name", "banana"]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = $1[0m  [["name", "banana"]]
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = $1[0m  [["name", "Banana"]]
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = $1[0m  [["name", "Bananas"]]
