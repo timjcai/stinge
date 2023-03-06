@@ -1035,7 +1035,6 @@ Processing by ShoppinglistController#index as HTML
   Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 9457)
 Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.3ms | Allocations: 9734)
 
-
   [1m[35m (350.6ms)[0m  [1m[35mCREATE DATABASE "rbnb_development" ENCODING = 'unicode'[0m
   [1m[35m (100.3ms)[0m  [1m[35mCREATE DATABASE "rbnb_test" ENCODING = 'unicode'[0m
   [1m[35m (17.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
@@ -1451,5 +1450,4 @@ Processing by PagesController#home as HTML
   Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
   Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 9289)
 Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.0ms | Allocations: 9553)
-
 
