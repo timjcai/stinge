@@ -1,3 +1,3 @@
 class PriceChart < ApplicationRecord
-  belongs_to :product
+  belongs_to :store_product
 end

@@ -4,13 +4,13 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  get 'batch', to: 'batch#index', as: 'batches'
-  get 'batch/:id', to: 'batch#show', as: 'batch'
-  get 'shoppinglist', to: 'shoppinglist#index', as: 'shoppinglist_history'
-  get 'shoppinglist/new', to: 'shoppinglist#new', as: 'new_shoppinglist'
-  get 'shoppinglist/:id', to: 'shoppinglist#show', as: 'shoppinglist'
-  post 'shoppinglist', to: 'shoppinglist#create'
-  get 'shoppinglist/:id/edit', to: 'shoppinglist#edit', as: 'edit_shoppinglist'
-  patch 'shoppinglist/:id', to: 'shoppinglist#update', as: 'update_shoppinglist'
-  delete 'shoppinglist/:id', to: 'shoppinglist#destroy', as: 'delete_shoppinglist'
+  get 'product', to: 'product#index', as: 'products'
+  get 'product/:id', to: 'product#show', as: 'product'
+  get 'list', to: 'list#index', as: 'list_history'
+  get 'list/new', to: 'list#new', as: 'new_list'
+  get 'list/:id', to: 'list#show', as: 'list'
+  post 'list', to: 'list#create'
+  get 'list/:id/edit', to: 'list#edit', as: 'edit_list'
+  patch 'list/:id', to: 'list#update', as: 'update_list'
+  delete 'list/:id', to: 'list#destroy', as: 'delete_list'
 end
