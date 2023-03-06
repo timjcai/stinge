@@ -3,7 +3,10 @@ class CreatePriceCharts < ActiveRecord::Migration[7.0]
     create_table :price_charts do |t|
       t.date :date
       t.float :price
-      t.references :products, null: false, foreign_key: true
+      t.references :store_products, null: false, foreign_key: true
+      t.integer :measurement
+      t.string :measurement_type
+      t.string :standard_measurement_ratio
 
       t.timestamps
     end
