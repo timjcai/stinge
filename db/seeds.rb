@@ -72,13 +72,19 @@ p init_store_generator(stores)
 def init_store_product_generator(array)
   array.each do |item|
     p product = Product.find_by(name: item)
-    p storeproduct = StoreProduct.create(brand_name: "Coles", product_name: item, product: product)
+    p storeproduct1 = StoreProduct.create(brand_name: "Coles", product_name: item, product: product)
+    p storeproduct2 = StoreProduct.create(brand_name: "Woolworths", product_name: item, product: product)
     prices = init_fake_prices(date_array)
-
+    prices2 = init_fake_prices(date_array)
     prices.each do |set|
       date = set[0]
       price_set = set[1]
-      p PriceChart.create(date: date, price: price_set, store_product: storeproduct, measurement: 100, measurement_type: 'g', standard_measurement_ratio: '100g')
+      p PriceChart.create(date: date, price: price_set, store_product: storeproduct1, measurement: 100, measurement_type: 'g', standard_measurement_ratio: '100g')
+    end
+    prices2.each do |set|
+      date = set[0]
+      price_set = set[1]
+      p PriceChart.create(date: date, price: price_set, store_product: storeproduct2, measurement: 100, measurement_type: 'g', standard_measurement_ratio: '100g')
     end
   end
 end
