@@ -12723,3 +12723,407 @@ FOREIGN KEY ("product_id")
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[36mPriceChart Create (0.3ms)[0m  [1m[32mINSERT INTO "price_charts" ("date", "price", "store_product_id", "measurement", "measurement_type", "standard_measurement_ratio", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["date", "2023-03-06"], ["price", 6.68], ["store_product_id", 2], ["measurement", 100], ["measurement_type", "g"], ["standard_measurement_ratio", "100g"], ["created_at", "2023-03-06 06:22:13.420085"], ["updated_at", "2023-03-06 06:22:13.420085"]]
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/product/1" for ::1 at 2023-03-06 17:24:07 +1100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:7:in `show'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 8.7ms | Allocations: 9742)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column products.product does not exist
+LINE 1: SELECT "products".* FROM "products" WHERE "products"."produc...
+                                                  ^
+):
+  
+app/controllers/product_controller.rb:8:in `show'
+Started GET "/product/1" for ::1 at 2023-03-06 17:24:14 +1100
+Processing by ProductController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:7:in `show'
+  [1m[36mStoreProduct Load (0.7ms)[0m  [1m[34mSELECT "store_products".* FROM "store_products" WHERE "store_products"."product_id" = $1 LIMIT $2[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering product/show.html.erb within layouts/application
+  Rendered product/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 156)
+  Rendered shared/_navbar.html.erb (Duration: 5.0ms | Allocations: 983)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 103)
+  Rendered layout layouts/application.html.erb (Duration: 53.0ms | Allocations: 45394)
+Completed 200 OK in 68ms (Views: 53.8ms | ActiveRecord: 8.5ms | Allocations: 55064)
+
+
+Started GET "/product/1" for ::1 at 2023-03-06 17:24:20 +1100
+Processing by ProductController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:7:in `show'
+  [1m[36mStoreProduct Load (0.4ms)[0m  [1m[34mSELECT "store_products".* FROM "store_products" WHERE "store_products"."product_id" = $1 LIMIT $2[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering product/show.html.erb within layouts/application
+  Rendered product/show.html.erb within layouts/application (Duration: 9.3ms | Allocations: 5742)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 5831)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.8ms | Allocations: 7720)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<StoreProduct id: 1, brand_name: "Coles", product_name: "Bananas", product_id: 1, created_at: "2023-03-06 06:22:11.581084000 +0000", updated_at: "2023-03-06 06:22:11.581084000 +0000">):
+    1: <h1>Show Page for <%= @product.name %></h1>
+    2: 
+    3: <%= @storeproducts.name %>
+  
+app/views/product/show.html.erb:3
+Started GET "/product/1" for ::1 at 2023-03-06 17:24:40 +1100
+Processing by ProductController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:7:in `show'
+  [1m[36mStoreProduct Load (0.2ms)[0m  [1m[34mSELECT "store_products".* FROM "store_products" WHERE "store_products"."product_id" = $1 LIMIT $2[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering product/show.html.erb within layouts/application
+  Rendered product/show.html.erb within layouts/application (Duration: 8.3ms | Allocations: 5572)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 5661)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.5ms | Allocations: 7534)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<StoreProduct id: 1, brand_name: "Coles", product_name: "Bananas", product_id: 1, created_at: "2023-03-06 06:22:11.581084000 +0000", updated_at: "2023-03-06 06:22:11.581084000 +0000">):
+    1: <h1>Show Page for <%= @product.name %></h1>
+    2: 
+    3: <% @storeproducts.each do |product|%>
+    4:   <%= product %>
+    5: <% end %>
+  
+app/views/product/show.html.erb:3
+Started GET "/product/1" for ::1 at 2023-03-06 17:24:49 +1100
+Processing by ProductController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:7:in `show'
+  [1m[36mStoreProduct Load (0.2ms)[0m  [1m[34mSELECT "store_products".* FROM "store_products" WHERE "store_products"."product_id" = $1 LIMIT $2[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering product/show.html.erb within layouts/application
+  Rendered product/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 5516)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 5605)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 7.3ms | Allocations: 13965)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<StoreProduct id: 1, brand_name: "Coles", product_name: "Bananas", product_id: 1, created_at: "2023-03-06 06:22:11.581084000 +0000", updated_at: "2023-03-06 06:22:11.581084000 +0000">):
+    1: <h1>Show Page for <%= @product.name %></h1>
+    2: 
+    3: <% @storeproducts.each do |product|%>
+    4:   <%= product %>
+    5: <% end %>
+  
+app/views/product/show.html.erb:3
+Started GET "/product/1" for ::1 at 2023-03-06 17:25:41 +1100
+Processing by ProductController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:7:in `show'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 3.8ms | Allocations: 8265)
+
+
+  
+NoMethodError (undefined method `find_all' for StoreProduct:Class
+Did you mean?  find_each):
+  
+app/controllers/product_controller.rb:8:in `show'
+Started GET "/product/1" for ::1 at 2023-03-06 17:25:49 +1100
+Processing by ProductController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering product/show.html.erb within layouts/application
+  [1m[36mStoreProduct Load (0.4ms)[0m  [1m[34mSELECT "store_products".* FROM "store_products" WHERE "store_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/views/product/show.html.erb:3
+  Rendered product/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2236)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 807)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 12946)
+Completed 200 OK in 25ms (Views: 12.4ms | ActiveRecord: 8.7ms | Allocations: 19017)
+
+
+Started GET "/product/1" for ::1 at 2023-03-06 17:26:01 +1100
+Processing by ProductController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering product/show.html.erb within layouts/application
+  [1m[36mStoreProduct Load (0.4ms)[0m  [1m[34mSELECT "store_products".* FROM "store_products" WHERE "store_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/views/product/show.html.erb:3
+  Rendered product/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 898)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 780)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 94)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 11265)
+Completed 200 OK in 21ms (Views: 17.5ms | ActiveRecord: 0.6ms | Allocations: 12678)
+
+
+Started GET "/product/1" for ::1 at 2023-03-06 17:28:03 +1100
+Processing by ProductController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering product/show.html.erb within layouts/application
+  [1m[36mStoreProduct Load (0.5ms)[0m  [1m[34mSELECT "store_products".* FROM "store_products" WHERE "store_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/views/product/show.html.erb:3
+  Rendered product/show.html.erb within layouts/application (Duration: 11.7ms | Allocations: 6733)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 6818)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 7.3ms | Allocations: 12881)
+
+
+  
+ActionView::Template::Error (undefined method `store_product' for #<ActionView::Base:0x00000000027ce0>
+
+@output_buffer.safe_append='  <div>'.freeze;@output_buffer.append=( link_to "#{product.brand_name} - #{product}", store_product(product) );@output_buffer.safe_append='</div>
+                                                                                                                  ^^^^^^^^^^^^^
+Did you mean?  store_product_url):
+    1: <h1>Show Page for <%= @product.name %></h1>
+    2: 
+    3: <% @storeproducts.each do |product|%>
+    4:   <div><%= link_to "#{product.brand_name} - #{product}", store_product(product) %></div>
+    5: <% end %>
+  
+app/views/product/show.html.erb:4
+app/views/product/show.html.erb:3
+Started GET "/product/1" for ::1 at 2023-03-06 17:28:14 +1100
+Processing by ProductController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering product/show.html.erb within layouts/application
+  [1m[36mStoreProduct Load (0.4ms)[0m  [1m[34mSELECT "store_products".* FROM "store_products" WHERE "store_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/views/product/show.html.erb:3
+  Rendered product/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1125)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 769)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 94)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 11772)
+Completed 200 OK in 21ms (Views: 18.1ms | ActiveRecord: 0.6ms | Allocations: 13192)
+
+
+Started GET "/product/1" for ::1 at 2023-03-06 17:28:28 +1100
+Processing by ProductController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering product/show.html.erb within layouts/application
+  [1m[36mStoreProduct Load (0.4ms)[0m  [1m[34mSELECT "store_products".* FROM "store_products" WHERE "store_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/views/product/show.html.erb:3
+  Rendered product/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1069)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 750)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 94)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 11523)
+Completed 200 OK in 29ms (Views: 24.3ms | ActiveRecord: 0.6ms | Allocations: 12936)
+
+
+Started GET "/product/1/store_product/1" for ::1 at 2023-03-06 17:28:30 +1100
+Processing by StoreProductController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStoreProduct Load (0.2ms)[0m  [1m[34mSELECT "store_products".* FROM "store_products" WHERE "store_products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/store_product_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering store_product/show.html.erb within layouts/application
+  Rendered store_product/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 107)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 359)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 9642)
+Completed 200 OK in 24ms (Views: 14.8ms | ActiveRecord: 1.9ms | Allocations: 13477)
+
+
+Started GET "/product/2/store_product/2" for ::1 at 2023-03-06 17:28:34 +1100
+Processing by StoreProductController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mStoreProduct Load (0.3ms)[0m  [1m[34mSELECT "store_products".* FROM "store_products" WHERE "store_products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/store_product_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering store_product/show.html.erb within layouts/application
+  Rendered store_product/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 267)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 9138)
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.3ms | Allocations: 10046)
+
+
+Started GET "/product" for ::1 at 2023-03-06 17:29:05 +1100
+Processing by ProductController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering product/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/product/index.html.erb:3
+  Rendered product/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 2830)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 745)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 94)
+  Rendered layout layouts/application.html.erb (Duration: 28.7ms | Allocations: 13149)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.3ms | Allocations: 13985)
+
+
+Started GET "/product/1" for ::1 at 2023-03-06 17:29:07 +1100
+Processing by ProductController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering product/show.html.erb within layouts/application
+  [1m[36mStoreProduct Load (0.3ms)[0m  [1m[34mSELECT "store_products".* FROM "store_products" WHERE "store_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/views/product/show.html.erb:3
+  Rendered product/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 879)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 258)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 9999)
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 0.6ms | Allocations: 10920)
+
+
+Started GET "/product/1/store_product/1" for ::1 at 2023-03-06 17:29:09 +1100
+Processing by StoreProductController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStoreProduct Load (0.3ms)[0m  [1m[34mSELECT "store_products".* FROM "store_products" WHERE "store_products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/store_product_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering store_product/show.html.erb within layouts/application
+  Rendered store_product/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 106)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 350)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 9610)
+Completed 200 OK in 26ms (Views: 20.3ms | ActiveRecord: 0.3ms | Allocations: 10779)
+
+
+Started GET "/product/1" for ::1 at 2023-03-06 17:29:31 +1100
+Processing by ProductController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering product/show.html.erb within layouts/application
+  [1m[36mStoreProduct Load (0.3ms)[0m  [1m[34mSELECT "store_products".* FROM "store_products" WHERE "store_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/views/product/show.html.erb:3
+  Rendered product/show.html.erb within layouts/application (Duration: 18.8ms | Allocations: 6318)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 6403)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.1ms | Allocations: 7849)
+
+
+  
+ActionView::Template::Error (undefined method `price_chart' for #<StoreProduct id: 1, brand_name: "Coles", product_name: "Bananas", product_id: 1, created_at: "2023-03-06 06:22:11.581084000 +0000", updated_at: "2023-03-06 06:22:11.581084000 +0000">):
+    1: <h1>Show Page for <%= @product.name %></h1>
+    2: 
+    3: <% @storeproducts.each do |product|%>
+    4:   <div><%= link_to "#{product.brand_name} - #{product.price_chart}", store_product_path(product) %></div>
+    5: <% end %>
+  
+app/views/product/show.html.erb:4
+app/views/product/show.html.erb:3
+Started GET "/product/1" for ::1 at 2023-03-06 17:30:06 +1100
+Processing by ProductController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering product/show.html.erb within layouts/application
+  [1m[36mStoreProduct Load (0.1ms)[0m  [1m[34mSELECT "store_products".* FROM "store_products" WHERE "store_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/views/product/show.html.erb:3
+  Rendered product/show.html.erb within layouts/application (Duration: 12.5ms | Allocations: 7580)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 7665)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 9.9ms | Allocations: 13724)
+
+
+  
+ActionView::Template::Error (undefined method `price_charts' for #<StoreProduct id: 1, brand_name: "Coles", product_name: "Bananas", product_id: 1, created_at: "2023-03-06 06:22:11.581084000 +0000", updated_at: "2023-03-06 06:22:11.581084000 +0000">):
+    1: <h1>Show Page for <%= @product.name %></h1>
+    2: 
+    3: <% @storeproducts.each do |product|%>
+    4:   <div><%= link_to "#{product.brand_name} - #{product.price_charts}", store_product_path(product) %></div>
+    5: <% end %>
+  
+app/views/product/show.html.erb:4
+app/views/product/show.html.erb:3
+Started GET "/product/1" for ::1 at 2023-03-06 17:30:07 +1100
+Processing by ProductController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering product/show.html.erb within layouts/application
+  [1m[36mStoreProduct Load (0.3ms)[0m  [1m[34mSELECT "store_products".* FROM "store_products" WHERE "store_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/views/product/show.html.erb:3
+  Rendered product/show.html.erb within layouts/application (Duration: 19.3ms | Allocations: 5946)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 6025)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.9ms | Allocations: 6853)
+
+
+  
+ActionView::Template::Error (undefined method `price_charts' for #<StoreProduct id: 1, brand_name: "Coles", product_name: "Bananas", product_id: 1, created_at: "2023-03-06 06:22:11.581084000 +0000", updated_at: "2023-03-06 06:22:11.581084000 +0000">):
+    1: <h1>Show Page for <%= @product.name %></h1>
+    2: 
+    3: <% @storeproducts.each do |product|%>
+    4:   <div><%= link_to "#{product.brand_name} - #{product.price_charts}", store_product_path(product) %></div>
+    5: <% end %>
+  
+app/views/product/show.html.erb:4
+app/views/product/show.html.erb:3
+Started GET "/product/1" for ::1 at 2023-03-06 17:30:38 +1100
+Processing by ProductController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering product/show.html.erb within layouts/application
+  [1m[36mStoreProduct Load (0.3ms)[0m  [1m[34mSELECT "store_products".* FROM "store_products" WHERE "store_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/views/product/show.html.erb:3
+  Rendered product/show.html.erb within layouts/application (Duration: 14.5ms | Allocations: 13533)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 13626)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.5ms | Allocations: 14946)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column price_charts.product does not exist
+LINE 1: SELECT "price_charts".* FROM "price_charts" WHERE "price_cha...
+                                                          ^
+):
+    1: <h1>Show Page for <%= @product.name %></h1>
+    2: 
+    3: <% @storeproducts.each do |product|%>
+    4:   <div><%= link_to "#{product.brand_name} - #{PriceChart.find_by(product: product)}", store_product_path(product) %></div>
+    5: <% end %>
+  
+app/views/product/show.html.erb:4
+app/views/product/show.html.erb:3
+Started GET "/product/1" for ::1 at 2023-03-06 17:30:57 +1100
+Processing by ProductController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/product_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering product/show.html.erb within layouts/application
+  [1m[36mStoreProduct Load (0.3ms)[0m  [1m[34mSELECT "store_products".* FROM "store_products" WHERE "store_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/views/product/show.html.erb:3
+  Rendered product/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1194)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 766)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 94)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 11844)
+Completed 200 OK in 26ms (Views: 21.5ms | ActiveRecord: 0.8ms | Allocations: 13270)
+
+
+Started GET "/product/1/store_product/1" for ::1 at 2023-03-06 17:30:59 +1100
+Processing by StoreProductController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStoreProduct Load (0.6ms)[0m  [1m[34mSELECT "store_products".* FROM "store_products" WHERE "store_products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/store_product_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering store_product/show.html.erb within layouts/application
+  Rendered store_product/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 106)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 358)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 9622)
+Completed 200 OK in 21ms (Views: 15.6ms | ActiveRecord: 0.6ms | Allocations: 11980)
+
+
