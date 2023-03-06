@@ -1109,6 +1109,68 @@ FOREIGN KEY ("shopping_list_id")
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-05 23:31:38.295600"], ["updated_at", "2023-03-05 23:31:38.295600"]]
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+<<<<<<< HEAD
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-06 02:02:22.005965"], ["updated_at", "2023-03-06 02:02:22.005965"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5049656801970026610)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-03-06 14:11:48 +1100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 10.3ms | Allocations: 5280)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 5390)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 8279)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `batches_path' for #<ActionView::Base:0x0000000000ceb8>
+
+'.freeze;@output_buffer.append=( link_to 'All Products', batches_path );@output_buffer.safe_append='
+                                                         ^^^^^^^^^^^^):
+    1: <h1>Pages#home</h1>
+    2: <p>Find me in app/views/pages/home.html.erb</p>
+    3: 
+    4: <%= link_to 'All Products', batches_path %>
+    5: <%= link_to 'Previous shopping lists', shoppinglist_history_path %>
+    6: <%# <%= link_to 'Current Shopping List', shoppinglists_path(params[:id]) %>
+  
+app/views/pages/home.html.erb:4
+Started GET "/" for ::1 at 2023-03-06 14:12:07 +1100
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 340)
+  Rendered layout layouts/application.html.erb (Duration: 45.0ms | Allocations: 44377)
+Completed 200 OK in 46ms (Views: 45.7ms | ActiveRecord: 0.0ms | Allocations: 45364)
+
+
+Started GET "/product" for ::1 at 2023-03-06 14:12:08 +1100
+Processing by ProductController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering product/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/product/index.html.erb:3
+  Rendered product/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 981)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 9946)
+Completed 200 OK in 23ms (Views: 12.8ms | ActiveRecord: 2.8ms | Allocations: 12406)
+
+
+Started GET "/list" for ::1 at 2023-03-06 14:12:11 +1100
+Processing by ListController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/index.html.erb within layouts/application
+  [1m[36mList Load (1.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/views/list/index.html.erb:3
+  Rendered list/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 922)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 9888)
+Completed 200 OK in 20ms (Views: 13.6ms | ActiveRecord: 1.4ms | Allocations: 11904)
+
+
+=======
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5049656801970026610)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
@@ -1451,3 +1513,4 @@ Processing by PagesController#home as HTML
   Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 9289)
 Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.0ms | Allocations: 9553)
 
+>>>>>>> master
