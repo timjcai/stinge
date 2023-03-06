@@ -1,16 +1,24 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<%= link_to 'All Products', products_path %>
-<%= link_to 'Previous lists', list_history_path %>
-
-<%# <%= link_to 'Current Shopping List', shoppinglists_path(params[:id]) %>
-
-<div class="container">
-
-
-
-
-
-
+<!-- BANNER SECTION -->
+<div class="container-fluid">
+  <div class="banner">
+    <div class="banner-flex">
+      <h1 class="banner-txt">Track Prices, <br>
+      Get the Deals!</h1>
+      <div class="form">
+        <label for="postcode">Enter your postcode:</label> <br>
+        <input id="postcode" type="text" placeholder="3000">
+        <a class="btn-location" href="#">Search</a>
+      </div>
+    </div>
+   </div>
 </div>
+<!-- BANNER SECTION END -->
+
+<%# <div class="container home-cards">
+  <h2 class="category-header">Browse categories</h2>
+  <div class="row">
+    <div class="col-lg-12"> %>
+      <%# <%= render "listings/cards" %>
+    <%# </div>
+  </div>
+</div> %>
