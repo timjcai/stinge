@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   get 'list/:id/edit', to: 'list#edit', as: 'edit_list'
   patch 'list/:id', to: 'list#update', as: 'update_list'
   delete 'list/:id', to: 'list#destroy', as: 'delete_list'
+  get 'product/:id/store_product/:id', to: 'store_product#show', as: 'store_product'
+  get 'product/:id/store_product/:id/price_chart', to: 'price_chart#show', as: 'price_chart'
 end

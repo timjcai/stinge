@@ -9,6 +9,9 @@
 
 # temporary seedfile
 require 'csv'
+require 'scraper/dummy_data/create_dummydata'
+
+
 
 filepath = 'scraper/veggie_names.csv'
 
@@ -16,7 +19,8 @@ veg_array = CSV.parse(File.read(filepath)).flatten
 
 def initbatches(array)
   array.each do |item|
-    p Product.create(name: item)
+    p StoreProduct.create(name: item)
+
   end
 end
 
