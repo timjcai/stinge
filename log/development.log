@@ -13950,3 +13950,102 @@ Processing by ListController#new as HTML
 Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms | Allocations: 12593)
 
 
+Started GET "/list/new" for ::1 at 2023-03-06 18:11:01 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2229)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 683)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 11993)
+Completed 200 OK in 13ms (Views: 7.9ms | ActiveRecord: 3.0ms | Allocations: 15744)
+
+
+Started POST "/list" for ::1 at 2023-03-06 18:11:02 +1100
+Processing by ListController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "list"=>{"name"=>"asdfadsf", "user"=>""}, "commit"=>"Create List"}
+[31mUnpermitted parameter: :user. Context: { controller: ListController, action: create, request: #<ActionDispatch::Request:0x0000000119d7fdd8>, params: {"authenticity_token"=>"[FILTERED]", "list"=>{"name"=>"asdfadsf", "user"=>""}, "commit"=>"Create List", "controller"=>"list", "action"=>"create"} }[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 2927)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"list", :id=>nil}, missing required keys: [:id]):
+  
+app/controllers/list_controller.rb:17:in `create'
+Started GET "/list/new" for ::1 at 2023-03-06 18:13:26 +1100
+  
+SyntaxError (/Users/timcai/code/timjcai/stinge/app/controllers/list_controller.rb:19: syntax error, unexpected ':', expecting `end'
+      alert: 'error'
+           ^
+):
+  
+app/controllers/list_controller.rb:19: syntax error, unexpected ':', expecting `end'
+app/controllers/list_controller.rb:19: syntax error, unexpected ':', expecting `end'
+app/controllers/list_controller.rb:19: syntax error, unexpected ':', expecting `end'
+Started GET "/list/new" for ::1 at 2023-03-06 18:14:04 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 2050)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 253)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 11074)
+Completed 200 OK in 18ms (Views: 7.8ms | ActiveRecord: 7.8ms | Allocations: 14426)
+
+
+Started POST "/list" for ::1 at 2023-03-06 18:14:06 +1100
+Processing by ListController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "list"=>{"name"=>"asdf", "user"=>""}, "commit"=>"Create List"}
+[31mUnpermitted parameter: :user. Context: { controller: ListController, action: create, request: #<ActionDispatch::Request:0x00000001194f6388>, params: {"authenticity_token"=>"[FILTERED]", "list"=>{"name"=>"asdf", "user"=>""}, "commit"=>"Create List", "controller"=>"list", "action"=>"create"} }[0m
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms | Allocations: 5573)
+
+
+  
+NameError (undefined local variable or method `new_listpath' for #<ListController:0x00000000041398>
+
+      redirect_to new_listpath, alert: 'error'
+                  ^^^^^^^^^^^^
+Did you mean?  new_list_path):
+  
+app/controllers/list_controller.rb:19:in `create'
+Started GET "/list/new" for ::1 at 2023-03-06 18:14:12 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 2026)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 253)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 10925)
+Completed 200 OK in 24ms (Views: 7.1ms | ActiveRecord: 14.1ms | Allocations: 14252)
+
+
+Started POST "/list" for ::1 at 2023-03-06 18:14:14 +1100
+Processing by ListController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "list"=>{"name"=>"asdf", "user"=>""}, "commit"=>"Create List"}
+[31mUnpermitted parameter: :user. Context: { controller: ListController, action: create, request: #<ActionDispatch::Request:0x000000011a4b5df0>, params: {"authenticity_token"=>"[FILTERED]", "list"=>{"name"=>"asdf", "user"=>""}, "commit"=>"Create List", "controller"=>"list", "action"=>"create"} }[0m
+Redirected to http://localhost:3000/list/new
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms | Allocations: 2061)
+
+
+Started GET "/list/new" for ::1 at 2023-03-06 18:14:14 +1100
+Processing by ListController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1541)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 214)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 10254)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 10575)
+
+
+Started GET "/list/new" for ::1 at 2023-03-06 18:14:26 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 2023)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 253)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 10922)
+Completed 200 OK in 15ms (Views: 5.9ms | ActiveRecord: 6.7ms | Allocations: 14250)
+
+
