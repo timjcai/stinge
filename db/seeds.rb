@@ -19,7 +19,7 @@ veg_array = CSV.parse(File.read(filepath)).flatten
 
 def initproducts(array)
   array.each do |item|
-    p StoreProduct.create(name: item)
+    p Product.create(name: item)
   end
 end
 
@@ -37,7 +37,7 @@ def date_array
   start = Date.new(2022,1,1)
   finish = Date.today
 
-  (start.to_date..finish.to_date).map { |date| date.strftime('%y %b %d') }
+  (start.to_date..finish.to_date).map { |date| date.strftime('%b %d %Y') }
 end
 
 def init_fake_prices(array)
@@ -71,11 +71,17 @@ p init_store_generator(stores)
 
 def init_store_product_generator(array)
   array.each do |item|
-    @product = Product.where(name: item)
-    p @storeproduct = StoreProduct.create(brand_name:"coles", product_name: item, products_id: @product.id)
-    @prices = init_fake_prices(date_array)
-    p PriceChart.create(date: @prices[0], price: @prices[1], store_products_id: @storeproduct.id, measurement: 100, measurement_type: 'g', standard_measurement_ratio: '100g')
+    p product = Product.find_by(name: item)
+    p storeproduct = StoreProduct.create(brand_name: "Coles", product_name: item, product: product)
+    prices = init_fake_prices(date_array)
+
+    prices.each do |set|
+      date = set[0]
+      price_set = set[1]
+      p PriceChart.create(date: date, price: price_set, store_product: storeproduct, measurement: 100, measurement_type: 'g', standard_measurement_ratio: '100g')
+    end
   end
 end
 
-init_store_product_generator(veg_array)
+test_aray = ['Bananas']
+init_store_product_generator(test_aray)
