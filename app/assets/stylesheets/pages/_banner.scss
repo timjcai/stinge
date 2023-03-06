@@ -1,0 +1,65 @@
+.container-fluid {
+  padding: 0;
+}
+
+.banner {
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)), url("https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3174&q=80");
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+
+  .banner-txt {
+    color: #e6e2aa;
+    font-family: 'Poppins', sans-serif;
+    font-size: 60px;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  .banner-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 180px 0;
+  }
+}
+
+.form label {
+  display: block;
+  margin: 8px 0;
+  color: $color-beige;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.form input {
+  padding: 17px;
+  width: 300px;
+  border: 1px solid $color-blue-800;
+  border-radius: 30px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin-right: 15px;
+}
+
+.form input::placeholder {
+  color: #6b6a69;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+}
+
+.btn-location {
+  background-color: #EEDBD4;
+  border: 1px solid $color-blue-800;
+  border-radius: 28px;
+  box-shadow: rgba(163, 165, 149, 0.2) 0px 8px 24px;
+  color: $color-blue-800;
+  font-size: 18px;
+  padding: 18px 35px;
+  text-decoration: none;
+}
+
+.btn-location:hover {
+  background-color: #e5b5a4;
+  color: $color-blue-800;
+  text-decoration: none;
+}
