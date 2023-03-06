@@ -36,13 +36,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_015021) do
   create_table "price_charts", force: :cascade do |t|
     t.date "date"
     t.float "price"
-    t.bigint "store_products_id", null: false
+    t.bigint "store_product_id", null: false
     t.integer "measurement"
     t.string "measurement_type"
     t.string "standard_measurement_ratio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["store_products_id"], name: "index_price_charts_on_store_products_id"
+    t.index ["store_product_id"], name: "index_price_charts_on_store_product_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -55,10 +55,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_015021) do
   create_table "store_products", force: :cascade do |t|
     t.string "brand_name"
     t.string "product_name"
-    t.bigint "products_id", null: false
+    t.bigint "product_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["products_id"], name: "index_store_products_on_products_id"
+    t.index ["product_id"], name: "index_store_products_on_product_id"
   end
 
   create_table "stores", force: :cascade do |t|
@@ -84,6 +84,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_015021) do
   add_foreign_key "list_items", "lists", column: "lists_id"
   add_foreign_key "list_items", "products", column: "products_id"
   add_foreign_key "lists", "users"
-  add_foreign_key "price_charts", "store_products", column: "store_products_id"
-  add_foreign_key "store_products", "products", column: "products_id"
+  add_foreign_key "price_charts", "store_products"
+  add_foreign_key "store_products", "products"
 end

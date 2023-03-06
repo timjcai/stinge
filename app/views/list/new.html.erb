@@ -1,1 +1,7 @@
-<h1>create new list</h1>
+<h1>Create new list</h1>
+
+<%= simple_form_for @list do |f| %>
+    <%= f.input :name, placeholder: 'Enter your list name' %>
+    <%= f.hidden_field :user, :value => current_user %>
+    <%= f.submit class: 'btn' %>
+<% end %>

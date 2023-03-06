@@ -13,6 +13,11 @@ class ListController < ApplicationController
 
   def create
     @list = List.new(list_params)
+    if @list.save
+      redirect_to list_path(@list)
+    else
+      redirect_to new_list_path, alert: 'error'
+    end
   end
 
   def edit
