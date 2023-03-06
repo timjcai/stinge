@@ -13127,3 +13127,826 @@ Processing by StoreProductController#show as HTML
 Completed 200 OK in 21ms (Views: 15.6ms | ActiveRecord: 0.6ms | Allocations: 11980)
 
 
+Started GET "/" for ::1 at 2023-03-06 17:55:39 +1100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 538)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 904)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 98)
+  Rendered layout layouts/application.html.erb (Duration: 55.3ms | Allocations: 46268)
+Completed 200 OK in 60ms (Views: 56.9ms | ActiveRecord: 0.0ms | Allocations: 49211)
+
+
+Started GET "/product" for ::1 at 2023-03-06 17:55:41 +1100
+Processing by ProductController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering product/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/product/index.html.erb:3
+  Rendered product/index.html.erb within layouts/application (Duration: 16.7ms | Allocations: 6501)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 319)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 15983)
+Completed 200 OK in 35ms (Views: 23.5ms | ActiveRecord: 6.1ms | Allocations: 18207)
+
+
+Started GET "/list" for ::1 at 2023-03-06 17:55:50 +1100
+Processing by ListController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/index.html.erb within layouts/application
+  [1m[36mList Load (3.0ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/views/list/index.html.erb:3
+  Rendered list/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 920)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 359)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 10451)
+Completed 200 OK in 24ms (Views: 16.0ms | ActiveRecord: 3.0ms | Allocations: 12444)
+
+
+Started GET "/list/new" for ::1 at 2023-03-06 17:55:54 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 56.4ms | Allocations: 15107)
+  Rendered layout layouts/application.html.erb (Duration: 56.6ms | Allocations: 15200)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 3.1ms | Allocations: 18128)
+
+
+  
+ActionView::Template::Error (undefined method `lists_path' for #<ActionView::Base:0x0000000000d7c8>
+
+              recipient.public_send(method, *args, options)
+                       ^^^^^^^^^^^^
+Did you mean?  list_path):
+    1: <h1>create new list</h1>
+    2: 
+    3:   <%= simple_form_for(@list, :html => { :class => 'form-horizontal' }) do |f| %>
+    4:     <div class="form-inputs">
+    5:       <%= f.input :name, placeholder: 'Date - List Name' %>
+    6:       <%= f.submit class: 'btn' %>
+  
+app/views/list/new.html.erb:3
+Started GET "/list/new" for ::1 at 2023-03-06 17:56:16 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 16.8ms | Allocations: 5290)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 5379)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 6213)
+
+
+  
+ActionView::Template::Error (undefined method `lists_path' for #<ActionView::Base:0x0000000000db10>
+
+              recipient.public_send(method, *args, options)
+                       ^^^^^^^^^^^^
+Did you mean?  list_path):
+    1: <h1>create new list</h1>
+    2: 
+    3:   <%= simple_form_for(@list) do |f| %>
+    4:     <div class="form-inputs">
+    5:       <%= f.input :name, placeholder: 'Date - List Name' %>
+    6:       <%= f.submit class: 'btn' %>
+  
+app/views/list/new.html.erb:3
+Started GET "/list/new" for ::1 at 2023-03-06 17:56:22 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 16.0ms | Allocations: 5287)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 5375)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 6192)
+
+
+  
+ActionView::Template::Error (undefined method `lists_path' for #<ActionView::Base:0x0000000000de58>
+
+              recipient.public_send(method, *args, options)
+                       ^^^^^^^^^^^^
+Did you mean?  list_path):
+    1: <h1>create new list</h1>
+    2: 
+    3:   <%= simple_form_for @list do |f| %>
+    4:     <div class="form-inputs">
+    5:       <%= f.input :name, placeholder: 'Date - List Name' %>
+    6:       <%= f.submit class: 'btn' %>
+  
+app/views/list/new.html.erb:3
+Started GET "/list/new" for ::1 at 2023-03-06 17:56:35 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 16.5ms | Allocations: 5287)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 5375)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms | Allocations: 6192)
+
+
+  
+ActionView::Template::Error (undefined method `lists_path' for #<ActionView::Base:0x0000000000e178>
+
+              recipient.public_send(method, *args, options)
+                       ^^^^^^^^^^^^
+Did you mean?  list_path):
+    1: <h1>create new list</h1>
+    2: 
+    3: <%= simple_form_for @list do |f| %>
+    4:   <div class="form-inputs">
+    5:     <%= f.input :name, placeholder: 'Date - List Name' %>
+    6:     <%= f.submit class: 'btn' %>
+  
+app/views/list/new.html.erb:3
+Started GET "/list/new" for ::1 at 2023-03-06 17:57:07 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 5246)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 5334)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 3.3ms | Allocations: 9054)
+
+
+  
+ActionView::Template::Error (undefined method `lists_path' for #<ActionView::Base:0x000000000134c0>
+
+              recipient.public_send(method, *args, options)
+                       ^^^^^^^^^^^^
+Did you mean?  list_path):
+    1: <h1>create new list</h1>
+    2: 
+    3: <%= simple_form_for (@list) do |f| %>
+    4:   <div class="form-inputs">
+    5:     <%= f.input :name, placeholder: 'Date - List Name' %>
+    6:     <%= f.submit class: 'btn' %>
+  
+app/views/list/new.html.erb:3
+Started PUT "/__web_console/repl_sessions/d2db234890d6e80e974032bad6c13a18" for ::1 at 2023-03-06 17:57:21 +1100
+Started PUT "/__web_console/repl_sessions/d2db234890d6e80e974032bad6c13a18" for ::1 at 2023-03-06 17:57:21 +1100
+Started GET "/list/new" for ::1 at 2023-03-06 17:59:39 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 16.9ms | Allocations: 5294)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 5382)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms | Allocations: 6238)
+
+
+  
+ActionView::Template::Error (undefined method `lists_path' for #<ActionView::Base:0x00000000013808>
+
+              recipient.public_send(method, *args, options)
+                       ^^^^^^^^^^^^
+Did you mean?  list_path):
+    1: <h1>create new list</h1>
+    2: 
+    3: <%= simple_form_for @list do |f| %>
+    4:     <%= f.input :name, placeholder: 'Date - List Name' %>
+    5:     <%=f.hidden_field :user_id, :value => current_user.id %>
+    6:     <%= f.submit class: 'btn' %>
+  
+app/views/list/new.html.erb:3
+Started GET "/list/new" for ::1 at 2023-03-06 17:59:41 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 17.9ms | Allocations: 5027)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 5106)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms | Allocations: 5364)
+
+
+  
+ActionView::Template::Error (undefined method `lists_path' for #<ActionView::Base:0x00000000013b28>
+
+              recipient.public_send(method, *args, options)
+                       ^^^^^^^^^^^^
+Did you mean?  list_path):
+    1: <h1>create new list</h1>
+    2: 
+    3: <%= simple_form_for @list do |f| %>
+    4:     <%= f.input :name, placeholder: 'Date - List Name' %>
+    5:     <%=f.hidden_field :user_id, :value => current_user.id %>
+    6:     <%= f.submit class: 'btn' %>
+  
+app/views/list/new.html.erb:3
+Started GET "/list/new" for ::1 at 2023-03-06 18:00:18 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 108)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 811)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 94)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 10844)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.0ms | Allocations: 11675)
+
+
+Started GET "/list/new" for ::1 at 2023-03-06 18:00:26 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 17.9ms | Allocations: 5294)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 5382)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms | Allocations: 6203)
+
+
+  
+ActionView::Template::Error (undefined method `lists_path' for #<ActionView::Base:0x00000000013f10>
+
+              recipient.public_send(method, *args, options)
+                       ^^^^^^^^^^^^
+Did you mean?  list_path):
+    1: <h1>create new list</h1>
+    2: 
+    3: <% simple_form_for @list do |f| %>
+    4:     <%= f.input :name, placeholder: 'Date - List Name' %>
+    5:     <%= f.hidden_field :user_id, :value => current_user.id %>
+    6:     <%= f.submit class: 'btn' %>
+  
+app/views/list/new.html.erb:3
+Started GET "/list/new" for ::1 at 2023-03-06 18:00:38 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 16.0ms | Allocations: 5297)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 5385)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms | Allocations: 6202)
+
+
+  
+ActionView::Template::Error (undefined method `lists_path' for #<ActionView::Base:0x00000000014230>
+
+              recipient.public_send(method, *args, options)
+                       ^^^^^^^^^^^^
+Did you mean?  list_path):
+    2: 
+    3: 
+    4: 
+    5: <%= simple_form_for @list do |f| %>
+    6:     <%= f.input :name, placeholder: 'Date - List Name' %>
+    7:     <%= f.hidden_field :user_id, :value => current_user.id %>
+    8:     <%= f.submit class: 'btn' %>
+  
+app/views/list/new.html.erb:5
+Started GET "/list/new" for ::1 at 2023-03-06 18:00:43 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 16.8ms | Allocations: 5296)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 5384)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms | Allocations: 6201)
+
+
+  
+ActionView::Template::Error (undefined method `lists_path' for #<ActionView::Base:0x00000000014550>
+
+              recipient.public_send(method, *args, options)
+                       ^^^^^^^^^^^^
+Did you mean?  list_path):
+    1: <h1>create new list</h1>
+    2: 
+    3: 
+    4: <%= simple_form_for @list do |f| %>
+    5:     <%= f.input :name, placeholder: 'Date - List Name' %>
+    6:     <%= f.hidden_field :user_id, :value => current_user.id %>
+    7:     <%= f.submit class: 'btn' %>
+  
+app/views/list/new.html.erb:4
+Started GET "/list/new" for ::1 at 2023-03-06 18:02:11 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1947)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2035)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2852)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass
+
+      convert_to_model(record_or_class).model_name
+                                       ^^^^^^^^^^^):
+    1: <h1>create new list</h1>
+    2: 
+    3: <%= simple_form_for @user do |f| %>
+    4:     <%= f.input :name, placeholder: 'Date - List Name' %>
+    5:     <%= f.hidden_field :user_id, :value => current_user.id %>
+    6:     <%= f.submit class: 'btn' %>
+  
+app/views/list/new.html.erb:3
+Started GET "/list/new" for ::1 at 2023-03-06 18:02:12 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1712)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1791)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2049)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass
+
+      convert_to_model(record_or_class).model_name
+                                       ^^^^^^^^^^^):
+    1: <h1>create new list</h1>
+    2: 
+    3: <%= simple_form_for @user do |f| %>
+    4:     <%= f.input :name, placeholder: 'Date - List Name' %>
+    5:     <%= f.hidden_field :user_id, :value => current_user.id %>
+    6:     <%= f.submit class: 'btn' %>
+  
+app/views/list/new.html.erb:3
+Started GET "/list/new" for ::1 at 2023-03-06 18:02:12 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1712)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | Allocations: 1791)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 2023)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass
+
+      convert_to_model(record_or_class).model_name
+                                       ^^^^^^^^^^^):
+    1: <h1>create new list</h1>
+    2: 
+    3: <%= simple_form_for @user do |f| %>
+    4:     <%= f.input :name, placeholder: 'Date - List Name' %>
+    5:     <%= f.hidden_field :user_id, :value => current_user.id %>
+    6:     <%= f.submit class: 'btn' %>
+  
+app/views/list/new.html.erb:3
+Started GET "/list/new" for ::1 at 2023-03-06 18:02:23 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 17.2ms | Allocations: 5294)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 5382)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms | Allocations: 6173)
+
+
+  
+ActionView::Template::Error (undefined method `lists_path' for #<ActionView::Base:0x000000000150e0>
+
+              recipient.public_send(method, *args, options)
+                       ^^^^^^^^^^^^
+Did you mean?  list_path):
+    1: <h1>create new list</h1>
+    2: 
+    3: <%= simple_form_for @list do |f| %>
+    4:     <%= f.input :name, placeholder: 'Date - List Name' %>
+    5:     <%= f.hidden_field :user_id, :value => current_user.id %>
+    6:     <%= f.submit class: 'btn' %>
+  
+app/views/list/new.html.erb:3
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yo@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yo@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "yo@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-03-06 07:05:09.529689"], ["updated_at", "2023-03-06 07:05:09.529689"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mList Create (2.8ms)[0m  [1m[32mINSERT INTO "lists" ("name", "user_id", "date_created", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hello"], ["user_id", 1], ["date_created", nil], ["created_at", "2023-03-06 07:05:26.947978"], ["updated_at", "2023-03-06 07:05:26.947978"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/list/new" for ::1 at 2023-03-06 18:05:55 +1100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 129)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 808)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 94)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 10875)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 12866)
+
+
+Started GET "/list/new" for ::1 at 2023-03-06 18:05:57 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 267)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 9155)
+Completed 200 OK in 13ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 9430)
+
+
+Started GET "/list/new" for ::1 at 2023-03-06 18:06:16 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1819)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1907)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2708)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze; @lists.each do |list| 
+                ^^^^^):
+    1: <h1>create new list</h1>
+    2: 
+    3: <% @lists.each do |list| %>
+    4:   <%= list.name %>
+    5: <% end %>
+  
+app/views/list/new.html.erb:3
+Started GET "/list/new" for ::1 at 2023-03-06 18:06:29 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1767)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1855)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2665)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass
+
+'.freeze; @lists.name 
+                ^^^^^):
+    1: <h1>create new list</h1>
+    2: 
+    3: <% @lists.name %>
+  
+app/views/list/new.html.erb:3
+Started GET "/list/new" for ::1 at 2023-03-06 18:06:33 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1806)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 1894)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2704)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass
+
+'.freeze;@output_buffer.append=( @lists.name );
+                                       ^^^^^):
+    1: <h1>create new list</h1>
+    2: 
+    3: <%= @lists.name %>
+  
+app/views/list/new.html.erb:3
+Started GET "/list/new" for ::1 at 2023-03-06 18:06:34 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1661)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1740)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1991)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass
+
+'.freeze;@output_buffer.append=( @lists.name );
+                                       ^^^^^):
+    1: <h1>create new list</h1>
+    2: 
+    3: <%= @lists.name %>
+  
+app/views/list/new.html.erb:3
+Started GET "/list/new" for ::1 at 2023-03-06 18:06:34 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1659)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | Allocations: 1738)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1967)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass
+
+'.freeze;@output_buffer.append=( @lists.name );
+                                       ^^^^^):
+    1: <h1>create new list</h1>
+    2: 
+    3: <%= @lists.name %>
+  
+app/views/list/new.html.erb:3
+Started GET "/list/new" for ::1 at 2023-03-06 18:06:59 +1100
+Processing by ListController#new as HTML
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/list_controller.rb:11:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 137)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 808)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 94)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 10858)
+Completed 200 OK in 18ms (Views: 7.6ms | ActiveRecord: 6.8ms | Allocations: 17179)
+
+
+Started GET "/list/new" for ::1 at 2023-03-06 18:07:12 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 5256)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 5344)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 15.1ms | Allocations: 8991)
+
+
+  
+ActionView::Template::Error (undefined method `lists_path' for #<ActionView::Base:0x000000000255f8>
+
+              recipient.public_send(method, *args, options)
+                       ^^^^^^^^^^^^
+Did you mean?  list_path):
+    1: <h1>create new list</h1>
+    2: 
+    3: <%= simple_form_for @list do |f| %>
+    4:     <%= f.input :name, placeholder: 'Date - List Name' %>
+    5:     <%= f.hidden_field :user_id, :value => current_user.id %>
+    6:     <%= f.submit class: 'btn' %>
+  
+app/views/list/new.html.erb:3
+Started GET "/list/new" for ::1 at 2023-03-06 18:08:02 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 630.5ms | Allocations: 956012)
+  Rendered layout layouts/application.html.erb (Duration: 630.8ms | Allocations: 956226)
+Completed 500 Internal Server Error in 637ms (ActiveRecord: 3.4ms | Allocations: 959586)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass
+
+    '.freeze;@output_buffer.append=( f.hidden_field :user_id, :value => current_user.id );@output_buffer.safe_append='
+                                                                                    ^^^):
+    2: 
+    3: <%= simple_form_for @list do |f| %>
+    4:     <%= f.input :name, placeholder: 'Date - List Name' %>
+    5:     <%= f.hidden_field :user_id, :value => current_user.id %>
+    6:     <%= f.submit class: 'btn' %>
+    7: <% end %>
+  
+app/views/list/new.html.erb:5
+app/views/list/new.html.erb:3
+Started GET "/list/new" for ::1 at 2023-03-06 18:08:03 +1100
+Started GET "/list/new" for ::1 at 2023-03-06 18:08:03 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 3076)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 3164)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 3931)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass
+
+    '.freeze;@output_buffer.append=( f.hidden_field :user_id, :value => current_user.id );@output_buffer.safe_append='
+                                                                                    ^^^):
+    2: 
+    3: <%= simple_form_for @list do |f| %>
+    4:     <%= f.input :name, placeholder: 'Date - List Name' %>
+    5:     <%= f.hidden_field :user_id, :value => current_user.id %>
+    6:     <%= f.submit class: 'btn' %>
+    7: <% end %>
+  
+app/views/list/new.html.erb:5
+app/views/list/new.html.erb:3
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 2992)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 3100)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 3968)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass
+
+    '.freeze;@output_buffer.append=( f.hidden_field :user_id, :value => current_user.id );@output_buffer.safe_append='
+                                                                                    ^^^):
+    2: 
+    3: <%= simple_form_for @list do |f| %>
+    4:     <%= f.input :name, placeholder: 'Date - List Name' %>
+    5:     <%= f.hidden_field :user_id, :value => current_user.id %>
+    6:     <%= f.submit class: 'btn' %>
+    7: <% end %>
+  
+app/views/list/new.html.erb:5
+app/views/list/new.html.erb:3
+Started GET "/list/new" for ::1 at 2023-03-06 18:08:08 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 3430)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 3518)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 4.5ms | Allocations: 6880)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass
+
+    '.freeze;@output_buffer.append=( f.hidden_field :user_id, :value => current_user.id );@output_buffer.safe_append='
+                                                                                    ^^^):
+    2: 
+    3: <%= simple_form_for @list do |f| %>
+    4:     <%= f.input :name, placeholder: 'Date - List Name' %>
+    5:     <%= f.hidden_field :user_id, :value => current_user.id %>
+    6:     <%= f.submit class: 'btn' %>
+    7: <% end %>
+  
+app/views/list/new.html.erb:5
+app/views/list/new.html.erb:3
+Started GET "/list/new" for ::1 at 2023-03-06 18:08:25 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 2289)
+  Rendered shared/_navbar.html.erb (Duration: 23.4ms | Allocations: 6029)
+  Rendered layout layouts/application.html.erb (Duration: 44.6ms | Allocations: 17535)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.0ms | Allocations: 18352)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `list_history_path' for #<ActionView::Base:0x00000000030598>
+
+            '.freeze;@output_buffer.append=( link_to 'Previous  lists', list_history_path, class: "nav-link" );@output_buffer.safe_append='
+                                                                        ^^^^^^^^^^^^^^^^^
+Did you mean?  lists_path):
+    31:           <li class="nav-item">
+    32:             <%= link_to 'All Products', products_path, class: "nav-link" %>
+    33:           <li class="nav-item">
+    34:             <%= link_to 'Previous  lists', list_history_path, class: "nav-link" %>
+    35:           <li class="nav-item">
+    36:             <%= link_to "Login", new_user_session_path, class: "nav-link login" %>
+    37:           </li>
+  
+app/views/shared/_navbar.html.erb:34
+app/views/layouts/application.html.erb:15
+Started GET "/list/new" for ::1 at 2023-03-06 18:08:51 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1999)
+  Rendered shared/_navbar.html.erb (Duration: 23.7ms | Allocations: 5973)
+  Rendered layout layouts/application.html.erb (Duration: 40.6ms | Allocations: 16815)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms | Allocations: 17630)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `list_history_path' for #<ActionView::Base:0x000000000308e0>
+
+            '.freeze;@output_buffer.append=( link_to 'Previous  lists', list_history_path, class: "nav-link" );@output_buffer.safe_append='
+                                                                        ^^^^^^^^^^^^^^^^^
+Did you mean?  lists_path):
+    31:           <li class="nav-item">
+    32:             <%= link_to 'All Products', products_path, class: "nav-link" %>
+    33:           <li class="nav-item">
+    34:             <%= link_to 'Previous  lists', list_history_path, class: "nav-link" %>
+    35:           <li class="nav-item">
+    36:             <%= link_to "Login", new_user_session_path, class: "nav-link login" %>
+    37:           </li>
+  
+app/views/shared/_navbar.html.erb:34
+app/views/layouts/application.html.erb:15
+Started GET "/list/new" for ::1 at 2023-03-06 18:08:52 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1533)
+  Rendered shared/_navbar.html.erb (Duration: 23.4ms | Allocations: 5479)
+  Rendered layout layouts/application.html.erb (Duration: 38.5ms | Allocations: 15506)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.0ms | Allocations: 15762)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `list_history_path' for #<ActionView::Base:0x00000000030bd8>
+
+            '.freeze;@output_buffer.append=( link_to 'Previous  lists', list_history_path, class: "nav-link" );@output_buffer.safe_append='
+                                                                        ^^^^^^^^^^^^^^^^^
+Did you mean?  lists_path):
+    31:           <li class="nav-item">
+    32:             <%= link_to 'All Products', products_path, class: "nav-link" %>
+    33:           <li class="nav-item">
+    34:             <%= link_to 'Previous  lists', list_history_path, class: "nav-link" %>
+    35:           <li class="nav-item">
+    36:             <%= link_to "Login", new_user_session_path, class: "nav-link login" %>
+    37:           </li>
+  
+app/views/shared/_navbar.html.erb:34
+app/views/layouts/application.html.erb:15
+Started GET "/list/new" for ::1 at 2023-03-06 18:08:55 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2008)
+  Rendered shared/_navbar.html.erb (Duration: 23.1ms | Allocations: 5973)
+  Rendered layout layouts/application.html.erb (Duration: 38.7ms | Allocations: 16949)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.0ms | Allocations: 17740)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `list_history_path' for #<ActionView::Base:0x00000000030f20>
+
+            '.freeze;@output_buffer.append=( link_to 'Previous  lists', list_history_path, class: "nav-link" );@output_buffer.safe_append='
+                                                                        ^^^^^^^^^^^^^^^^^
+Did you mean?  lists_path):
+    31:           <li class="nav-item">
+    32:             <%= link_to 'All Products', products_path, class: "nav-link" %>
+    33:           <li class="nav-item">
+    34:             <%= link_to 'Previous  lists', list_history_path, class: "nav-link" %>
+    35:           <li class="nav-item">
+    36:             <%= link_to "Login", new_user_session_path, class: "nav-link login" %>
+    37:           </li>
+  
+app/views/shared/_navbar.html.erb:34
+app/views/layouts/application.html.erb:15
+Started GET "/list/new" for ::1 at 2023-03-06 18:08:56 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1515)
+  Rendered shared/_navbar.html.erb (Duration: 24.5ms | Allocations: 5479)
+  Rendered layout layouts/application.html.erb (Duration: 40.3ms | Allocations: 15488)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.0ms | Allocations: 15744)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `list_history_path' for #<ActionView::Base:0x000000000311f0>
+
+            '.freeze;@output_buffer.append=( link_to 'Previous  lists', list_history_path, class: "nav-link" );@output_buffer.safe_append='
+                                                                        ^^^^^^^^^^^^^^^^^
+Did you mean?  lists_path):
+    31:           <li class="nav-item">
+    32:             <%= link_to 'All Products', products_path, class: "nav-link" %>
+    33:           <li class="nav-item">
+    34:             <%= link_to 'Previous  lists', list_history_path, class: "nav-link" %>
+    35:           <li class="nav-item">
+    36:             <%= link_to "Login", new_user_session_path, class: "nav-link login" %>
+    37:           </li>
+  
+app/views/shared/_navbar.html.erb:34
+app/views/layouts/application.html.erb:15
+Started GET "/list/new" for ::1 at 2023-03-06 18:09:10 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2017)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 679)
+  Rendered shared/_footer.html.erb (Duration: 1.0ms | Allocations: 94)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 11900)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.0ms | Allocations: 12730)
+
+
+Started POST "/list" for ::1 at 2023-03-06 18:09:15 +1100
+Processing by ListController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "list"=>{"name"=>"asdfadf", "user"=>""}, "commit"=>"Create List"}
+[31mUnpermitted parameter: :user. Context: { controller: ListController, action: create, request: #<ActionDispatch::Request:0x000000011807fad0>, params: {"authenticity_token"=>"[FILTERED]", "list"=>{"name"=>"asdfadf", "user"=>""}, "commit"=>"Create List", "controller"=>"list", "action"=>"create"} }[0m
+No template found for ListController#create, rendering head :no_content
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 1312)
+
+
+Started GET "/list/new" for ::1 at 2023-03-06 18:09:32 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2011)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 678)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 94)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 11771)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.0ms | Allocations: 12627)
+
+
+Started GET "/list/new" for ::1 at 2023-03-06 18:09:45 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2012)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 678)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 94)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 11767)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 12617)
+
+
+Started GET "/list/new" for ::1 at 2023-03-06 18:09:51 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2003)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 678)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 94)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 11758)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.0ms | Allocations: 12608)
+
+
+Started GET "/list/new" for ::1 at 2023-03-06 18:10:01 +1100
+Processing by ListController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering list/new.html.erb within layouts/application
+  Rendered list/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1988)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 678)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 94)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 11743)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms | Allocations: 12593)
+
+
