@@ -36,7 +36,7 @@
   padding: 17px;
   width: 300px;
   border: 1px solid $color-blue-800;
-  border-radius: 30px;
+  border-radius: 5px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   margin-right: 15px;
 }
@@ -50,10 +50,11 @@
 .btn-location {
   background-color: #EEDBD4;
   border: 1px solid $color-blue-800;
-  border-radius: 28px;
+  border-radius: 5px;
   box-shadow: rgba(163, 165, 149, 0.2) 0px 8px 24px;
   color: $color-blue-800;
   font-size: 18px;
+  font-weight: 500;
   padding: 18px 35px;
   text-decoration: none;
 }
