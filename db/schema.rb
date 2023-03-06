@@ -10,48 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_04_054607) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_06_015021) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "batches", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "shopping_list_id"
-    t.index ["shopping_list_id"], name: "index_batches_on_shopping_list_id"
-  end
-
-  create_table "price_charts", force: :cascade do |t|
-    t.date "date"
-    t.float "price"
+  create_table "list_items", force: :cascade do |t|
+    t.bigint "lists_id", null: false
     t.bigint "products_id", null: false
+    t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "stores_id"
-    t.index ["products_id"], name: "index_price_charts_on_products_id"
-    t.index ["stores_id"], name: "index_price_charts_on_stores_id"
+    t.index ["lists_id"], name: "index_list_items_on_lists_id"
+    t.index ["products_id"], name: "index_list_items_on_products_id"
   end
 
-  create_table "products", force: :cascade do |t|
-    t.string "brand_name"
-    t.string "product_name"
-    t.integer "weight"
-    t.string "weight_type"
-    t.bigint "batch_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["batch_id"], name: "index_products_on_batch_id"
-  end
-
-  create_table "shopping_lists", force: :cascade do |t|
+  create_table "lists", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id", null: false
     t.date "date_created"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_shopping_lists_on_user_id"
+    t.index ["user_id"], name: "index_lists_on_user_id"
+  end
+
+  create_table "price_charts", force: :cascade do |t|
+    t.date "date"
+    t.float "price"
+    t.bigint "store_products_id", null: false
+    t.integer "measurement"
+    t.string "measurement_type"
+    t.string "standard_measurement_ratio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["store_products_id"], name: "index_price_charts_on_store_products_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "store_products", force: :cascade do |t|
+    t.string "brand_name"
+    t.string "product_name"
+    t.bigint "products_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["products_id"], name: "index_store_products_on_products_id"
   end
 
   create_table "stores", force: :cascade do |t|
@@ -74,9 +81,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_04_054607) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "batches", "shopping_lists"
-  add_foreign_key "price_charts", "products", column: "products_id"
-  add_foreign_key "price_charts", "stores", column: "stores_id"
-  add_foreign_key "products", "batches"
-  add_foreign_key "shopping_lists", "users"
+  add_foreign_key "list_items", "lists", column: "lists_id"
+  add_foreign_key "list_items", "products", column: "products_id"
+  add_foreign_key "lists", "users"
+  add_foreign_key "price_charts", "store_products", column: "store_products_id"
+  add_foreign_key "store_products", "products", column: "products_id"
 end
