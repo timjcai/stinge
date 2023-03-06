@@ -1,0 +1,42 @@
+:root {
+  --poppins: 'Poppins', sans-serif;
+}
+
+.category-section{
+  background-color: $color-beige;
+  padding: 0 50px 50px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  grid-gap: 40px;
+}
+
+.category-header {
+  color: $color-blue-800;
+  font-weight: 700;
+  font-size: 40px;
+  padding: 50px 0;
+  font-family: var(--poppins);
+  text-align: center;
+}
+
+.card {
+  border-radius: 7px;
+  box-shadow: 2px 10px 15px -3px rgba(0,0,0,0.1);
+  text-align: center;
+
+  img {
+    border-radius: 7px;
+    height: 170px;
+    object-fit: cover;
+  }
+}
+
+.card-title {
+  color: $color-blue-800;
+  font-weight: 400;
+  font-family: var(--poppins);
+  padding: 15px;
+}
