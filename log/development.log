@@ -1035,211 +1035,81 @@ Processing by ShoppinglistController#index as HTML
   Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 9457)
 Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.3ms | Allocations: 9734)
 
-
-Started GET "/" for ::1 at 2023-03-06 08:54:14 +1100
-  [1m[36mActiveRecord::SchemaMigration Pluck (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by PagesController#home as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering pages/home.html.erb within layouts/application
-  Rendered pages/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 535)
-  Rendered layout layouts/application.html.erb (Duration: 70.9ms | Allocations: 44083)
-Completed 200 OK in 76ms (Views: 72.9ms | ActiveRecord: 0.0ms | Allocations: 47032)
-
-
-Started GET "/shoppinglist" for ::1 at 2023-03-06 08:54:17 +1100
-Processing by ShoppinglistController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering shoppinglist/index.html.erb within layouts/application
-  [1m[36mShoppingList Load (3.2ms)[0m  [1m[34mSELECT "shopping_lists".* FROM "shopping_lists"[0m
-  ↳ app/views/shoppinglist/index.html.erb:3
-  Rendered shoppinglist/index.html.erb within layouts/application (Duration: 21.1ms | Allocations: 5028)
-  Rendered layout layouts/application.html.erb (Duration: 33.7ms | Allocations: 14014)
-Completed 200 OK in 41ms (Views: 23.1ms | ActiveRecord: 12.4ms | Allocations: 16221)
-
-
-Started GET "/batch" for ::1 at 2023-03-06 08:54:20 +1100
-Processing by BatchController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering batch/index.html.erb within layouts/application
-  [1m[36mBatch Load (2.1ms)[0m  [1m[34mSELECT "batches".* FROM "batches"[0m
-  ↳ app/views/batch/index.html.erb:3
-  Rendered batch/index.html.erb within layouts/application (Duration: 15.4ms | Allocations: 5476)
-  Rendered layout layouts/application.html.erb (Duration: 30.2ms | Allocations: 14420)
-Completed 200 OK in 35ms (Views: 27.8ms | ActiveRecord: 4.9ms | Allocations: 15600)
-
-
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (1.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[35m (35.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "rbnb_development"[0m
-  [1m[35m (23.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "rbnb_test"[0m
-  [1m[35m (129.6ms)[0m  [1m[35mCREATE DATABASE "rbnb_development" ENCODING = 'unicode'[0m
-  [1m[35m (34.7ms)[0m  [1m[35mCREATE DATABASE "rbnb_test" ENCODING = 'unicode'[0m
-  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
-  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5049656801970026610)[0m
+  [1m[35m (350.6ms)[0m  [1m[35mCREATE DATABASE "rbnb_development" ENCODING = 'unicode'[0m
+  [1m[35m (100.3ms)[0m  [1m[35mCREATE DATABASE "rbnb_test" ENCODING = 'unicode'[0m
+  [1m[35m (17.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5049656801970026610)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to CreateProducts (20230304022427)
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5049656801970026610)[0m
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5049656801970026610)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to CreateProducts (20230304022427)
-  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230304022427"]]
+Migrating to CreateBatches (20230304022427)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "batches" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230304022427"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProducts (20230304022428)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "brand_name" character varying, "product_name" character varying, "weight" integer, "weight_type" character varying, "batch_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_01389ea7da"
+FOREIGN KEY ("batch_id")
+  REFERENCES "batches" ("id")
+)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_products_on_batch_id" ON "products" ("batch_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230304022428"]]
   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
-Migrating to StoreProducts (20230304022428)
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5049656801970026610)[0m
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5049656801970026610)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to StoreProducts (20230304022428)
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5049656801970026610)[0m
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5049656801970026610)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to StoreProducts (20230304022428)
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5049656801970026610)[0m
-  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5049656801970026610)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to StoreProducts (20230304022428)
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(5049656801970026610)[0m
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5049656801970026610)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to StoreProducts (20230304022428)
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5049656801970026610)[0m
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5049656801970026610)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to StoreProducts (20230304022428)
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5049656801970026610)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5049656801970026610)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to StoreProducts (20230304022428)
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5049656801970026610)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-06 01:56:37.450262"], ["updated_at", "2023-03-06 01:56:37.450262"]]
-  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
-  [1m[35m (3.4ms)[0m  [1m[35mCREATE DATABASE "rbnb_development" ENCODING = 'unicode'[0m
-  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "rbnb_test" ENCODING = 'unicode'[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[35m (34.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "rbnb_development"[0m
-  [1m[35m (17.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "rbnb_test"[0m
-  [1m[35m (72.8ms)[0m  [1m[35mCREATE DATABASE "rbnb_development" ENCODING = 'unicode'[0m
-  [1m[35m (36.6ms)[0m  [1m[35mCREATE DATABASE "rbnb_test" ENCODING = 'unicode'[0m
-  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
-  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5049656801970026610)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to CreateProducts (20230304022427)
-  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230304022427"]]
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
-Migrating to StoreProducts (20230304022428)
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5049656801970026610)[0m
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5049656801970026610)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to StoreProducts (20230304022428)
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5049656801970026610)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mActiveRecord::InternalMetadata Create (2.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-06 01:58:04.898516"], ["updated_at", "2023-03-06 01:58:04.898516"]]
-  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[35m (31.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "rbnb_development"[0m
-  [1m[35m (20.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "rbnb_test"[0m
-  [1m[35m (68.2ms)[0m  [1m[35mCREATE DATABASE "rbnb_development" ENCODING = 'unicode'[0m
-  [1m[35m (35.0ms)[0m  [1m[35mCREATE DATABASE "rbnb_test" ENCODING = 'unicode'[0m
-  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
-  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5049656801970026610)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to CreateProducts (20230304022427)
-  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230304022427"]]
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
-Migrating to CreateStoreProducts (20230304022428)
-  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "store_products" ("id" bigserial primary key, "brand_name" character varying, "product_name" character varying, "products_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_025dce71a4"
+Migrating to CreatePriceCharts (20230304022429)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "price_charts" ("id" bigserial primary key, "date" date, "price" float, "products_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_09783b235e"
 FOREIGN KEY ("products_id")
   REFERENCES "products" ("id")
 )[0m
-  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_store_products_on_products_id" ON "store_products" ("products_id")[0m
-  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230304022428"]]
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
-Migrating to CreatePriceCharts (20230304022429)
-  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "price_charts" ("id" bigserial primary key, "date" date, "price" float, "store_products_id" bigint NOT NULL, "measurement" integer, "measurement_type" character varying, "standard_measurement_ratio" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_05894ac6bf"
-FOREIGN KEY ("store_products_id")
-  REFERENCES "store_products" ("id")
-)[0m
-  [1m[35m (0.6ms)[0m  [1m[35mCREATE INDEX "index_price_charts_on_store_products_id" ON "price_charts" ("store_products_id")[0m
-  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230304022429"]]
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_price_charts_on_products_id" ON "price_charts" ("products_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230304022429"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
 Migrating to DeviseCreateUsers (20230304023500)
-  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
-  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
-  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230304023500"]]
-  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230304023500"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
 Migrating to CreateStores (20230304024520)
-  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "stores" ("id" bigserial primary key, "company_name" character varying, "location_name" character varying, "address" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230304024520"]]
-  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "stores" ("id" bigserial primary key, "company_name" character varying, "location_name" character varying, "address" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230304024520"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
 Migrating to AddStoreIDtoPriceCharts (20230304025334)
-  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "price_charts" ADD "store_products_id" bigint[0m
-  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5049656801970026610)[0m
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5049656801970026610)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "price_charts" ADD "stores_id" bigint[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_price_charts_on_stores_id" ON "price_charts" ("stores_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "price_charts" ADD CONSTRAINT "fk_rails_4735a51c7a"
+FOREIGN KEY ("stores_id")
+  REFERENCES "stores" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230304025334"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
 Migrating to CreateShoppingLists (20230304053126)
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5049656801970026610)[0m
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5049656801970026610)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to CreateLists (20230304053126)
-  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "lists" ("id" bigserial primary key, "name" character varying, "user_id" bigint NOT NULL, "date_created" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_d6cf4279f7"
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "shopping_lists" ("id" bigserial primary key, "name" character varying, "user_id" bigint NOT NULL, "date_created" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_206c06401d"
 FOREIGN KEY ("user_id")
   REFERENCES "users" ("id")
 )[0m
-  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_lists_on_user_id" ON "lists" ("user_id")[0m
-  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230304053126"]]
-  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
-Migrating to CreateListItems (20230306015021)
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_shopping_lists_on_user_id" ON "shopping_lists" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230304053126"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddShoppingListIdToBatch (20230304054607)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "batches" ADD "shopping_list_id" bigint[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_batches_on_shopping_list_id" ON "batches" ("shopping_list_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "batches" ADD CONSTRAINT "fk_rails_df40a0236e"
+FOREIGN KEY ("shopping_list_id")
+  REFERENCES "shopping_lists" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230304054607"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "list_items" ("id" bigserial primary key, "lists_id" bigint NOT NULL, "products_id" bigint NOT NULL, "quantity" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_3b85178618"
-FOREIGN KEY ("lists_id")
-  REFERENCES "lists" ("id")
-, CONSTRAINT "fk_rails_c1843a4338"
-FOREIGN KEY ("products_id")
-  REFERENCES "products" ("id")
-)[0m
-  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_list_items_on_lists_id" ON "list_items" ("lists_id")[0m
-  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_list_items_on_products_id" ON "list_items" ("products_id")[0m
-  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230306015021"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-05 23:31:38.295600"], ["updated_at", "2023-03-05 23:31:38.295600"]]
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+<<<<<<< HEAD
   [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-06 02:02:22.005965"], ["updated_at", "2023-03-06 02:02:22.005965"]]
@@ -1300,3 +1170,347 @@ Processing by ListController#index as HTML
 Completed 200 OK in 20ms (Views: 13.6ms | ActiveRecord: 1.4ms | Allocations: 11904)
 
 
+=======
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5049656801970026610)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-03-06 10:32:38 +1100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.4ms | Allocations: 643)
+  Rendered layout layouts/application.html.erb (Duration: 8167.6ms | Allocations: 164131)
+Completed 200 OK in 8191ms (Views: 8176.6ms | ActiveRecord: 0.0ms | Allocations: 168312)
+
+
+Started GET "/lists" for ::1 at 2023-03-06 10:33:07 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/lists"):
+  
+Started GET "/lists" for ::1 at 2023-03-06 10:33:08 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/lists"):
+  
+Started GET "/" for ::1 at 2023-03-06 10:33:14 +1100
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 81)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 9244)
+Completed 200 OK in 15ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 9525)
+
+
+Started GET "/batch" for ::1 at 2023-03-06 10:52:15 +1100
+Processing by BatchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering batch/index.html.erb within layouts/application
+  [1m[36mBatch Load (0.6ms)[0m  [1m[34mSELECT "batches".* FROM "batches"[0m
+  ↳ app/views/batch/index.html.erb:3
+  Rendered batch/index.html.erb within layouts/application (Duration: 30.6ms | Allocations: 3897)
+  Rendered layout layouts/application.html.erb (Duration: 57.2ms | Allocations: 13163)
+Completed 200 OK in 73ms (Views: 63.5ms | ActiveRecord: 8.0ms | Allocations: 14395)
+
+
+Started GET "/shoppinglist" for ::1 at 2023-03-06 10:52:18 +1100
+Processing by ShoppinglistController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shoppinglist/index.html.erb within layouts/application
+  [1m[36mShoppingList Load (1.3ms)[0m  [1m[34mSELECT "shopping_lists".* FROM "shopping_lists"[0m
+  ↳ app/views/shoppinglist/index.html.erb:3
+  Rendered shoppinglist/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 922)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 10024)
+Completed 200 OK in 32ms (Views: 17.1ms | ActiveRecord: 1.3ms | Allocations: 12537)
+
+
+Started GET "/" for ::1 at 2023-03-06 10:56:58 +1100
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 278)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 12166)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.0ms | Allocations: 13001)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_navbar with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/user/Desktop/stinge/app/views"
+  * "/Users/user/.rbenv/versions/3.1.3/lib/ruby/gems/3.1.0/gems/devise-4.9.0/app/views"
+  * "/Users/user/.rbenv/versions/3.1.3/lib/ruby/gems/3.1.0/gems/turbo-rails-1.4.0/app/views"
+  * "/Users/user/.rbenv/versions/3.1.3/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4.2/app/views"
+  * "/Users/user/.rbenv/versions/3.1.3/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.4.2/app/views"
+
+Did you mean?  action_text/attachables/missing_attachable
+               active_storage/blobs/blob
+               devise/shared/links
+               action_text/contents/content
+               action_text/attachment_galleries/attachment_gallery
+               layouts/action_text/contents/content):
+    11:   </head>
+    12: 
+    13:   <body>
+    14:     <%= render "shared/navbar" %>
+    15:     <%= yield %>
+    16:       <p class="notice"><%= notice %></p>
+    17:       <p class="alert"><%= alert %></p>
+  
+app/views/layouts/application.html.erb:14
+Started GET "/" for ::1 at 2023-03-06 11:00:00 +1100
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.5ms | Allocations: 273)
+  Rendered shared/_navbar.html.erb (Duration: 21.6ms | Allocations: 6006)
+  Rendered layout layouts/application.html.erb (Duration: 56.1ms | Allocations: 15902)
+Completed 500 Internal Server Error in 66ms (Allocations: 16698)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `listings_path' for #<ActionView::Base:0x0000000000da20>
+
+            '.freeze;@output_buffer.append=( link_to "View Vans", listings_path, class: "nav-link" );@output_buffer.safe_append='
+                                                                  ^^^^^^^^^^^^^):
+    29:           </li>
+    30:         <% else %>
+    31:         <li class="nav-item">
+    32:             <%= link_to "View Vans", listings_path, class: "nav-link" %>
+    33:           <li class="nav-item">
+    34:             <%= link_to "Login", new_user_session_path, class: "nav-link login" %>
+    35:           </li>
+  
+app/views/shared/_navbar.html.erb:32
+app/views/layouts/application.html.erb:14
+Started GET "/" for ::1 at 2023-03-06 11:02:18 +1100
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 273)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 682)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 12785)
+Completed 500 Internal Server Error in 25ms (Allocations: 13571)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_footer with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/user/Desktop/stinge/app/views"
+  * "/Users/user/.rbenv/versions/3.1.3/lib/ruby/gems/3.1.0/gems/devise-4.9.0/app/views"
+  * "/Users/user/.rbenv/versions/3.1.3/lib/ruby/gems/3.1.0/gems/turbo-rails-1.4.0/app/views"
+  * "/Users/user/.rbenv/versions/3.1.3/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4.2/app/views"
+  * "/Users/user/.rbenv/versions/3.1.3/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.4.2/app/views"
+
+Did you mean?  shared/navbar
+               action_text/contents/content
+               layouts/action_text/contents/content
+               action_text/attachables/remote_image
+               active_storage/blobs/blob
+               devise/shared/error_messages):
+    15:     <%= yield %>
+    16:       <p class="notice"><%= notice %></p>
+    17:       <p class="alert"><%= alert %></p>
+    18:     <%= render "shared/footer" %>
+    19: 
+    20:   </body>
+    21: </html>
+  
+app/views/layouts/application.html.erb:18
+Started GET "/" for ::1 at 2023-03-06 11:02:21 +1100
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 71)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 220)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 11472)
+Completed 500 Internal Server Error in 21ms (Allocations: 11704)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_footer with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/user/Desktop/stinge/app/views"
+  * "/Users/user/.rbenv/versions/3.1.3/lib/ruby/gems/3.1.0/gems/devise-4.9.0/app/views"
+  * "/Users/user/.rbenv/versions/3.1.3/lib/ruby/gems/3.1.0/gems/turbo-rails-1.4.0/app/views"
+  * "/Users/user/.rbenv/versions/3.1.3/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4.2/app/views"
+  * "/Users/user/.rbenv/versions/3.1.3/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.4.2/app/views"
+
+Did you mean?  shared/navbar
+               action_text/contents/content
+               layouts/action_text/contents/content
+               action_text/attachables/remote_image
+               active_storage/blobs/blob
+               devise/shared/error_messages):
+    15:     <%= yield %>
+    16:       <p class="notice"><%= notice %></p>
+    17:       <p class="alert"><%= alert %></p>
+    18:     <%= render "shared/footer" %>
+    19: 
+    20:   </body>
+    21: </html>
+  
+app/views/layouts/application.html.erb:18
+Started GET "/" for ::1 at 2023-03-06 11:02:43 +1100
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 273)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 679)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 10430)
+Completed 200 OK in 20ms (Views: 19.1ms | Allocations: 11226)
+
+
+Started GET "/" for ::1 at 2023-03-06 11:05:03 +1100
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 273)
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | Allocations: 681)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 98)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 10561)
+Completed 200 OK in 20ms (Views: 19.0ms | Allocations: 11380)
+
+
+Started GET "/" for ::1 at 2023-03-06 11:05:08 +1100
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 71)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 220)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 9192)
+Completed 200 OK in 13ms (Views: 12.3ms | Allocations: 9448)
+
+
+Started GET "/" for ::1 at 2023-03-06 11:05:10 +1100
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 71)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 220)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 9290)
+Completed 200 OK in 12ms (Views: 12.2ms | Allocations: 9530)
+
+
+Started GET "/" for ::1 at 2023-03-06 11:08:11 +1100
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.7ms | Allocations: 276)
+  Rendered shared/_navbar.html.erb (Duration: 3.6ms | Allocations: 686)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | Allocations: 94)
+  Rendered layout layouts/application.html.erb (Duration: 6582.7ms | Allocations: 67835)
+Completed 200 OK in 6593ms (Views: 6589.4ms | Allocations: 68637)
+
+
+Started GET "/batch" for ::1 at 2023-03-06 11:08:22 +1100
+Processing by BatchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering batch/index.html.erb within layouts/application
+  [1m[36mBatch Load (0.6ms)[0m  [1m[34mSELECT "batches".* FROM "batches"[0m
+  ↳ app/views/batch/index.html.erb:3
+  Rendered batch/index.html.erb within layouts/application (Duration: 21.0ms | Allocations: 3785)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 317)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 33.2ms | Allocations: 13267)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 8.2ms | Allocations: 13903)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-03-06 11:08:24 +1100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 675)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2278.3ms | Allocations: 966477)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 243)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 2288.3ms | Allocations: 975310)
+Completed 200 OK in 2312ms (Views: 2291.1ms | ActiveRecord: 6.3ms | Allocations: 982667)
+
+
+Started GET "/batch" for ::1 at 2023-03-06 11:08:28 +1100
+Processing by BatchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering batch/index.html.erb within layouts/application
+  [1m[36mBatch Load (0.2ms)[0m  [1m[34mSELECT "batches".* FROM "batches"[0m
+  ↳ app/views/batch/index.html.erb:3
+  Rendered batch/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 621)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 236)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 9798)
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.2ms | Allocations: 10095)
+
+
+Started GET "/" for ::1 at 2023-03-06 11:08:35 +1100
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 71)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 220)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 9199)
+Completed 200 OK in 16ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 9445)
+
+
+Started GET "/" for ::1 at 2023-03-06 11:14:13 +1100
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 71)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 220)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 6454.7ms | Allocations: 69702)
+Completed 200 OK in 6456ms (Views: 6455.4ms | Allocations: 69941)
+
+
+Started GET "/" for ::1 at 2023-03-06 11:25:59 +1100
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.1ms | Allocations: 276)
+  Rendered shared/_navbar.html.erb (Duration: 4.3ms | Allocations: 742)
+  Rendered shared/_footer.html.erb (Duration: 1.0ms | Allocations: 94)
+  Rendered layout layouts/application.html.erb (Duration: 46.0ms | Allocations: 10659)
+Completed 200 OK in 57ms (Views: 53.3ms | Allocations: 11463)
+
+
+Started GET "/shoppinglist" for ::1 at 2023-03-06 11:26:02 +1100
+Processing by ShoppinglistController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shoppinglist/index.html.erb within layouts/application
+  [1m[36mShoppingList Load (0.7ms)[0m  [1m[34mSELECT "shopping_lists".* FROM "shopping_lists"[0m
+  ↳ app/views/shoppinglist/index.html.erb:3
+  Rendered shoppinglist/index.html.erb within layouts/application (Duration: 25.3ms | Allocations: 3803)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 358)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 40.1ms | Allocations: 13376)
+Completed 200 OK in 44ms (Views: 41.7ms | ActiveRecord: 9.1ms | Allocations: 14011)
+
+
+Started GET "/batch" for ::1 at 2023-03-06 11:26:04 +1100
+Processing by BatchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering batch/index.html.erb within layouts/application
+  [1m[36mBatch Load (0.5ms)[0m  [1m[34mSELECT "batches".* FROM "batches"[0m
+  ↳ app/views/batch/index.html.erb:3
+  Rendered batch/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 828)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 350)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 10390)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.5ms | Allocations: 11042)
+
+
+Started GET "/" for ::1 at 2023-03-06 11:26:08 +1100
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 71)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 258)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 9289)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.0ms | Allocations: 9553)
+
+>>>>>>> master
