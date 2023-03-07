@@ -20,9 +20,12 @@ class ProductController < ApplicationController
       pricechart = PriceChart.where(store_product: product)
       counter = 0
       pricechart.each do |pair|
-        json = {}
-        json['date'] = pair.date
-        json['price'] = pair.price
+        json = {
+          date: pair.date,
+          price: pair.price
+        }
+        # json[:date] = pair.date
+        # json[:price] = pair.price
         p @storeproduct[counter] = json
         counter += 1
       end
