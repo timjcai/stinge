@@ -6,5 +6,6 @@ class ProductController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @storeproducts = StoreProduct.where(product: @product)
+    @pricechart = PriceChart.where(store_product: @storeproducts)
   end
 end

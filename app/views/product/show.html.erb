@@ -1,5 +1,9 @@
 <h1>Show Page for <%= @product.name %></h1>
 
 <% @storeproducts.each do |product|%>
-  <div><%= link_to "#{product.brand_name} - #{PriceChart.where(product: product)}", store_product_path(product) %></div>
+  <div><%= link_to "#{product.brand_name} - #{pricechart = PriceChart.where(store_product: product)}", store_product_path(product) %>
+      <% pricechart.each do |price| %>
+        <div><%= price.date %>, $<%= price.price %></div>
+      <% end %>
+  </div>
 <% end %>

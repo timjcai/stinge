@@ -19,7 +19,7 @@ veg_array = CSV.parse(File.read(filepath)).flatten
 
 def initproducts(array)
   array.each do |item|
-    p Product.create(name: item)
+    p Product.create(name: item[0], item[1])
   end
 end
 
