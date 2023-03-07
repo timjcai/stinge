@@ -12,7 +12,9 @@ class ListItemController < ApplicationController
   end
 
   def create
-
+    @listitem = ListItem.new(product_id: params[:id], list_id: params[:list_id], quantity: params[:quantity])
+    @listitem.save
+    redirect_to products_path
   end
 
   def edit
@@ -24,10 +26,14 @@ class ListItemController < ApplicationController
   end
 
   def destory
-
+    @listitem = ListItem.find(params[:id])
+    @listitem.destroy
+    redirect_to list_path, status: :see_other
   end
 
   private
 
-
+  def listitem_params
+    params.require(:listitem).permit(:id, :list_id, :quantity)
+  end
 end

@@ -1,7 +1,1 @@
 <h1>Create new list item</h1>
-
-<%= simple_form_for @listitem do |f| %>
-    <%= f.input :quantity, placeholder: 'Enter your list name' %>
-    <%= f.hidden_field :list, :value => params[:id] %>
-    <%= f.submit class: 'btn' %>
-<% end %>
