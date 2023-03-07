@@ -1,5 +1,8 @@
-<h1>Index</h1>
-
-<% @products.each do |product| %>
-  <div><%= link_to product.name, product_path(product.id) %></div>
-<% end %>
+<main>
+  <h1>Product list</h1>
+  <div class="product-list">
+    <% @products.each do |product| %>
+      <button class="product"><%= link_to product.name, product_path(product.id) %></button>
+    <% end %>
+  </div>
+</main>
