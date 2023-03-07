@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_015021) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
