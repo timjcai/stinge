@@ -1,7 +1,7 @@
 class ListController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
   def index
-    @lists = List.all
+    @lists = List.where(user: current_user)
   end
 
   def show

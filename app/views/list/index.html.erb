@@ -1,8 +1,8 @@
 <main>
 <h1>All previous lists</h1>
-<div class>
+<div class="d-flex">
   <% @lists.each do |list| %>
-    <div class><%= link_to list.name, list_path(list) %>, <%= list.date_created %></div>
+    <div class="border border-dark w-25 mx-1 d-flex justify-content-center py-5"><%= link_to list.name, list_path(list) %></div>
   <% end %>
 </div>
 </main>
