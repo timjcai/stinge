@@ -1,6 +1,12 @@
 <h1>individual shopping list page</h1>
 
-<%= @list.name %>
-<%= @listitems.each do |item| %>
-  <%= item %>
-<% end %>
+<h2><%= @list.name %></h2>
+
+<div>
+  <% @listitems.each do |item| %>
+    <div>
+      <%= Product.find(item.product_id).name %>
+      <%= item.quantity %>
+    </div>
+  <% end %>
+</div>
