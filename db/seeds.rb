@@ -10,6 +10,10 @@
 # temporary seedfile
 require 'csv'
 
+#new user
+
+p User.create(email: 'test@gmail.com', password: '123456')
+p List.create(name: 'test_list', user_id: 1)
 
 #product generator
 
@@ -65,7 +69,7 @@ def init_store_generator(array)
   end
 end
 
-# p init_store_generator(stores)
+p init_store_generator(stores)
 
 # store_product generator
 
@@ -89,5 +93,5 @@ def init_store_product_generator(array)
   end
 end
 
-# test_aray = ['Bananas']
-# init_store_product_generator(test_aray)
+test_aray = ['Bananas']
+init_store_product_generator(test_aray)
