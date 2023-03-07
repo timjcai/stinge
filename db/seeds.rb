@@ -15,11 +15,11 @@ require 'csv'
 
 filepath = 'scraper/veggie_names.csv'
 
-veg_array = CSV.parse(File.read(filepath)).flatten
+veg_array = CSV.parse(File.read(filepath))
 
 def initproducts(array)
   array.each do |item|
-    p Product.create(name: item[0], item[1])
+    p Product.create(name: item[0], category: item[1])
   end
 end
 
@@ -65,7 +65,7 @@ def init_store_generator(array)
   end
 end
 
-p init_store_generator(stores)
+# p init_store_generator(stores)
 
 # store_product generator
 
