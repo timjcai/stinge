@@ -21,6 +21,8 @@ filepath = 'scraper/veggie_names.csv'
 
 veg_array = CSV.parse(File.read(filepath))
 
+
+
 def initproducts(array)
   array.each do |item|
     p Product.create(name: item[0], category: item[1])

@@ -1,4 +1,6 @@
 <h1>individual shopping list page</h1>
 
 <%= @list.name %>
-<p>aasdfasdfasdfkasdfkjadsfkjad</p>
+<%= @listitems.each do |item| %>
+  <%= item %>
+<% end %>

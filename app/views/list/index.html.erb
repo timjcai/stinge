@@ -1,5 +1,8 @@
+<main>
 <h1>All previous lists</h1>
-
-<% @lists.each do |list| %>
-  <div><%= list.name %>, <%= list.date_created %></div>
-<% end %>
+<div class>
+  <% @lists.each do |list| %>
+    <div class><%= link_to list.name, list_path(list) %>, <%= list.date_created %></div>
+  <% end %>
+</div>
+</main>
