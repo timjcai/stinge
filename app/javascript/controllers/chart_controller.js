@@ -13,13 +13,13 @@ export default class extends Controller {
     new Chart(
       document.getElementById('price-chart'),
       {
-        type: 'bar',
+        type: 'line',
         data: {
-          labels: data.map(row => row.year),
+          labels: data.map(row => row.date),
           datasets: [
             {
-              label: 'Acquisitions by year',
-              data: data.map(row => row.count)
+              label: 'Daily Prices',
+              data: data.map(row => row.price)
             }
           ]
         }

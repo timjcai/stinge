@@ -1,11 +1,4 @@
 <h1>Show Page for <%= @product.name %></h1>
 
-<% @storeproducts.each do |product|%>
-  <div><%= link_to "#{product.brand_name} - #{pricechart = PriceChart.where(store_product: product)}", store_product_path(product) %>
-      <% pricechart.each do |price| %>
-        <div><%= price.date %>, $<%= price.price %></div>
-      <% end %>
-  </div>
-<% end %>
-
-<div style="width: 800px;" data-controller="chart" data-prices=<%= @product.prices %>><canvas id="price-chart"></canvas></div>
+<% @allprices %>
+<div style="width: 800px;" data-controller="chart" data-prices=<%= @allprices%> ><canvas id="price-chart"></canvas></div>
