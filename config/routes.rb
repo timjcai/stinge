@@ -15,4 +15,12 @@ Rails.application.routes.draw do
   delete 'list/:id', to: 'list#destroy', as: 'delete_list'
   get 'product/:id/store_product/:id', to: 'store_product#show', as: 'store_product'
   get 'product/:id/store_product/:id/price_chart', to: 'price_chart#show', as: 'price_chart'
+
+  get 'listitem', to: 'list_item#index', as: 'list_items'
+  get 'listitem/new', to: 'list_item#new', as: 'new_list_item'
+  get 'listitem/:id', to: 'list_item#show', as: 'list_item'
+  post 'listitem', to: 'list_item#create'
+  get 'listitem/:id/edit', to: 'list_item#edit', as: 'edit_list_item'
+  patch 'listitem/:id', to: 'list_item#update', as: 'update_list_item'
+  delete 'listitem/:id', to: 'list_item#destroy', as: 'delete_list_item'
 end

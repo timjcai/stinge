@@ -10,16 +10,20 @@
 # temporary seedfile
 require 'csv'
 
+#new user
+
+p User.create(email: 'test@gmail.com', password: '123456')
+p List.create(name: 'test_list', user_id: 1)
 
 #product generator
 
 filepath = 'scraper/veggie_names.csv'
 
-veg_array = CSV.parse(File.read(filepath)).flatten
+veg_array = CSV.parse(File.read(filepath))
 
 def initproducts(array)
   array.each do |item|
-    p Product.create(name: item)
+    p Product.create(name: item[0], category: item[1])
   end
 end
 
@@ -89,5 +93,5 @@ def init_store_product_generator(array)
   end
 end
 
-# test_aray = ['Bananas']
-# init_store_product_generator(test_aray)
+test_aray = ['Bananas']
+init_store_product_generator(test_aray)
