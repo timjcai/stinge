@@ -1,0 +1,62 @@
+:root {
+  --poppins: 'Poppins', sans-serif;
+}
+
+.category-section{
+  background-color: $color-beige;
+  padding: 0 20px 30px;
+}
+
+// .cards {
+//   display: grid;
+//   grid-template-columns: repeat(4, minmax(200px, 1fr));
+//   grid-gap: 40px;
+// }
+
+.category-header {
+  color: $color-blue-800;
+  font-weight: 700;
+  font-size: 30px;
+  padding: 50px 0 30px 0;
+  font-family: var(--poppins);
+  text-align: center;
+}
+
+.card {
+  border-radius: 5px;
+  overflow: hidden;
+
+  // background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6));
+
+  img {
+    object-fit: cover;
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+    filter: brightness(50%);
+  }
+}
+
+.carousel-item {
+  width: 100%;
+  height: 400px;
+  padding: 0 15px;
+  position: relative;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.card-title {
+  color: $color-beige;
+  font-size: 35px;
+  font-weight: 500;
+  font-family: var(--poppins);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.carousel-control-prev-icon {
+  color: red;
+}
