@@ -1,8 +1,8 @@
 <main>
-<h1>All previous shopping lists</h1>
-<div class="shopping-lists">
-<% @shoppinglists.each do |list| %>
-  <div class="shopping-list"><%= list.name %>, <%= list.date_created %></div>
-<% end %>
+<h1>All previous lists</h1>
+<div class>
+  <% @lists.each do |list| %>
+    <div class><%= link_to list.name, list_path(list) %>, <%= list.date_created %></div>
+  <% end %>
 </div>
 </main>

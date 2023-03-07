@@ -5,6 +5,7 @@ class ListController < ApplicationController
   end
 
   def show
+    @listitems = ListItem.where(list: @list)
   end
 
   def new
