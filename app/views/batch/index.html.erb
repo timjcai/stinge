@@ -1,0 +1,10 @@
+<%= render template: "components/navbar" %>
+
+<main>
+<h1>Product list</h1>
+<div class="batch-list">
+<% @batches.each do |batch| %>
+  <button class="batch"><%= link_to batch.name, batch_path(batch.id) %></button>
+<% end %>
+</div>
+</main>

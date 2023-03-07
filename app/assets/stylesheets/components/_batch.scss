@@ -1,0 +1,17 @@
+.batch-list{
+  display:flex;
+  flex-direction:column;
+  padding: 16px;
+  .batch {
+    margin-bottom: 8px;
+    display: flex;
+    text-align: left;
+    padding: 16px;
+    transition-duration: 0.4s;
+
+    &:hover {
+      background-color: #4CAF50; /* Green */
+      color: white;
+    }
+  }
+}

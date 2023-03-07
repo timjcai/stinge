@@ -1,0 +1,16 @@
+<nav>
+  <ul class="sidenav">
+  <li><%= link_to 'Home', root_path %>
+</li>
+    <li><%= link_to 'All Products', batches_path %>
+</li>
+    <li><%= link_to 'Previous shopping lists', shoppinglist_history_path %></li>
+    <%
+=begin%>
+ <li><% <%= link_to 'Current Shopping List', shoppinglists_path(params[:id]) %></li> 
+<%
+=end%>
+  </ul>
+</nav>
+
+

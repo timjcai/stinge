@@ -1,0 +1,9 @@
+<%= render template: "components/navbar" %>
+<main>
+<h1>All previous shopping lists</h1>
+<div class="shopping-lists">
+<% @shoppinglists.each do |list| %>
+  <div class="shopping-list"><%= list.name %>, <%= list.date_created %></div>
+<% end %>
+</div>
+</main>

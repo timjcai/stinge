@@ -15,7 +15,7 @@ require 'csv'
 
 filepath = 'scraper/veggie_names.csv'
 
-veg_array = CSV.parse(File.read(filepath)).flatten
+veg_array = CSV.read(filepath)
 
 def initproducts(array)
   array.each do |item|
