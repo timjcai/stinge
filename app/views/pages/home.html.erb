@@ -1,21 +1,21 @@
 <!-- BANNER SECTION -->
-<div class="container-fluid">
+<div class="container-sm p-0">
   <div class="banner">
-    <div class="banner-flex">
-      <h1 class="banner-txt">Track Prices, <br>
+    <h1 class="banner-txt">Track Prices, <br>
       Get the Deals!</h1>
-      <div class="form">
-        <label for="postcode">Enter your postcode:</label> <br>
+    <div class="form">
+      <label for="postcode">Enter your postcode:</label> <br>
+      <div class="d-flex justify-content-start align-items-center">
         <input id="postcode" type="text" placeholder="3000">
         <a class="btn-location" href="#">Search</a>
       </div>
     </div>
-   </div>
+  </div>
 
   <!-- BANNER SECTION END -->
   <!-- CATEGORY SECTION -->
   <div class="row">
-    <div class="col-lg-12">
+    <div class="col">
       <%= render "categories/cards" %>
     </div>
   </div>
