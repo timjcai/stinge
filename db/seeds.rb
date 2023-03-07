@@ -89,5 +89,5 @@ def init_store_product_generator(array)
   end
 end
 
-test_aray = ['Bananas']
-init_store_product_generator(test_aray)
+# test_aray = ['Bananas']
+# init_store_product_generator(test_aray)

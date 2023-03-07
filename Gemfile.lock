@@ -80,6 +80,7 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     autoprefixer-rails (10.4.13.0)
       execjs (~> 2)
+    base64 (0.1.1)
     bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.16.0)
@@ -260,6 +261,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (~> 9.0)
   autoprefixer-rails
+  base64
   bootsnap
   capybara
   debug
