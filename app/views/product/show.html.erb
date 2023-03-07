@@ -1,4 +1,4 @@
 <h1>Show Page for <%= @product.name %></h1>
 
-<% @allprices %>
-<div style="width: 800px;" data-controller="chart" data-prices=<%= @allprices%> ><canvas id="price-chart"></canvas></div>
+<div><%= @allprices[0] %></div>
+<div style="width: 800px;" data-controller="chart" data-prices=<%= @allprices[0]%> ><canvas id="price-chart"></canvas></div>

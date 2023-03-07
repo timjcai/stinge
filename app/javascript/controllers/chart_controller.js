@@ -1,9 +1,9 @@
 import { Controller } from "@hotwired/stimulus"
 import Chart from 'chart.js/auto'
 
-
 export default class extends Controller {
   initialize(){
+    console.log('hello');
     this.priceData = JSON.parse(this.element.dataset.prices);
   }
 
