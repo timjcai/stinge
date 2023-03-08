@@ -6,7 +6,7 @@
   height: 100px;
   justify-content: space-between;
   margin-top: auto;
-  padding: 0px 50px;
+  padding: 0px 20px;
 }
 .footer-links {
   align-items: center;
@@ -16,7 +16,7 @@
   color: black;
   font-size: 24px;
   opacity: 0.15;
-  padding: 0px 10px;
+  padding: 0px 6px;
   text-decoration: none;
 }
 .footer-links a:hover {
@@ -24,4 +24,8 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+
+.footer-copyright {
+  font-size: 18px;
 }
