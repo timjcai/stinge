@@ -22,10 +22,14 @@ export default class extends Controller {
             {
               label: 'Coles',
               data: data1.map(row => row.price),
+              backgroundColor: '#EF2126',
+              borderColor: '#EF2126'
             },
             {
               label: 'Woolworths',
-              data: data2.map(row => row.price)
+              data: data2.map(row => row.price),
+              backgroundColor: '#004A2B',
+              borderColor: '#004A2B'
             }
           ]
         },

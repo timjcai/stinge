@@ -14,3 +14,19 @@
 
 <div style="width: 800px;" data-controller="chart" data-prices=<%= @allprices.to_json%> ><canvas id="price-chart"></canvas></div>
 <script type="module" src="chart_controller.js"></script>
+
+<div>
+  <h2>Coles</h2>
+  <div>
+    <p>$<%= @allprices["Coles"].last[:price] %> AUD</p>
+    <p>last update: <%= @allprices["Coles"].last[:date] %></p>
+  </div>
+</div>
+
+<div>
+  <h2>Woolworths</h2>
+  <div>
+    <p>$<%= @allprices["Woolworths"].last[:price] %> AUD</p>
+    <p>last update: <%= @allprices["Woolworths"].last[:date] %></p>
+  </div>
+</div>

@@ -8,6 +8,11 @@ class ListController < ApplicationController
     @listitems = ListItem.where(list: @list)
   end
 
+  def current
+    @list = List.last
+    redirect_to list_path(@list)
+  end
+
   def new
     @list = List.new
   end
