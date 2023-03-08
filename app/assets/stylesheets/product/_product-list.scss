@@ -31,3 +31,16 @@ main {
   object-fit: cover;
   width: 100%;
 }
+
+.save-btn {
+  border: none;
+  background-color: #D21404;
+  // background-color: #028A0F;
+  border-radius: 3px;
+  padding: 8px 43%;
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+  font-size: 20px;
+  position: relative;
+}
