@@ -28,6 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_015021) do
     t.string "name"
     t.bigint "user_id", null: false
     t.date "date_created"
+    t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_lists_on_user_id"
