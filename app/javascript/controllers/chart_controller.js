@@ -4,6 +4,7 @@ import Chart from 'chart.js/auto'
 export default class extends Controller {
   initialize(){
     this.priceData = JSON.parse(this.element.dataset.prices);
+    // this.startDate = new Date();
   }
 
   connect() {
@@ -20,13 +21,21 @@ export default class extends Controller {
           datasets: [
             {
               label: 'Coles',
-              data: data1.map(row => row.price)
+              data: data1.map(row => row.price),
             },
             {
               label: 'Woolworths',
               data: data2.map(row => row.price)
             }
           ]
+        },
+        options: {
+          scales: {
+            y: {
+              min: 1,
+              max: 8.5,
+            }
+          }
         }
       }
     );

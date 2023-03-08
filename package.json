@@ -8,6 +8,7 @@
     "@prettier/plugin-ruby": "^3.2.2",
     "bootstrap": "^5.2.3",
     "chart.js": "^4.2.1",
+    "flatpickr": "^4.6.13",
     "prettier": "^2.8.4",
     "prettier-plugin-erb": "^0.4.0",
     "stimulus-chartjs": "^5.0.0",
