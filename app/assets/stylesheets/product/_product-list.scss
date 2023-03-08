@@ -14,16 +14,16 @@ main {
 
 .product-card {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: flex-start;
   height: 260px;
 }
 
 .image-area {
   height: 100%;
-  margin-right: 16px;
+  margin-right: 25px;
   margin-bottom: 8px;
-  width: 50%;
+  width: 45%;
 }
 
 .product-image {
