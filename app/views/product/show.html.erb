@@ -1,7 +1,16 @@
 <h1>Show Page for <%= @product.name %></h1>
 
-<div><%= @allprices[0] %></div>
-<div style="width: 800px;" data-controller="chart" data-prices=<%= @allprices[0]%> ><canvas id="price-chart"></canvas></div>
-<div style="width: 800px;"><canvas id="acquisitions"></canvas></div>
+<div>
+      <%= form_with url: product_path(@product), method: :get do |f| %>
+        <%= f.text_field :start_date,
+          value: params[:start_date],
+          data: {
+            controller: "flatpickr",
+            }
+          %>
+        <%= f.submit class:'book-btn' %>
+      <% end %>
+</div>
 
-<%# <script type="module" src="chart_controller.js"></script> %>
+<div style="width: 800px;" data-controller="chart" data-prices=<%= @allprices.to_json%> ><canvas id="price-chart"></canvas></div>
+<script type="module" src="chart_controller.js"></script>

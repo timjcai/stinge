@@ -4,8 +4,11 @@
 
 import { application } from "./application"
 
-// import HelloController from "./hello_controller"
 import ChartController from "./chart_controller"
-
-// application.register("hello", HelloController)
 application.register("chart", ChartController)
+
+import FlatpickrController from "./flatpickr_controller"
+application.register("flatpickr", FlatpickrController)
+
+import HelloController from "./hello_controller"
+application.register("hello", HelloController)
