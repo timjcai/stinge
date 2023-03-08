@@ -17,9 +17,9 @@ p List.create(name: 'test_list', user_id: 1)
 
 #product generator
 
-filepath = 'scraper/veggie_names.csv'
+filepath = 'scraper/product_names.csv'
 
-veg_array = CSV.parse(File.read(filepath))
+product_array = CSV.parse(File.read(filepath))
 
 
 
@@ -29,7 +29,7 @@ def initproducts(array)
   end
 end
 
-p initproducts(veg_array)
+p initproducts(product_array)
 
 # price generator
 
@@ -40,7 +40,7 @@ end
 
 # date
 def date_array
-  start = Date.new(2022,1,1)
+  start = Date.new(2022, 10, 1)
   finish = Date.today
 
   (start.to_date..finish.to_date).map { |date| date.strftime('%b %d %Y') }
@@ -76,24 +76,46 @@ p init_store_generator(stores)
 # store_product generator
 
 def init_store_product_generator(array)
+  all_sproducts = []
   array.each do |item|
+    product_sproducts = []
     p product = Product.find_by(name: item)
-    p storeproduct1 = StoreProduct.create(brand_name: "Coles", product_name: item, product: product)
-    p storeproduct2 = StoreProduct.create(brand_name: "Woolworths", product_name: item, product: product)
+    brand_name = ['Coles', 'Woolworths']
+    brand_name.each do |brand|
+      product_sproducts << StoreProduct.create(brand_name: brand, product_name: item, product: product)
+    end
+    all_sproducts << product_sproducts
+    # p storeproduct1 = StoreProduct.create(brand_name: "Coles", product_name: item, product: product)
+    # p storeproduct2 = StoreProduct.create(brand_name: "Woolworths", product_name: item, product: product)
+    # prices = init_fake_prices(date_array)
+    # prices2 = init_fake_prices(date_array)
+    # prices.each do |set|
+    #   date = set[0]
+    #   price_set = set[1]
+    #   p PriceChart.create(date: date, price: price_set, store_product: storeproduct1, measurement: 100, measurement_type: 'g', standard_measurement_ratio: '100g')
+    # end
+    # prices2.each do |set|
+    #   date = set[0]
+    #   price_set = set[1]
+    #   p PriceChart.create(date: date, price: price_set, store_product: storeproduct2, measurement: 100, measurement_type: 'g', standard_measurement_ratio: '100g')
+    # end
+  end
+  all_sproducts.flatten
+end
+
+def init_product_prices(array)
+  array.each do |storeproduct|
     prices = init_fake_prices(date_array)
-    prices2 = init_fake_prices(date_array)
     prices.each do |set|
       date = set[0]
       price_set = set[1]
-      p PriceChart.create(date: date, price: price_set, store_product: storeproduct1, measurement: 100, measurement_type: 'g', standard_measurement_ratio: '100g')
-    end
-    prices2.each do |set|
-      date = set[0]
-      price_set = set[1]
-      p PriceChart.create(date: date, price: price_set, store_product: storeproduct2, measurement: 100, measurement_type: 'g', standard_measurement_ratio: '100g')
+      p PriceChart.create(date: date, price: price_set, store_product: storeproduct, measurement: 100, measurement_type: 'g', standard_measurement_ratio: '100g')
     end
   end
 end
 
-test_aray = ['Bananas']
-init_store_product_generator(test_aray)
+# test_aray = ['Bananas', 'Hass Avocados']
+
+all_sproducts = init_store_product_generator(product_array)
+
+init_product_prices(all_sproducts)

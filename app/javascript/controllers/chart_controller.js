@@ -1,27 +1,45 @@
 import { Controller } from "@hotwired/stimulus"
 import Chart from 'chart.js/auto'
 
-
 export default class extends Controller {
   initialize(){
     this.priceData = JSON.parse(this.element.dataset.prices);
+    // this.startDate = new Date();
   }
 
   connect() {
-    const data = this.priceData;
+    const alldata = this.priceData;
+    const data1 = alldata["Coles"];
+    const data2 = alldata["Woolworths"];
 
     new Chart(
       document.getElementById('price-chart'),
       {
-        type: 'bar',
+        type: 'line',
         data: {
-          labels: data.map(row => row.year),
+          labels: data1.map(row => row.date),
           datasets: [
             {
-              label: 'Acquisitions by year',
-              data: data.map(row => row.count)
+              label: 'Coles',
+              data: data1.map(row => row.price),
+              backgroundColor: '#EF2126',
+              borderColor: '#EF2126'
+            },
+            {
+              label: 'Woolworths',
+              data: data2.map(row => row.price),
+              backgroundColor: '#004A2B',
+              borderColor: '#004A2B'
             }
           ]
+        },
+        options: {
+          scales: {
+            y: {
+              min: 1,
+              max: 8.5,
+            }
+          }
         }
       }
     );

@@ -1,12 +1,24 @@
-<h1>individual shopping list page</h1>
+<div class="container">
+  <h1 class="mt-4"><%= @list.name %></h1>
 
-<h2><%= @list.name %></h2>
-
-<div>
-  <% @listitems.each do |item| %>
-    <div>
-      <%= Product.find(item.product_id).name %>
-      <%= item.quantity %>
-    </div>
-  <% end %>
+  <div>
+    <% @listitems.each do |item| %>
+      <%= link_to product_path(item) do %>
+        <div class="border border-dark py-2">
+          <% thisproduct = Product.find(item.product_id) %>
+          <div><%= thisproduct.name %></div>
+          <div><%= item.quantity %></div>
+          <div>
+            <% StoreProduct.where(product: thisproduct).each do |storeproduct| %>
+              <div>
+                <p><%= storeproduct.brand_name %></p>
+                <p><%= PriceChart.where(store_product: storeproduct).last[:price] %></p>
+                <p><%= PriceChart.where(store_product: storeproduct).last[:date] %></p>
+              <div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
