@@ -17,9 +17,9 @@ p List.create(name: 'test_list', user_id: 1)
 
 #product generator
 
-filepath = 'scraper/veggie_names.csv'
+filepath = 'scraper/product_names.csv'
 
-veg_array = CSV.parse(File.read(filepath))
+product_array = CSV.parse(File.read(filepath))
 
 
 
@@ -114,7 +114,7 @@ def init_product_prices(array)
   end
 end
 
-test_aray = ['Bananas', 'Hass Avocados']
-all_sproducts = init_store_product_generator(test_aray)
+# test_aray = ['Bananas', 'Hass Avocados']
+all_sproducts = init_store_product_generator(product_array)
 
 init_product_prices(all_sproducts)
