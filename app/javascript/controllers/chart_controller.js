@@ -8,8 +8,8 @@ export default class extends Controller {
 
   connect() {
     const alldata = this.priceData;
-    const data1 = alldata[0];
-    const data2 = alldata[1];
+    const data1 = alldata["Coles"];
+    const data2 = alldata["Woolworths"];
 
     new Chart(
       document.getElementById('price-chart'),
@@ -19,11 +19,11 @@ export default class extends Controller {
           labels: data1.map(row => row.date),
           datasets: [
             {
-              label: 'Daily Prices',
+              label: 'Coles',
               data: data1.map(row => row.price)
             },
             {
-              label: 'Daily Prices',
+              label: 'Woolworths',
               data: data2.map(row => row.price)
             }
           ]
