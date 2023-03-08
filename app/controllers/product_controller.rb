@@ -14,7 +14,7 @@ class ProductController < ApplicationController
   def create_price_json
     @product = Product.find(params[:id])
     @storeproducts = StoreProduct.where(product: @product)
-    @allprices = []
+    @allprices = {}
     @storeproduct = []
     @storeproducts.each do |product|
       pricechart = PriceChart.where(store_product: product)
@@ -24,12 +24,10 @@ class ProductController < ApplicationController
           date: pair.date,
           price: pair.price
         }
-        # json[:date] = pair.date
-        # json[:price] = pair.price
-        p @storeproduct[counter] = json
+        @storeproduct[counter] = json
         counter += 1
       end
-      @allprices << @storeproduct
+      @allprices[product.brand_name] = @storeproduct
     end
     @allprices
   end

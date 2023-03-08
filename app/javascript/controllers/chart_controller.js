@@ -3,23 +3,28 @@ import Chart from 'chart.js/auto'
 
 export default class extends Controller {
   initialize(){
-    console.log('hello');
     this.priceData = JSON.parse(this.element.dataset.prices);
   }
 
   connect() {
-    const data = this.priceData;
+    const alldata = this.priceData;
+    const data1 = alldata[0];
+    const data2 = alldata[1];
 
     new Chart(
       document.getElementById('price-chart'),
       {
         type: 'line',
         data: {
-          labels: data.map(row => row.date),
+          labels: data1.map(row => row.date),
           datasets: [
             {
               label: 'Daily Prices',
-              data: data.map(row => row.price)
+              data: data1.map(row => row.price)
+            },
+            {
+              label: 'Daily Prices',
+              data: data2.map(row => row.price)
             }
           ]
         }
