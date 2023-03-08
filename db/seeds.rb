@@ -29,7 +29,7 @@ def initproducts(array)
   end
 end
 
-p initproducts(veg_array)
+p initproducts(product_array)
 
 # price generator
 
@@ -40,7 +40,7 @@ end
 
 # date
 def date_array
-  start = Date.new(2022, 1, 1)
+  start = Date.new(2022, 10, 1)
   finish = Date.today
 
   (start.to_date..finish.to_date).map { |date| date.strftime('%b %d %Y') }
@@ -115,6 +115,7 @@ def init_product_prices(array)
 end
 
 # test_aray = ['Bananas', 'Hass Avocados']
+
 all_sproducts = init_store_product_generator(product_array)
 
 init_product_prices(all_sproducts)
