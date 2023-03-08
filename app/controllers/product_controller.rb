@@ -15,10 +15,12 @@ class ProductController < ApplicationController
     @product = Product.find(params[:id])
     @storeproducts = StoreProduct.where(product: @product)
     @allprices = {}
-    @storeproduct = []
     p start_date = params[:start_date]&.to_date || Date.today-1.month
+
     @storeproducts.each do |product|
-      pricechart = PriceChart.where(store_product: product)
+      @all_store_products = []
+      p product
+      p pricechart = PriceChart.where(store_product: product)
       counter = 0
       pricechart.each do |pair|
         json = {
@@ -26,11 +28,11 @@ class ProductController < ApplicationController
           price: pair.price
         }
         if pair.date > start_date
-          @storeproduct[counter] = json
+          @all_store_products[counter] = json
           counter += 1
         end
+      @allprices[product.brand_name] = @all_store_products
       end
-      @allprices[product.brand_name] = @storeproduct
     end
     @allprices
   end
