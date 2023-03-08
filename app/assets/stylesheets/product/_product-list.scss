@@ -16,14 +16,13 @@ main {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  height: 260px;
+  height: 160px;
 }
 
 .image-area {
   height: 100%;
   margin-right: 25px;
   margin-bottom: 8px;
-  width: 45%;
 }
 
 .product-image {
@@ -32,15 +31,55 @@ main {
   width: 100%;
 }
 
+.product-name {
+  text-decoration: none;
+  color: $color-blue-800;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.prices {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 35px;
+}
+
+.price-flex {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  p {
+    padding-right: 20px;
+  }
+
+  span {
+    color: #000000;
+  }
+}
+
+.coles-price {
+  color: #E01A22;
+  margin-bottom: 0;
+}
+
+.wooly-price {
+  color: #146B34;
+  margin-bottom: 0;
+}
+
 .save-btn {
   border: none;
-  background-color: #D21404;
+  // background-color: #D21404;
   // background-color: #028A0F;
+  background-color: #ED7117;
   border-radius: 3px;
   padding: 8px 43%;
   text-align: center;
   color: white;
   margin-top: 20px;
   font-size: 20px;
+  font-weight: 510;
   position: relative;
 }

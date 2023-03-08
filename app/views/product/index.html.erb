@@ -1,16 +1,24 @@
 <main>
-  <%# <h1>Product list</h1> %>
   <div class="product-list">
     <% @products.each do |product| %>
       <%# product  %>
       <div class="product-tile">
         <div class="product-card">
           <div class="image-area">
-            <%= image_tag "https://images.unsplash.com/photo-1528821128474-27f963b062bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", class:"product-image" %>
+            <%= image_tag "https://images.unsplash.com/photo-1577916082233-f97ed22e4df8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", class:"product-image" %>
           </div>
           <div class="name-price-area">
             <%= link_to product.name, product_path(product.id), class: "product-name" %>
-            <div class="product-price">$5.00</div>
+            <div class="prices">
+            <div class="price-flex">
+              <p class="coles-price">Coles: </p>
+              <span>$5.50</span>
+            </div>
+            <div class="price-flex">
+              <p class="wooly-price">Woolworths: </p>
+              <span>$6.50</span>
+            </div>
+            </div>
           </div>
         </div>
             <% if current_user %>
