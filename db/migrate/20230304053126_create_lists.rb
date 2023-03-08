@@ -4,6 +4,7 @@ class CreateLists < ActiveRecord::Migration[7.0]
       t.string :name
       t.references :user, null: false, foreign_key: true
       t.date :date_created
+      t.boolean :active
 
       t.timestamps
     end
