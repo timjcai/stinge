@@ -34,9 +34,37 @@ body {
 .data-chart {
   margin: 25px 0;
   width: 365px;
-  overflow: hidden;
 }
 
 #price-chart {
   margin-right: 0;
+}
+
+.secondary-header {
+  font-family: $lexend;
+  font-size: 24px;
+  font-weight: 600;
+  color: $color-blue-800;
+}
+
+.coles1 {
+  color: $coles-color;
+  display: inline;
+  border-bottom: 2px solid $coles-color;
+  margin-bottom: 15px;
+}
+
+.wooly1 {
+  color: $wooly-color;
+  display: inline;
+  border-bottom: 2px solid $wooly-color;
+  margin-bottom: 15px;
+}
+
+.update {
+  padding: 15px 0;
+
+  p {
+    margin-bottom: 3px;
+  }
 }

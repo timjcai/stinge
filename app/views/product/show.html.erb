@@ -17,16 +17,16 @@
   <script type="module" src="chart_controller.js"></script>
 
   <div>
-    <h2>Coles</h2>
-    <div>
+    <h2 class="secondary-header coles1">Coles</h2>
+    <div class="update">
       <p>$<%= @allprices["Coles"].last[:price] %><small> AUD</small></p>
       <p>Last update: <%= @allprices["Coles"].last[:date] %></p>
     </div>
   </div>
 
   <div>
-    <h2>Woolworths</h2>
-    <div>
+    <h2 class="secondary-header wooly1">Woolworths</h2>
+    <div class="update">
       <p>$<%= @allprices["Woolworths"].last[:price] %><small> AUD</small></p>
       <p>Last update: <%= @allprices["Woolworths"].last[:date] %></p>
     </div>
