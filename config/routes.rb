@@ -6,12 +6,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   get 'product', to: 'product#index', as: 'products'
   get 'product/:id', to: 'product#show', as: 'product'
-  get 'list', to: 'list#index', as: 'lists'
-  get 'list/new', to: 'list#new', as: 'new_list'
-  get 'list/current', to: 'list#current', as: 'current_list'
+  # get 'list', to: 'list#index', as: 'lists'
+  # get 'list/new', to: 'list#new', as: 'new_list'
+  # get 'list/current', to: 'list#current', as: 'current_list'
   get 'list/:id', to: 'list#show', as: 'list'
 
-  post 'list', to: 'list#create'
+  # post 'list', to: 'list#create'
   get 'list/:id/edit', to: 'list#edit', as: 'edit_list'
   patch 'list/:id', to: 'list#update', as: 'update_list'
   delete 'list/:id', to: 'list#destroy', as: 'delete_list'
