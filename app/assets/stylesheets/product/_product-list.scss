@@ -63,40 +63,42 @@ main {
 }
 
 .price-flex.coles {
-  border: 1px solid #E01A22;
+  border: 1px solid $coles-color;
   border-radius: 3px;
   margin-bottom: 12px;
   padding: 2px 7px;
 }
 
 .price-flex.wooly {
-  border: 1px solid #146B34;
+  border: 1px solid $wooly-color;
   border-radius: 3px;
   margin-bottom: 12px;
   padding: 2px 7px;
 }
 
 .coles-price {
-  color: #E01A22;
+  color: $coles-color;
   margin-bottom: 0;
 }
 
 .wooly-price {
-  color: #146B34;
+  color: $wooly-color;
   margin-bottom: 0;
 }
 
 .save-btn {
   border: none;
-  // background-color: #D21404;
-  // background-color: #028A0F;
   background-color: #ED7117;
   border-radius: 3px;
-  color: white;
   font-size: 20px;
   font-weight: 510;
   margin-top: 20px;
   padding: 8px 43%;
   position: relative;
   text-align: center;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }

@@ -1,0 +1,70 @@
+body {
+  font-family: $lexend;
+}
+
+.my-header {
+  padding: 20px;
+  font-family: $lexend;
+  font-size: 30px;
+  font-weight: 600;
+  color: $color-blue-800;
+  text-align: center;
+}
+
+.calendar form {
+  text-align: center;
+}
+
+.flatpickr-input {
+  color: $color-navy-600;
+  font-size: 18px;
+  padding: 7px 10px;
+}
+
+.book-btn {
+  padding: 9px 18px;
+  color: #fff;
+  font-size: 18px;
+  background: #ED7117;
+  border: none;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+.data-chart {
+  margin: 25px 0;
+  width: 365px;
+}
+
+#price-chart {
+  margin-right: 0;
+}
+
+.secondary-header {
+  font-family: $lexend;
+  font-size: 24px;
+  font-weight: 600;
+  color: $color-blue-800;
+}
+
+.coles1 {
+  color: $coles-color;
+  display: inline;
+  border-bottom: 2px solid $coles-color;
+  margin-bottom: 15px;
+}
+
+.wooly1 {
+  color: $wooly-color;
+  display: inline;
+  border-bottom: 2px solid $wooly-color;
+  margin-bottom: 15px;
+}
+
+.update {
+  padding: 15px 0;
+
+  p {
+    margin-bottom: 3px;
+  }
+}

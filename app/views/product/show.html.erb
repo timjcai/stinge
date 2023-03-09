@@ -1,32 +1,34 @@
-<h1>Show Page for <%= @product.name %></h1>
+<div class="container">
+  <h1 class="my-header">Details of <%= @product.name %></h1>
 
-<div>
-      <%= form_with url: product_path(@product), method: :get do |f| %>
-        <%= f.text_field :start_date,
-          value: params[:start_date],
-          data: {
-            controller: "flatpickr",
-            }
-          %>
-        <%= f.submit class:'book-btn' %>
-      <% end %>
-</div>
-
-<div style="width: 800px;" data-controller="chart" data-prices=<%= @allprices.to_json%> ><canvas id="price-chart"></canvas></div>
-<script type="module" src="chart_controller.js"></script>
-
-<div>
-  <h2>Coles</h2>
-  <div>
-    <p>$<%= @allprices["Coles"].last[:price] %> AUD</p>
-    <p>last update: <%= @allprices["Coles"].last[:date] %></p>
+  <div class="calendar">
+        <%= form_with url: product_path(@product), method: :get do |f| %>
+          <%= f.text_field :start_date,
+            value: params[:start_date],
+            data: {
+              controller: "flatpickr",
+              }
+            %>
+          <%= f.submit class:'book-btn' %>
+        <% end %>
   </div>
-</div>
 
-<div>
-  <h2>Woolworths</h2>
+  <div class="data-chart" data-controller="chart" data-prices=<%= @allprices.to_json%> ><canvas id="price-chart"></canvas></div>
+  <script type="module" src="chart_controller.js"></script>
+
   <div>
-    <p>$<%= @allprices["Woolworths"].last[:price] %> AUD</p>
-    <p>last update: <%= @allprices["Woolworths"].last[:date] %></p>
+    <h2 class="secondary-header coles1">Coles</h2>
+    <div class="update">
+      <p>$<%= @allprices["Coles"].last[:price] %><small> AUD</small></p>
+      <p>Last update: <%= @allprices["Coles"].last[:date] %></p>
+    </div>
+  </div>
+
+  <div>
+    <h2 class="secondary-header wooly1">Woolworths</h2>
+    <div class="update">
+      <p>$<%= @allprices["Woolworths"].last[:price] %><small> AUD</small></p>
+      <p>Last update: <%= @allprices["Woolworths"].last[:date] %></p>
+    </div>
   </div>
 </div>
