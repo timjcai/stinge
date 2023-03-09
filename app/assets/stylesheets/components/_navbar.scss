@@ -8,11 +8,11 @@
   overflow: hidden;
   background-color: #333;
 
-  li {
+  .navbar-nav li {
     float: left;
   }
 
-  li a {
+  .navbar-nav li a {
     display: block;
     color: white;
     text-align: center;
@@ -20,7 +20,7 @@
     text-decoration: none;
   }
 
-  li a:hover {
+  .navbar-nav li a:hover {
     background-color: #111;
     color: white;
   }
@@ -37,4 +37,8 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 60px;
+}
+
+.dropdown-menu a {
+  color: #000;
 }

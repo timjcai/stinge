@@ -5,4 +5,8 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def default_list
+    List.find_or_create_by(name: "Shopping List", user: self)
+  end
 end

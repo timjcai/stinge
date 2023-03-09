@@ -12,7 +12,7 @@ class ListItemController < ApplicationController
   end
 
   def create
-    @listitem = ListItem.new(product_id: params[:id], list_id: params[:list_id], quantity: params[:quantity])
+    @listitem = ListItem.new(product_id: params[:id], list: current_user.default_list, quantity: params[:quantity])
     @listitem.save
     redirect_to products_path
   end

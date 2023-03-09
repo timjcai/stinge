@@ -21,11 +21,9 @@
           </div>
         </div>
         <% if current_user %>
-          <% if current_user.lists.empty? %>
-            <%= link_to 'Create a list', new_list_path(List.new), class:"save-btn" %>
-          <% else %>
-            <div class="save-btn"><%= link_to 'Save', create_list_item_path(product, list_id: current_user.lists.last.id, quantity: 1), data: {turbo_method: :post} %></div>
-          <% end %>
+          <div class="save-btn">
+            <%= link_to 'Save', create_list_item_path(product, list_id: current_user.default_list.id, quantity: 1), data: {turbo_method: :post} %>
+          </div>
         <% end %>
       </div>
     <% end %>
