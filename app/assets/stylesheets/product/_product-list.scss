@@ -92,11 +92,15 @@ main {
   // background-color: #028A0F;
   background-color: #ED7117;
   border-radius: 3px;
-  color: white;
   font-size: 20px;
   font-weight: 510;
   margin-top: 20px;
   padding: 8px 43%;
   position: relative;
   text-align: center;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }
