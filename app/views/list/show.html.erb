@@ -1,21 +1,26 @@
 <div class="container">
-  <h1 class="mt-4"><%= @list.name %></h1>
+  <h1 class="my-header mt-2 mb-2" ><%= @list.name %></h1>
 
   <div>
     <% @listitems.each do |item| %>
-      <%= link_to product_path(item) do %>
-        <div class="border border-dark py-2">
+      <%= link_to product_path(item.product_id) do %>
+        <div class="border py-2 product-tile">
           <% thisproduct = Product.find(item.product_id) %>
-          <div><%= thisproduct.name %></div>
-          <div><%= item.quantity %></div>
-          <div>
-            <% StoreProduct.where(product: thisproduct).each do |storeproduct| %>
-              <div>
-                <p><%= storeproduct.brand_name %></p>
-                <p><%= PriceChart.where(store_product: storeproduct).last[:price] %></p>
-                <p><%= PriceChart.where(store_product: storeproduct).last[:date] %></p>
-              <div>
-            <% end %>
+          <div class="product-card">
+            <div class="image-area">
+              <%= image_tag "https://images.unsplash.com/photo-1577916082233-f97ed22e4df8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", class:"product-image" %>
+            </div>
+            <div class="name-price-area">
+              <div class="product-name product-link"><%= thisproduct.name %></div>
+              <div class="prices">
+                <% StoreProduct.where(product: thisproduct).each do |storeproduct| %>
+                  <div class="price-flex <%= storeproduct.brand_name.downcase %>">
+                    <p class="<%= storeproduct.brand_name.downcase %>-price"><%= storeproduct.brand_name %>:</p>
+                    <span><%= PriceChart.where(store_product: storeproduct).last[:price] %></span>
+                  </div>
+                <% end %>
+              </div>
+            </div>
           </div>
         </div>
       <% end %>
