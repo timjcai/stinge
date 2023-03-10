@@ -1,5 +1,5 @@
 .banner {
-  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)), url("https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3174&q=80");
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)), url("https://images.unsplash.com/photo-1570913196376-dacb677ef459?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
   background-size: cover;
   background-position: center center;
   width: 100%;
@@ -7,7 +7,7 @@
   .banner-txt {
     color: #e6e2aa;
     font-family: 'Poppins', sans-serif;
-    font-size: 40px;
+    font-size: 36px;
     font-weight: 700;
     padding-top: 90px;
     text-align: center;
@@ -20,15 +20,14 @@
 
 .form label {
   display: block;
-  margin: 8px 0;
   color: $color-beige;
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 500;
 }
 
 .form input {
-  padding: 12px;
-  width: 200px;
+  padding: 10px;
+  width: 190px;
   border: 1px solid $color-blue-800;
   border-radius: 5px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -38,7 +37,7 @@
 .form input::placeholder {
   color: #777777;
   font-family: 'Poppins', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .btn-location {
@@ -49,7 +48,7 @@
   color: $color-blue-800;
   font-size: 16px;
   font-weight: 500;
-  padding: 13px 25px;
+  padding: 10px 22px;
   text-decoration: none;
 }
 

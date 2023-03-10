@@ -16,8 +16,8 @@
 .category-header {
   color: $color-blue-800;
   font-weight: 700;
-  font-size: 30px;
-  padding: 50px 0 30px 0;
+  font-size: 26px;
+  padding: 40px 0 20px 0;
   font-family: var(--poppins);
   text-align: center;
 }
@@ -25,8 +25,6 @@
 .card {
   border-radius: 5px;
   overflow: hidden;
-
-  // background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6));
 
   img {
     object-fit: cover;
