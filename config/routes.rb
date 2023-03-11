@@ -16,10 +16,10 @@ Rails.application.routes.draw do
   get 'products/:id/store_products/:id/price_chart', to: 'price_chart#show', as: 'price_chart'
   get 'products/:id/listitem', to: 'list_item#index', as: 'list_items'
   get 'products/:id/listitem/new', to: 'list_item#new', as: 'new_list_item'
-  get 'products/:id/listitem/:id', to: 'list_item#show', as: 'list_item'
+  get 'listitem/:id', to: 'list_item#show', as: 'list_item'
   post 'products/:id/listitem', to: 'list_item#create', as: 'create_list_item'
-  get 'products/:id/listitem/:id/edit', to: 'list_item#edit', as: 'edit_list_item'
-  patch 'products/:id/listitem/:id', to: 'list_item#update', as: 'update_list_item'
-  delete 'products/:id/listitem/:id', to: 'list_item#destroy', as: 'delete_list_item'
+  get 'listitem/:id/edit', to: 'list_item#edit', as: 'edit_list_item'
+  patch 'listitem/:id', to: 'list_item#update', as: 'update_list_item'
+  delete 'listitem/:id', to: 'list_item#destroy', as: 'delete_list_item'
 
 end

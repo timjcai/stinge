@@ -11,7 +11,10 @@
               <%= image_tag "https://images.unsplash.com/photo-1577916082233-f97ed22e4df8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", class:"product-image" %>
             </div>
             <div class="name-price-area">
+            <div class="d-flex justify-content-between">
               <div class="product-name product-link"><%= thisproduct.name %></div>
+              <%= link_to "x", delete_list_item_path(item.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            </div>
               <div class="prices">
                 <% StoreProduct.where(product: thisproduct).each do |storeproduct| %>
                   <div class="price-flex <%= storeproduct.brand_name.downcase %>">
