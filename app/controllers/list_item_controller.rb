@@ -25,10 +25,11 @@ class ListItemController < ApplicationController
 
   end
 
-  def destory
+  def destroy
     @listitem = ListItem.find(params[:id])
+    list_id = @listitem.list_id
     @listitem.destroy
-    redirect_to list_path, status: :see_other
+    redirect_to list_path(list_id), status: :see_other
   end
 
   private
