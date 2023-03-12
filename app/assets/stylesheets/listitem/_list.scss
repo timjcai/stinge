@@ -1,98 +1,7 @@
-main {
-  padding: 0;
-}
-
-h1 {
-  font-family: $body-font
-}
-
-a:link {
-  color: none;
-  text-decoration: none;
-}
-
-a:visited {
-  color: none;
-  text-decoration: none;
-}
-
-a:hover {
-  color: none;
-}
-
-.product-link:hover {
-  color: #0D6EFD;
-  cursor: pointer;
-}
-
-
-.product-tile {
-  padding: 20px;
+.product-tile.item {
   margin-bottom: 16px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-
-}
-
-.product-title:hover {
-  color: none;
-  cursor: pointer;
-}
-
-.product-card {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  height: 165px;
-}
-
-.image-area {
-  height: 100%;
-  margin-right: 13px;
-  margin-bottom: 8px;
-}
-
-.product-image {
-  height: 100%;
-  object-fit: cover;
-  width: 100%;
-}
-
-.product-name {
-  color: #212121;
-  font-size: 18px;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.prices {
-  font-size: 18px;
-  font-weight: 500;
-  // line-height: 35px;
-  // margin-top: 17px;
-}
-
-.price-flex {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-
-  p {
-    padding-right: 20px;
-  }
-
-  span {
-    color: #000000;
-    font-weight: 600;
-    font-size: 20px;
-  }
-}
-
-.price-flex.coles {
-  border: 1px solid $coles-color;
-  border-radius: 3px;
-  margin-bottom: 12px;
-  padding: 2px 7px;
 }
 
 .price-flex.woolworths {
@@ -100,11 +9,6 @@ a:hover {
   border-radius: 3px;
   margin-bottom: 12px;
   padding: 2px 7px;
-}
-
-.coles-price {
-  color: $coles-color;
-  margin-bottom: 0;
 }
 
 .woolworths-price {

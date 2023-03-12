@@ -3,8 +3,7 @@
 
   <div>
     <% @listitems.each do |item| %>
-      <%= link_to product_path(item.product_id) do %>
-        <div class="border py-2 product-tile">
+        <div class="border py-2 product-tile item">
           <% thisproduct = Product.find(item.product_id) %>
           <div class="product-card">
             <div class="image-area">
@@ -12,21 +11,20 @@
             </div>
             <div class="name-price-area">
             <div class="d-flex justify-content-between">
-              <div class="product-name product-link"><%= thisproduct.name %></div>
-              <%= link_to "x", delete_list_item_path(item.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+              <a class="product-name"><%= thisproduct.name %></a>
+              <%= link_to 'x', delete_list_item_path(item.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
             </div>
               <div class="prices">
                 <% StoreProduct.where(product: thisproduct).each do |storeproduct| %>
                   <div class="price-flex <%= storeproduct.brand_name.downcase %>">
                     <p class="<%= storeproduct.brand_name.downcase %>-price"><%= storeproduct.brand_name %>:</p>
-                    <span><%= PriceChart.where(store_product: storeproduct).last[:price] %></span>
+                    <span>$<%= PriceChart.where(store_product: storeproduct).last[:price] %></span>
                   </div>
                 <% end %>
               </div>
             </div>
           </div>
         </div>
-      <% end %>
     <% end %>
   </div>
 </div>
