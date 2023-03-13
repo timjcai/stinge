@@ -4,27 +4,29 @@
   <div>
     <% @listitems.each do |item| %>
         <div class="border py-2 product-tile item">
-          <% thisproduct = Product.find(item.product_id) %>
+          <% this_product = Product.find(item.product_id) %>
           <div class="product-card">
             <div class="image-area">
               <%= image_tag "https://images.unsplash.com/photo-1577916082233-f97ed22e4df8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", class:"product-image" %>
             </div>
             <div class="name-price-area">
-            <div class="d-flex justify-content-between">
-              <a class="product-name"><%= thisproduct.name %></a>
-              <%= link_to 'x', delete_list_item_path(item.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-            </div>
+              <div class="d-flex justify-content-between">
+                <a class="product-name"><%= this_product.name %></a>
+                <%= link_to 'x', delete_list_item_path(item.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+              </div>
               <div class="prices">
-                <% StoreProduct.where(product: thisproduct).each do |storeproduct| %>
-                  <div class="price-flex <%= storeproduct.brand_name.downcase %>">
-                    <p class="<%= storeproduct.brand_name.downcase %>-price"><%= storeproduct.brand_name %>:</p>
-                    <span>$<%= PriceChart.where(store_product: storeproduct).last[:price] %></span>
+                <% StoreProduct.where(product: this_product).each do |store_product| %>
+                  <div class="price-flex <%= store_product.brand_name.downcase %>">
+                    <p class="<%= store_product.brand_name.downcase %>-price"><%= store_product.brand_name %>:</p>
+                    <span>$<%= PriceChart.where(store_product: store_product).last[:price] %></span>
                   </div>
                 <% end %>
               </div>
             </div>
           </div>
         </div>
+    <% end.empty? && begin %>
+      <p>List is empty. Please, go to the products and add.</p>
     <% end %>
   </div>
 </div>
