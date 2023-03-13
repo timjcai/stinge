@@ -15,3 +15,12 @@
   color: $wooly-color;
   margin-bottom: 0;
 }
+
+.empty-list-message {
+  background-color: rgb(232, 230, 230);
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  padding: 2px;
+  text-align: center;
+}
