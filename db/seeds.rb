@@ -40,8 +40,7 @@ end
 
 # date
 def date_array
-  # start = Date.new(2022, 10, 1)
-  p start = Date.today.prev_month(3)
+  start = Date.today.prev_month(3)
   finish = Date.today
 
   (start.to_date..finish.to_date).map { |date| date.strftime('%b %d %Y') }
