@@ -7,6 +7,9 @@
   %>
   <%= submit_tag "", class: "btn btn-primary" %>
 <% end %>
+<%# raise %>
+<%= render "shared/category_nav_bar", products: @products %>
+
 
   <div class="product-list">
     <% @products.each do |product| %>
