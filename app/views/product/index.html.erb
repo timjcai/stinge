@@ -1,6 +1,4 @@
 <main>
-
-
 <%= form_with url: products_path, method: :get, class: "d-flex my-3" do %>
   <%= text_field_tag :query,
     params[:query],
@@ -12,43 +10,9 @@
 <%# raise %>
 <%= render "shared/category_nav_bar", products: @products %>
 
-  <div class="product-list">
-    <%= form_with url: products_path, method: :get, class: "d-flex my-3" do %>
-      <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Search products", id: "search-bar"
-      %>
-      <%= submit_tag "", class: "search-icon" %>
-    <% end %>
-    <% @products.each do |product| %>
-      <div class="product-tile">
-        <div class="product-card">
-          <div class="image-area">
-            <%= image_tag "https://images.unsplash.com/photo-1577916082233-f97ed22e4df8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", class:"product-image" %>
-          </div>
-          <div class="name-price-area">
-            <%= link_to product.name, product_path(product.id), class: "product-name" %>
-            <div class="prices">
-            <div class="price-flex coles">
-              <p class="coles-price">Coles: </p>
-              <span>$5.50</span>
-            </div>
-            <div class="price-flex wooly">
-              <p class="wooly-price">Woolworths: </p>
-              <span>$6.50</span>
-            </div>
-            </div>
-          </div>
-        </div>
-        <% if current_user %>
-          <% if current_user.default_list.has_product?(product) %>
-            <a class='disabled add-btn'>Added</a>
-          <% else %>
-            <%= link_to 'Add', create_list_item_path(product, list_id: current_user.default_list.id, quantity: 1), data: {turbo_method: :post}, class: 'add-btn' %>
-          <% end %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+<div class="product-list">
+  <% @products.each do |product| %>
+    <%= render "shared/showproductlist", product: product%>
+  <% end %>
+</div>
 </main>

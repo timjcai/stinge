@@ -1,7 +1,6 @@
-<h1>Meat & Seafood</h1>
-
-<ul>
-  <% @meats.each do |item| %>
-    <li><%= item.name %></li>
+<%= render "shared/category_nav_bar", products: @products %>
+<div class="product-list">
+  <% @meats.each do |product| %>
+    <%= render "shared/showproductlist", product: product%>
   <% end %>
-</ul>
+</div>

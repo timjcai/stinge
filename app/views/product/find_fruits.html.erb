@@ -1,7 +1,6 @@
-<h1>Fruit & Veggies</h1>
-
-<ul>
-  <% @fruits.each do |item| %>
-    <li><%= item.name %></li>
+<%= render "shared/category_nav_bar", products: @products %>
+<div class="product-list">
+  <% @fruits.each do |product| %>
+    <%= render "shared/showproductlist", product: product%>
   <% end %>
-</ul>
+</div>
