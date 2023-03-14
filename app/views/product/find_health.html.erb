@@ -1,7 +1,6 @@
-<h1>Health & Self Care</h1>
-
-<ul>
-  <% @health.each do |item| %>
-    <li><%= item.name %></li>
+<%= render "shared/category_nav_bar", products: @products %>
+<div class="product-list">
+  <% @health.each do |product| %>
+    <%= render "shared/showproductlist", product: product%>
   <% end %>
-</ul>
+</div>

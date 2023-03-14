@@ -13,7 +13,7 @@ require 'csv'
 #new user
 
 p User.create(email: 'test@gmail.com', password: '123456')
-p List.create(name: 'test_list', user_id: 1)
+p List.create(name: 'Shopping List', user_id: 1)
 
 #product generator
 
