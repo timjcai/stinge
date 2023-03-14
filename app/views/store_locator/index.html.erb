@@ -1,5 +1,5 @@
 <div class="container map-container">
-  <h2 class="map-title">Location: <%= @postcode %></h2>
+  <h2 class="map-title">Postcode: <%= @postcode %></h2>
   <% if @stores.empty? %>
     <p class="text-danger">There are no stores at this postcode ‼️</p>
   <% end %>
@@ -7,4 +7,11 @@
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <div class="store-list">
+    <h3 class="store-list-title">Our locations</h3>
+    <ul>
+    <li class="coles-balwyn">Coles Balwyn East<br><small>342-344 Belmore Rd, Balwyn VIC 3103</small></li>
+    <li class="woolie-boxhill">Woolworths Box Hill Central<br><small class="no-berder">Cnr Main &, Station St, Box Hill VIC 3128</small></li>
+    </ul>
+  </div>
 </div>
