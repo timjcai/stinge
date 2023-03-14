@@ -1,11 +1,5 @@
 <div class="container">
   <h1 class="my-header mt-2 mb-2" ><%= @list.name %></h1>
-
-  <div>
-    <div>Coles</div>
-    <div>Woolworths</div>
-    <div>Mix</div>
-  </div>
   <div>
     <% @listitems.each do |item| %>
         <div class="border py-2 product-tile item">
@@ -23,7 +17,12 @@
                 <% StoreProduct.where(product: this_product).each do |store_product| %>
                   <div class="price-flex <%= store_product.brand_name.downcase %>">
                     <p class="<%= store_product.brand_name.downcase %>-price"><%= store_product.brand_name %>:</p>
-                    <span>$<%= PriceChart.where(store_product: store_product).last[:price] %></span>
+                    <span>$<%= price = PriceChart.where(store_product: store_product).last[:price] %></span>
+                    <% if store_product.brand_name.downcase == 'coles' %>
+                      <% @colesprices << PriceChart.where(store_product: store_product).last[:price] %>
+                    <% else %>
+                      <% @wooliesprices << PriceChart.where(store_product: store_product).last[:price] %>
+                    <% end %>
                   </div>
                 <% end %>
               </div>
@@ -33,5 +32,17 @@
     <% end.empty? && begin %>
       <p>List is empty. Please, go to the products and add.</p>
     <% end %>
+  </div>
+
+    <div>
+    <div>Coles $<%= @csum = @colesprices.sum %></div>
+    <div>Woolworths $<%= @wsum = @wooliesprices.sum %></div>
+    <div>
+      <% if @csum > @wsum %>
+        <div>Shop at Woolworths to save $<%= (@csum - @wsum).floor(2) %></div>
+      <% else %>
+        <div>Shop at Coles to save $<%= (@wsum - @csum).floor(2) %>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -6,7 +6,10 @@ class ListController < ApplicationController
 
   def show
     @listitems = ListItem.where(list: @list)
-    @coles = Store.find(1)
+    @colesprices = []
+    @wooliesprices = []
+    @coles = Store.find_by(id: 2)
+    @woolworths = Store.find_by(id: 1)
   end
 
   # def current
