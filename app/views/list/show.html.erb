@@ -12,7 +12,9 @@
             <div class="name-price-area">
               <div class="d-flex justify-content-between">
                 <a class="product-name"><%= this_product.name %></a>
-                <%= link_to 'x', delete_list_item_path(item.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+                <%= link_to delete_list_item_path(item.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                  <i class="fa-solid fa-trash  delete-icon"></i>
+                <% end %>
               </div>
               <div class="prices">
                 <% StoreProduct.where(product: this_product).each do |store_product| %>
@@ -26,7 +28,7 @@
           </div>
         </div>
     <% end.empty? && begin %>
-      <p>List is empty. Please, go to the products and add.</p>
+      <p class="empty-list-message">List is empty. Please, go to the products and add.</p>
     <% end %>
   </div>
 </div>
