@@ -36,13 +36,15 @@
     </div>
 
     <div id="price-calculator">
-        <div>Coles $<%= @csum = @colesprices.sum %></div>
-        <div>Woolworths $<%= @wsum = @wooliesprices.sum %></div>
-        <div>
+    <% @csum = @colesprices.sum  %>
+    <% @wsum = @wooliesprices.sum %>
+        <div class="d-flex justify-content-between total-price-list coles"><div>Coles</div> <div>$<%= @csum %></div></div>
+        <div class="d-flex justify-content-between total-price-list wooly"><div>Woolworths</div> <div>$<%= @wsum %></div></div>
+        <div class="mb-2">
           <% if @csum > @wsum %>
-            <div>Shop at Woolworths to save $<%= @difference = (@csum - @wsum).floor(2) %> and <%= ((@difference/@csum)*100).floor(2) %>% on your shop</div>
+            <div class="total-price-list wooly">Shop at Woolworths to save $<%= @difference = (@csum - @wsum).floor(2) %> and <%= ((@difference/@csum)*100).floor(2) %>% on your shop</div>
           <% else %>
-            <div>Shop at Coles to save $<%= @difference = (@wsum - @csum).floor(2) %> and <%= ((@difference/@wsum)*100).floor(2) %>% on your shop</div>
+            <div class="total-price-list coles">Shop at Coles to save $<%= @difference = (@wsum - @csum).floor(2) %> and <%= ((@difference/@wsum)*100).floor(2) %>% on your shop</div>
           <% end %>
         </div>
       </div>
