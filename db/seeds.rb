@@ -40,7 +40,8 @@ end
 
 # date
 def date_array
-  start = Date.new(2022, 10, 1)
+  # start = Date.new(2022, 10, 1)
+  p start = Date.today.prev_month(3)
   finish = Date.today
 
   (start.to_date..finish.to_date).map { |date| date.strftime('%b %d %Y') }
@@ -83,10 +84,10 @@ def init_store_product_generator(array)
     brand_name = ['Coles', 'Woolworths']
     brand_name.each do |brand|
       if brand == 'Coles'
-        p id = Store.find_by(id: 2)
+        id = Store.find_by(id: 2)
         product_sproducts << StoreProduct.create(brand_name: brand, product_name: item, product: product, store: id)
       else
-        p id = Store.find_by(id: 1)
+        id = Store.find_by(id: 1)
         product_sproducts << StoreProduct.create(brand_name: brand, product_name: item, product: product, store: id)
       end
     end
@@ -106,7 +107,7 @@ def init_store_product_generator(array)
     #   p PriceChart.create(date: date, price: price_set, store_product: storeproduct2, measurement: 100, measurement_type: 'g', standard_measurement_ratio: '100g')
     # end
   end
-  all_sproducts.flatten
+  p all_sproducts.flatten
 end
 
 def init_product_prices(array)
@@ -124,4 +125,4 @@ end
 
 all_sproducts = init_store_product_generator(product_array)
 
-init_product_prices(all_sproducts)
+p init_product_prices(all_sproducts)
