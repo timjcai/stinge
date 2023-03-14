@@ -3,13 +3,13 @@
   <div class="banner">
     <h1 class="banner-txt">Track Prices, <br>
       Get the Deals!</h1>
-    <div class="form">
-      <label for="postcode">Enter your postcode:</label> <br>
+    <%= form_with url: store_locator_path, method: :get, class: 'form' do |f| %>
+      <%= f.label :postcode, "Enter your postcode:" %><br>
       <div class="d-flex justify-content-start align-items-center">
-        <input id="postcode" type="text" placeholder="3000">
-        <a class="btn-location" href="#">Search</a>
+        <%= f.text_field :postcode, placeholder: '3000' %>
+        <%= f.submit 'Search', class: 'btn-location' %>
       </div>
-    </div>
+    <% end %>
   </div>
 
   <!-- BANNER SECTION END -->
@@ -20,6 +20,4 @@
     </div>
   </div>
   <!-- CATEGORY SECTION END -->
-  <!-- MAP SECTION -->
-  <!-- MAP SECTION END -->
 </div>

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'listitem/:id/edit', to: 'list_item#edit', as: 'edit_list_item'
   patch 'listitem/:id', to: 'list_item#update', as: 'update_list_item'
   delete 'listitem/:id', to: 'list_item#destroy', as: 'delete_list_item'
+  get 'store_locator', to: 'store_locator#index', as: :store_locator
 
   # Routes for product categories (e.g. fruits, bakery, deli, etc.)
   # These are HARDCODED

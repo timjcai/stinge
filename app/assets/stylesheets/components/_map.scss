@@ -1,0 +1,46 @@
+.map-title {
+  color: #333229;
+  font-family: $lexend;
+  margin: 15px 0;
+}
+
+.store-list {
+  margin-top: 20px;
+
+  .store-list-title {
+    color: #333229;
+    font-family: $lexend;
+    margin: 15px 0;
+  }
+
+  ul {
+    line-height: 32px;
+  }
+
+  ul > li {
+    color: #00853e;
+    font-size: 18px;
+    font-weight: normal;
+    list-style: none;
+  }
+
+  ul > li > small {
+    border-bottom: 1px solid #cbcaca;
+    color: #4d4d4c;
+    font-size: 14px;
+    padding-right: 75px;
+  }
+
+  ul > li .no-berder {
+    border-bottom: none;
+  }
+
+}
+
+.coles-balwyn small {
+  padding-bottom: 20px;
+}
+
+.woolie-boxhill {
+  padding-top: 24px;
+}

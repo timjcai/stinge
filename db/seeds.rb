@@ -12,6 +12,14 @@ require 'csv'
 
 #new user
 
+if Rails.env == 'development'
+  User.destroy_all
+  List.destroy_all
+  Store.destroy_all
+  Product.destroy_all
+  StoreProduct.destroy_all
+end
+
 p User.create(email: 'test@gmail.com', password: '123456')
 p List.create(name: 'Shopping List', user_id: 1)
 
