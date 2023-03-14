@@ -23,6 +23,13 @@
   border-radius: 5px;
   border: 1px solid black;
   justify-content: center;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  .active {
+    background-color: $color-beige;
+    color:black;
+  }
 
   &:active {
     background-color: $color-beige;
@@ -33,7 +40,4 @@
     color: white;
   }
 
-  #active {
-
-  }
 }

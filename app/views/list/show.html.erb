@@ -1,10 +1,10 @@
-<div class="container">
+<div data-controller="view" class="container">
   <h1 class="my-header mt-2 mb-2" ><%= @list.name %></h1>
-    <div data-controller="view" class="d-flex justify-content-center" id="selector">
-      <div data-view-target="default" data-action="click->view#default" class="list-selector mx-3">Default</div>
-      <div data-view-target="coles" data-action="click->view#coles" class="list-selector mx-3">Coles</div>
-      <div data-view-target="woolworths" data-action="click->view#woolworths" class="list-selector mx-3">Woolworths</div>
-      <div data-view-target="cheapest" data-action="click->view#cheapest" class="list-selector mx-3">Cheapest</div>
+    <div  class="d-flex justify-content-center mb-3" id="selector">
+      <div data-view-target="default" data-action="click->view#default" class="list-selector" hidden>Default</div>
+      <div data-view-target="coles" data-action="click->view#coles" class="list-selector">Coles</div>
+      <div data-view-target="woolworths" data-action="click->view#woolworths" class="list-selector">Woolworths</div>
+      <div data-view-target="cheapest" data-action="click->view#cheapest" class="list-selector">Cheapest</div>
     </div>
   <div class="d-flex flex-column-reverse">
     <div id="shopping-list">
@@ -44,19 +44,20 @@
     </div>
 
     <div id="price-calculator">
-
         <% @csum = @colesprices.sum  %>
         <% @wsum = @wooliesprices.sum %>
         <div class="d-flex justify-content-between total-price-list coles"><div>Coles</div> <div>$<%= @csum %></div></div>
         <div class="d-flex justify-content-between total-price-list wooly"><div>Woolworths</div> <div>$<%= @wsum %></div></div>
         <div class="mb-2">
           <% if @csum > @wsum %>
-            <div class="total-price-list wooly">Shop at Woolworths to save $<%= @difference = (@csum - @wsum).floor(2) %> and <%= ((@difference/@csum)*100).floor(2) %>% on your shop</div>
+            <div data-view-target="woolworthsm" class="total-price-list wooly"> Shop at Woolworths to save $<%= @difference = (@csum - @wsum).floor(2) %> and <%= ((@difference/@csum)*100).floor(2) %>% on your shop</div>
+            <div data-view-target="colesm" >Shopping at Coles is $<%= @difference = (@csum - @wsum).floor(2) %> more expensive</div>
           <% else %>
-            <div class="total-price-list coles">Shop at Coles to save $<%= @difference = (@wsum - @csum).floor(2) %> and <%= ((@difference/@wsum)*100).floor(2) %>% on your shop</div>
+            <div data-view-target="colesm" class="total-price-list coles">Shop at Coles to save $<%= @difference = (@wsum - @csum).floor(2) %> and <%= ((@difference/@wsum)*100).floor(2) %>% on your shop</div>
+            <div data-view-target="woolworthsm" >Shopping at Woolworths is $<%= @difference = (@wsum - @csum).floor(2) %> more expensive</div>
           <% end %>
         </div>
-        <div class="d-flex justify-content-between total-price-list coles">Cheapest <div><%= @cheapestprices.sum %></div></div>
+        <div data-view-target="cheapestm" class="total-price-list">Cheapest shopping list total is <%= @cheapestprices.sum %></div>
       </div>
     </div>
 
