@@ -12,3 +12,6 @@ application.register("flatpickr", FlatpickrController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import ViewController from "./view_controller"
+application.register("view", ViewController)

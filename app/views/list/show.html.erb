@@ -1,9 +1,10 @@
 <div class="container">
   <h1 class="my-header mt-2 mb-2" ><%= @list.name %></h1>
-    <div class="d-flex justify-content-center"id="selector">
-      <div class="list-selector mx-3">Coles</div>
-      <div class="list-selector mx-3">Woolworths</div>
-      <div class="list-selector mx-3">Cheapest</div>
+    <div data-controller="view" class="d-flex justify-content-center" id="selector">
+      <div data-view-target="default" data-action="click->view#default" class="list-selector mx-3">Default</div>
+      <div data-view-target="coles" data-action="click->view#coles" class="list-selector mx-3">Coles</div>
+      <div data-view-target="woolworths" data-action="click->view#woolworths" class="list-selector mx-3">Woolworths</div>
+      <div data-view-target="cheapest" data-action="click->view#cheapest" class="list-selector mx-3">Cheapest</div>
     </div>
   <div class="d-flex flex-column-reverse">
     <div id="shopping-list">
