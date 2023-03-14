@@ -1,0 +1,16 @@
+.category-container {
+  background-color: #ECF0F1;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.category-container a {
+  text-decoration: none;
+  color: black;
+}
+
+.category-container a:hover {
+  text-decoration: underline;
+}
