@@ -15,3 +15,21 @@
   color: $wooly-color;
   margin-bottom: 0;
 }
+
+.list-selector{
+  display: flex;
+  width: 150px;
+  padding: 16px;
+  border-radius: 5px;
+  border: 1px solid black;
+  justify-content: center;
+
+  &:active {
+    background-color: $color-beige
+  }
+
+  &:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+}
