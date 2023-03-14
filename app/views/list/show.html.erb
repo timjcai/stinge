@@ -2,6 +2,11 @@
   <h1 class="my-header mt-2 mb-2" ><%= @list.name %></h1>
 
   <div>
+    <div>Coles</div>
+    <div>Woolworths</div>
+    <div>Mix</div>
+  </div>
+  <div>
     <% @listitems.each do |item| %>
         <div class="border py-2 product-tile item">
           <% this_product = Product.find(item.product_id) %>

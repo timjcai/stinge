@@ -6,6 +6,7 @@ class ListController < ApplicationController
 
   def show
     @listitems = ListItem.where(list: @list)
+    @coles = Store.find(1)
   end
 
   # def current
