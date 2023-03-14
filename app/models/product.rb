@@ -1,9 +1,8 @@
 class Product < ApplicationRecord
-  has_many :list_items
+  has_many :list_items, dependent: :destroy
+  has_many :store_products, dependent: :destroy
 
   include PgSearch::Model
-
-
   pg_search_scope :search_by_product_name,
     against: [ :name ],
     using: {
