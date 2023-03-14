@@ -32,6 +32,38 @@ class ProductController < ApplicationController
     @allprices = create_price_json
   end
 
+  def find_fruits
+    @fruits = Product.where(category: 'Fruit & Veggies')
+  end
+
+  def find_bakery
+    @bakery = Product.where(category: 'Bakery')
+  end
+
+  def find_deli
+    @deli = Product.where(category: 'Deli')
+  end
+
+  def find_pantry
+    @pantry = Product.where(category: 'Pantry')
+  end
+
+  def find_frozen
+    @frozen = Product.where(category: 'Frozen')
+  end
+
+  def find_health
+    @health = Product.where(category: 'Health & Self Care')
+  end
+
+  def find_drinks
+    @drinks = Product.where(category: 'Drinks')
+  end
+
+  def find_meats
+    @meats = Product.where(category: 'Meat & Seafood')
+  end
+
   private
 
   def create_price_json

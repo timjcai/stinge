@@ -22,4 +22,14 @@ Rails.application.routes.draw do
   patch 'listitem/:id', to: 'list_item#update', as: 'update_list_item'
   delete 'listitem/:id', to: 'list_item#destroy', as: 'delete_list_item'
 
+  # Routes for product categories (e.g. fruits, bakery, deli, etc.)
+  # These are HARDCODED
+  get 'fruit', to: 'product#find_fruits'
+  get 'bakery', to: 'product#find_bakery'
+  get 'deli', to: 'product#find_deli'
+  get 'pantry', to: 'product#find_pantry'
+  get 'frozen', to: 'product#find_frozen'
+  get 'health', to: 'product#find_health'
+  get 'drinks', to: 'product#find_drinks'
+  get 'meat', to: 'product#find_meats'
 end

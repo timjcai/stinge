@@ -1,5 +1,6 @@
 <div data-controller="view" class="container">
   <h1 class="my-header mt-2 mb-2" ><%= @list.name %></h1>
+
     <div  class="d-flex justify-content-center mb-3" id="selector">
       <%# <div data-filter="default" data-action="click->view#default" class="list-selector" hidden>Default</div> %>
       <div data-filter="coles" data-action="click->view#filter" class="list-selector">Coles</div>
@@ -8,18 +9,21 @@
     </div>
   <div class="d-flex flex-column-reverse">
     <div id="shopping-list">
-      <% @listitems.each do |item| %>
-          <div class="border py-2 product-tile item">
-            <% this_product = Product.find(item.product_id) %>
-            <div class="product-card">
-              <div class="image-area">
-                <%= image_tag "https://images.unsplash.com/photo-1577916082233-f97ed22e4df8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", class:"product-image" %>
+     <% @listitems.each do |item| %>
+        <div class="border py-2 product-tile item">
+          <% this_product = Product.find(item.product_id) %>
+          <div class="product-card">
+            <div class="image-area">
+              <%= image_tag "https://images.unsplash.com/photo-1577916082233-f97ed22e4df8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", class:"product-image" %>
+            </div>
+            <div class="name-price-area">
+              <div class="d-flex justify-content-between">
+                <a class="product-name"><%= this_product.name %></a>
+                <%= link_to delete_list_item_path(item.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                  <i class="fa-solid fa-trash  delete-icon"></i>
+                <% end %>
+
               </div>
-              <div class="name-price-area">
-                <div class="d-flex justify-content-between">
-                  <a class="product-name"><%= this_product.name %></a>
-                  <%= link_to 'x', delete_list_item_path(item.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-                </div>
                 <div class="prices">
                   <% @comparison = {} %>
                   <% price_charts_order_by_price = this_product.price_charts.where(date: this_product.price_charts.last.date).order(price: :asc) %>
@@ -61,6 +65,5 @@
         <div data-view-target="filterItem" class="total-price-list" data-cheapest="true" style="display:none;" >Cheapest shopping list total is <%= @cheapestprices.sum %></div>
       </div>
     </div>
-
   </div>
 </div>
