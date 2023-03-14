@@ -1,48 +1,51 @@
 <div class="container">
   <h1 class="my-header mt-2 mb-2" ><%= @list.name %></h1>
-  <div>
-    <% @listitems.each do |item| %>
-        <div class="border py-2 product-tile item">
-          <% this_product = Product.find(item.product_id) %>
-          <div class="product-card">
-            <div class="image-area">
-              <%= image_tag "https://images.unsplash.com/photo-1577916082233-f97ed22e4df8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", class:"product-image" %>
-            </div>
-            <div class="name-price-area">
-              <div class="d-flex justify-content-between">
-                <a class="product-name"><%= this_product.name %></a>
-                <%= link_to 'x', delete_list_item_path(item.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <div class="d-flex flex-column-reverse">
+    <div id="shopping-list">
+      <% @listitems.each do |item| %>
+          <div class="border py-2 product-tile item">
+            <% this_product = Product.find(item.product_id) %>
+            <div class="product-card">
+              <div class="image-area">
+                <%= image_tag "https://images.unsplash.com/photo-1577916082233-f97ed22e4df8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", class:"product-image" %>
               </div>
-              <div class="prices">
-                <% StoreProduct.where(product: this_product).each do |store_product| %>
-                  <div class="price-flex <%= store_product.brand_name.downcase %>">
-                    <p class="<%= store_product.brand_name.downcase %>-price"><%= store_product.brand_name %>:</p>
-                    <span>$<%= price = PriceChart.where(store_product: store_product).last[:price] %></span>
-                    <% if store_product.brand_name.downcase == 'coles' %>
-                      <% @colesprices << PriceChart.where(store_product: store_product).last[:price] %>
-                    <% else %>
-                      <% @wooliesprices << PriceChart.where(store_product: store_product).last[:price] %>
-                    <% end %>
-                  </div>
-                <% end %>
+              <div class="name-price-area">
+                <div class="d-flex justify-content-between">
+                  <a class="product-name"><%= this_product.name %></a>
+                  <%= link_to 'x', delete_list_item_path(item.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+                </div>
+                <div class="prices">
+                  <% StoreProduct.where(product: this_product).each do |store_product| %>
+                    <div class="price-flex <%= store_product.brand_name.downcase %>">
+                      <p class="<%= store_product.brand_name.downcase %>-price"><%= store_product.brand_name %>:</p>
+                      <span>$<%= price = PriceChart.where(store_product: store_product).last[:price] %></span>
+                      <% if store_product.brand_name.downcase == 'coles' %>
+                        <% @colesprices << PriceChart.where(store_product: store_product).last[:price] %>
+                      <% else %>
+                        <% @wooliesprices << PriceChart.where(store_product: store_product).last[:price] %>
+                      <% end %>
+                    </div>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-    <% end.empty? && begin %>
-      <p>List is empty. Please, go to the products and add.</p>
-    <% end %>
-  </div>
-
-    <div>
-    <div>Coles $<%= @csum = @colesprices.sum %></div>
-    <div>Woolworths $<%= @wsum = @wooliesprices.sum %></div>
-    <div>
-      <% if @csum > @wsum %>
-        <div>Shop at Woolworths to save $<%= (@csum - @wsum).floor(2) %></div>
-      <% else %>
-        <div>Shop at Coles to save $<%= (@wsum - @csum).floor(2) %>
+      <% end.empty? && begin %>
+        <p>List is empty. Please, go to the products and add.</p>
       <% end %>
+    </div>
+
+    <div id="price-calculator">
+        <div>Coles $<%= @csum = @colesprices.sum %></div>
+        <div>Woolworths $<%= @wsum = @wooliesprices.sum %></div>
+        <div>
+          <% if @csum > @wsum %>
+            <div>Shop at Woolworths to save $<%= @difference = (@csum - @wsum).floor(2) %> and <%= ((@difference/@csum)*100).floor(2) %>% on your shop</div>
+          <% else %>
+            <div>Shop at Coles to save $<%= @difference = (@wsum - @csum).floor(2) %> and <%= ((@difference/@wsum)*100).floor(2) %>% on your shop</div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
