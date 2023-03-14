@@ -1,2 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[2513],{27115:function(n,u,_){(window.__NEXT_P=window.__NEXT_P||[]).push(["/offers",function(){return _(93226)}])},93226:function(n,u,_){"use strict";_.r(u),_.d(u,{__N_SSP:function(){return e}});var r=_(70865),t=_(52322),f=_(64467),e=!0;u.default=function(n){return(0,t.jsx)(f.g4,(0,r.Z)({},n))}}},function(n){n.O(0,[4467,9774,2888,179],(function(){return u=27115,n(n.s=u);var u}));var u=n.O();_N_E=u}]);
-//# sourceMappingURL=offers-13c13d9cb46570ba.js.map

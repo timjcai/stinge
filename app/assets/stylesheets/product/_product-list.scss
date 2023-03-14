@@ -115,3 +115,22 @@ a.add-btn {
 a.disabled {
   background-color: rgb(140, 139, 139);
 }
+
+.total-price-list {
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+  margin-bottom: 12px;
+  padding: 2px 7px;
+}
+
+.total-price-list.coles {
+  border: 1px solid $coles-color;
+  background-color: $coles-color;
+}
+
+.total-price-list.wooly {
+  border: 1px solid $wooly-color;
+  background-color: $wooly-color;
+}

@@ -16,6 +16,30 @@
   margin-bottom: 0;
 }
 
+.list-selector{
+  display: flex;
+  width: 150px;
+  padding: 16px;
+  border-radius: 5px;
+  border: 1px solid black;
+  justify-content: center;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  .active {
+    background-color: $color-beige;
+    color:black;
+  }
+
+  &:active {
+    background-color: $color-beige;
+  }
+
+  &:hover {
+    background-color: $color-beige; /* Green */
+    color: white;
+  }
+
 .empty-list-message {
   background-color: rgb(232, 230, 230);
   border: none;
