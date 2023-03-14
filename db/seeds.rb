@@ -21,7 +21,7 @@ if Rails.env == 'development'
 end
 
 p User.create(email: 'test@gmail.com', password: '123456')
-p List.create(name: 'test_list', user_id: 1)
+p List.create(name: 'Shopping List', user_id: 1)
 
 #product generator
 
@@ -37,7 +37,7 @@ def initproducts(array)
   end
 end
 
-p initproducts(product_array)
+initproducts(product_array)
 
 # price generator
 
@@ -48,7 +48,7 @@ end
 
 # date
 def date_array
-  start = Date.new(2022, 10, 1)
+  start = Date.today.prev_month(3)
   finish = Date.today
 
   (start.to_date..finish.to_date).map { |date| date.strftime('%b %d %Y') }
@@ -68,18 +68,18 @@ end
 
 stores = [
   { company_name: 'Woolworths', location_name: 'Balwyn', address: 'Cnr Whitehorse Road And Mangan Street, Balwyn VIC 3103' },
-  { company_name: 'Coles', location_name: 'Balwyn East', address: '342-344 Belmore Rd, Balwyn VIC 3103' },
-  { company_name: 'Woolworths', location_name: 'Box Hill Central', address: 'Cnr Main &, Station St, Box Hill VIC 3128' },
-  { company_name: 'Coles', location_name: 'Box Hill Central', address: '1 Main St, Box Hill VIC 3128' }
+  { company_name: 'Coles', location_name: 'Balwyn East', address: '342-344 Belmore Rd, Balwyn VIC 3103' }
+  # { company_name: 'Woolworths', location_name: 'Box Hill Central', address: 'Cnr Main &, Station St, Box Hill VIC 3128' },
+  # { company_name: 'Coles', location_name: 'Box Hill Central', address: '1 Main St, Box Hill VIC 3128' }
 ]
 
 def init_store_generator(array)
   array.each do |row|
-    Store.create(row)
+    p Store.create(row)
   end
 end
 
-p init_store_generator(stores)
+init_store_generator(stores)
 
 # store_product generator
 
@@ -90,7 +90,13 @@ def init_store_product_generator(array)
     p product = Product.find_by(name: item)
     brand_name = ['Coles', 'Woolworths']
     brand_name.each do |brand|
-      product_sproducts << StoreProduct.create(brand_name: brand, product_name: item, product: product)
+      if brand == 'Coles'
+        id = Store.find_by(id: 2)
+        product_sproducts << StoreProduct.create(brand_name: brand, product_name: item, product: product, store: id)
+      else
+        id = Store.find_by(id: 1)
+        product_sproducts << StoreProduct.create(brand_name: brand, product_name: item, product: product, store: id)
+      end
     end
     all_sproducts << product_sproducts
     # p storeproduct1 = StoreProduct.create(brand_name: "Coles", product_name: item, product: product)
@@ -108,7 +114,7 @@ def init_store_product_generator(array)
     #   p PriceChart.create(date: date, price: price_set, store_product: storeproduct2, measurement: 100, measurement_type: 'g', standard_measurement_ratio: '100g')
     # end
   end
-  all_sproducts.flatten
+  p all_sproducts.flatten
 end
 
 def init_product_prices(array)
@@ -126,4 +132,4 @@ end
 
 all_sproducts = init_store_product_generator(product_array)
 
-init_product_prices(all_sproducts)
+p init_product_prices(all_sproducts)

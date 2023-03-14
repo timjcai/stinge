@@ -1,0 +1,6 @@
+<%= render "shared/category_nav_bar", products: @products %>
+<div class="product-list">
+  <% @fruits.each do |product| %>
+    <%= render "shared/showproductlist", product: product%>
+  <% end %>
+</div>

@@ -1,4 +1,6 @@
 class ProductController < ApplicationController
+  before_action :set_products, only: %i[find_fruits find_deli find_bakery find_pantry find_frozen find_drinks find_health find_meats]
+
   def index
     if params[:query].present?
       @products = Product.search_by_product_name(params[:query])
@@ -32,7 +34,43 @@ class ProductController < ApplicationController
     @allprices = create_price_json
   end
 
+  def find_fruits
+    @fruits = Product.where(category: 'Fruit & Veggies')
+  end
+
+  def find_bakery
+    @bakery = Product.where(category: 'Bakery')
+  end
+
+  def find_deli
+    @deli = Product.where(category: 'Deli')
+  end
+
+  def find_pantry
+    @pantry = Product.where(category: 'Pantry')
+  end
+
+  def find_frozen
+    @frozen = Product.where(category: 'Frozen')
+  end
+
+  def find_health
+    @health = Product.where(category: 'Health & Self Care')
+  end
+
+  def find_drinks
+    @drinks = Product.where(category: 'Drinks')
+  end
+
+  def find_meats
+    @meats = Product.where(category: 'Meat & Seafood')
+  end
+
   private
+
+  def set_products
+    @products = Product.all
+  end
 
   def create_price_json
     @product = Product.find(params[:id])

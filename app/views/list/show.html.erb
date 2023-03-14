@@ -1,8 +1,15 @@
-<div class="container">
+<div data-controller="view" class="container">
   <h1 class="my-header mt-2 mb-2" ><%= @list.name %></h1>
 
-  <div>
-    <% @listitems.each do |item| %>
+    <div  class="d-flex justify-content-center mb-3" id="selector">
+      <%# <div data-filter="default" data-action="click->view#default" class="list-selector" hidden>Default</div> %>
+      <div data-filter="coles" data-action="click->view#filter" class="list-selector">Coles</div>
+      <div data-filter="woolworths" data-action="click->view#filter" class="list-selector">Woolworths</div>
+      <div data-action="click->view#filterByCheapest" class="list-selector">Cheapest</div>
+    </div>
+  <div class="d-flex flex-column-reverse">
+    <div id="shopping-list">
+     <% @listitems.each do |item| %>
         <div class="border py-2 product-tile item">
           <% this_product = Product.find(item.product_id) %>
           <div class="product-card">
@@ -15,20 +22,49 @@
                 <%= link_to delete_list_item_path(item.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
                   <i class="fa-solid fa-trash  delete-icon"></i>
                 <% end %>
+
               </div>
-              <div class="prices">
-                <% StoreProduct.where(product: this_product).each do |store_product| %>
-                  <div class="price-flex <%= store_product.brand_name.downcase %>">
-                    <p class="<%= store_product.brand_name.downcase %>-price"><%= store_product.brand_name %>:</p>
-                    <span>$<%= PriceChart.where(store_product: store_product).last[:price] %></span>
+                <div class="prices">
+                  <% @comparison = {} %>
+                  <% price_charts_order_by_price = this_product.price_charts.where(date: this_product.price_charts.last.date).order(price: :asc) %>
+                  <% price_charts_order_by_price.each_with_index do |price_chart, index| %>
+                    <% brand_name = price_chart.store_product.brand_name.downcase %>
+                    <div data-view-target="filterItem" <%= 'data-cheapest="true"' if index == 0 %> data-filter-value="<%= brand_name.downcase %>" class="price-flex <%= brand_name %>">
+                      <p class="<%= brand_name %>-price"><%= brand_name.capitalize %>:</p>
+                      <span>$<%= price_chart.price %></span>
+                      <% brand_name == 'coles' ? @colesprices << price_chart.price : @wooliesprices << price_chart.price %>
+                      <% @comparison[brand_name] = price_chart.price %>
+                    </div>
+                  <% end %>
+                  <div id="cheapest-price">
+                    <% @comparison['woolworths'] < @comparison['coles'] ? @cheapestprices << @comparison['woolworths'] : @cheapestprices << @comparison['coles'] %>
                   </div>
-                <% end %>
+                </div>
               </div>
             </div>
           </div>
+      <% end.empty? && begin %>
+        <p>List is empty. Please, go to the products and add.</p>
+      <% end %>
+    </div>
+
+    <div id="price-calculator">
+        <% @csum = @colesprices.sum  %>
+        <% @wsum = @wooliesprices.sum %>
+        <div data-view-target="filterItem" class="d-flex justify-content-between total-price-list coles" data-filter-value="coles"><div>Coles</div> <div>$<%= @csum %></div></div>
+        <div data-view-target="filterItem" class="d-flex justify-content-between total-price-list wooly" data-filter-value="woolworths"><div>Woolworths</div> <div>$<%= @wsum %></div></div>
+        <div class="mb-2">
+          <% if @csum > @wsum %>
+            <div data-view-target="filterItem" class="total-price-list wooly" data-filter-value="woolworths" style="display:none;"> Shop at Woolworths to save $<%= @difference = (@csum - @wsum).floor(2) %> and <%= ((@difference/@csum)*100).floor(2) %>% on your shop</div>
+            <div data-view-target="filterItem" data-filter-value="coles" style="display:none;">Shopping at Coles is $<%= @difference = (@csum - @wsum).floor(2) %> more expensive</div>
+          <% elsif @wsum > @csum%>
+            <div data-view-target="filterItem" class="total-price-list coles" data-filter-value="coles" style="display:none;">Shop at Coles to save $<%= @difference = (@wsum - @csum).floor(2) %> and <%= ((@difference/@wsum)*100).floor(2) %>% on your shop</div>
+            <div data-view-target="filterItem" data-filter-value="woolworths" style="display:none;">Shopping at Woolworths is $<%= @difference = (@wsum - @csum).floor(2) %> more expensive</div>
+          <% else %>
+          <% end %>
         </div>
-    <% end.empty? && begin %>
-      <p class="empty-list-message">List is empty. Please, go to the products and add.</p>
-    <% end %>
+        <div data-view-target="filterItem" class="total-price-list" data-cheapest="true" style="display:none;" >Cheapest shopping list total is <%= @cheapestprices.sum %></div>
+      </div>
+    </div>
   </div>
 </div>
