@@ -14,7 +14,7 @@
           <% this_product = Product.find(item.product_id) %>
           <div class="product-card">
             <div class="image-area">
-              <%= cl_image_tag this_product.photo.key, class:"product-image" %>
+              <%= cl_image_tag this_product.photo.key, class:"product-image", width: 100, height: 150 %>
             </div>
             <div class="name-price-area">
               <div class="d-flex justify-content-between">
