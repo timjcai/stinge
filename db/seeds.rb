@@ -9,6 +9,7 @@
 
 # temporary seedfile
 require 'csv'
+require 'open-uri'
 
 #new user
 
@@ -19,17 +20,19 @@ p List.create(name: 'Shopping List', user_id: 1)
 
 filepath = 'scraper/product_names.csv'
 
-product_array = CSV.parse(File.read(filepath))
-
-
+p product_array = CSV.parse(File.read(filepath))
 
 def initproducts(array)
   array.each do |item|
-    p Product.create(name: item[0], category: item[1])
+    p item[2]
+    p file = URI.open(item[2])
+    p new_product = Product.new(name: item[0], category: item[1])
+    p new_product.photo.attach(io: file, filename: "#{item[0]}.png", content_type: "image/jpg")
+    p new_product.save
   end
 end
 
-initproducts(product_array)
+p initproducts(product_array)
 
 # price generator
 
@@ -125,15 +128,3 @@ end
 all_sproducts = init_store_product_generator(product_array)
 
 p init_product_prices(all_sproducts)
-
-
-require "open-uri"
-require 'csv'
-
-
-def open_images(filepath)
-  file = URI.open(filepath)
-  article = Article.new(title: "NES", body: "A great console")
-  article.photo.attach(io: file, filename: "nes.png", content_)
-  article.save
-end

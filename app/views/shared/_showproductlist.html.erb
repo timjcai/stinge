@@ -8,11 +8,11 @@
       <div class="prices">
         <div class="price-flex coles">
           <p class="coles-price">Coles: </p>
-          <span>$<%= a = PriceChart.where(store_product: (product.store_products.where(brand_name: 'Coles')).ids).last.price %></span>
+          <span>$<%= a = PriceChart.where(store_product: (product.store_products.where(brand_name: 'Coles')).ids).last %></span>
         </div>
         <div class="price-flex wooly">
           <p class="wooly-price">Woolworths: </p>
-          <span>$<%= PriceChart.where(store_products: (product.store_products.where(brand_name: 'Woolworths')).ids).last.price %></span>
+          <span>$<%= PriceChart.where(store_products: (product.store_products.where(brand_name: 'Woolworths')).ids).last %></span>
         </div>
       </div>
     </div>
