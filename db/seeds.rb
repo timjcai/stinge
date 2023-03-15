@@ -125,3 +125,15 @@ end
 all_sproducts = init_store_product_generator(product_array)
 
 p init_product_prices(all_sproducts)
+
+
+require "open-uri"
+require 'csv'
+
+
+def open_images(filepath)
+  file = URI.open(filepath)
+  article = Article.new(title: "NES", body: "A great console")
+  article.photo.attach(io: file, filename: "nes.png", content_)
+  article.save
+end
