@@ -143,3 +143,16 @@ a.disabled {
   border-radius: 5px;
   box-shadow: 1px 1px 1px black;
 }
+
+@media only screen and (min-width: 970px) {
+  #price-calculator {
+    width: 750px;
+    align-self: center;
+  }
+
+  #shopping-list {
+    width: 750px;
+    align-self: center;
+  }
+
+}
