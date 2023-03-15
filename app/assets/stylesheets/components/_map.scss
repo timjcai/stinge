@@ -4,43 +4,55 @@
   margin: 15px 0;
 }
 
-.store-list {
-  margin-top: 20px;
+.store-list-title {
+  color: #333229;
+  font-family: $lexend;
+  margin: 15px 0;
+}
 
-  .store-list-title {
-    color: #333229;
-    font-family: $lexend;
-    margin: 15px 0;
-  }
+.store-name {
+  color: #00853e;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: $lexend;
+}
 
-  ul {
-    line-height: 32px;
-  }
+.store-address {
+  color: #575757;
+  font-size: 14px;
+  font-family: $lexend;
+}
 
-  ul > li {
-    color: #00853e;
-    font-size: 18px;
-    font-weight: normal;
-    list-style: none;
-  }
+.location-name {
+  color: #373737;
+  font-family: $lexend;
+}
 
-  ul > li > small {
-    border-bottom: 1px solid #cbcaca;
-    color: #4d4d4c;
-    font-size: 14px;
-    padding-right: 75px;
-  }
+.category-item {
+  flex: 0 0 30%;
+}
 
-  ul > li .no-berder {
-    border-bottom: none;
-  }
+.category-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.category-selector + label {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 12px;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #EAEAEA;
+  border-radius: 3px;
+  background-color: white;
+  line-height: 32px;
+  margin-bottom: 20px;
 
 }
 
-.coles-balwyn small {
-  padding-bottom: 20px;
-}
-
-.woolie-boxhill {
-  padding-top: 24px;
+.snippet_category:checked + label {
+  background-color: #FFC65A;
+  border-color: #FFC65A;
 }
