@@ -14,7 +14,7 @@
           <% this_product = Product.find(item.product_id) %>
           <div class="product-card">
             <div class="image-area">
-              <%= image_tag "https://images.unsplash.com/photo-1577916082233-f97ed22e4df8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", class:"product-image" %>
+              <%= cl_image_tag this_product.photo.key, class:"product-image" %>
             </div>
             <div class="name-price-area">
               <div class="d-flex justify-content-between">

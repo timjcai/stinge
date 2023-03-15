@@ -18,7 +18,8 @@ p List.create(name: 'Shopping List', user_id: 1)
 
 #product generator
 
-filepath = 'scraper/product_names.csv'
+####filepath = 'scraper/product_names.csv'
+filepath = 'scraper/product_names_test.csv'
 
 p product_array = CSV.parse(File.read(filepath))
 
@@ -28,7 +29,7 @@ def initproducts(array)
     p file = URI.open(item[2])
     p new_product = Product.new(name: item[0], category: item[1])
     p new_product.photo.attach(io: file, filename: "#{item[0]}.png", content_type: "image/jpg")
-    p new_product.save
+    p new_product.save!
   end
 end
 
@@ -82,15 +83,15 @@ def init_store_product_generator(array)
   all_sproducts = []
   array.each do |item|
     product_sproducts = []
-    p product = Product.find_by(name: item)
+    p product = Product.find_by(name: item[0])
     brand_name = ['Coles', 'Woolworths']
     brand_name.each do |brand|
       if brand == 'Coles'
         id = Store.find_by(id: 2)
-        product_sproducts << StoreProduct.create(brand_name: brand, product_name: item, product: product, store: id)
+        product_sproducts << StoreProduct.create(brand_name: brand, product_name: item[0], product: product, store: id)
       else
         id = Store.find_by(id: 1)
-        product_sproducts << StoreProduct.create(brand_name: brand, product_name: item, product: product, store: id)
+        product_sproducts << StoreProduct.create(brand_name: brand, product_name: item[0], product: product, store: id)
       end
     end
     all_sproducts << product_sproducts
@@ -113,12 +114,13 @@ def init_store_product_generator(array)
 end
 
 def init_product_prices(array)
+  p "hellohellohellohello #{array}"
   array.each do |storeproduct|
     prices = init_fake_prices(date_array)
     prices.each do |set|
       date = set[0]
       price_set = set[1]
-      p PriceChart.create(date: date, price: price_set, store_product: storeproduct, measurement: 100, measurement_type: 'g', standard_measurement_ratio: '100g')
+      p PriceChart.create!(date: date, price: price_set, store_product: storeproduct, measurement: 100, measurement_type: 'g', standard_measurement_ratio: '100g')
     end
   end
 end
