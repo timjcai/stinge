@@ -7,26 +7,11 @@ class ProductController < ApplicationController
     else
       @products = Product.all
     end
+    if params[:store_list]
+      @stores = Store.where(id: params[:store_list])
+      @products = @products.joins(:stores).where(stores: params[:store_list])
+    end
   end
-
-  # def index
-  #   if params[:query].present?
-  #     sql_query = <<~SQL
-  #       products.name @@ :query
-  #     SQL
-  #     @products = Product.where(sql_query, query: "%#{params[:query]}%")
-  #   else
-  #     @products = Product.all
-  #   end
-  # end
-
-  # def index
-  #   if params[:query].present?
-  #     @products = Product.where(@@, "%#{params[:query]}%")
-  #   else
-  #     @products = Product.all
-  #   end
-  # end
 
   def show
     @product = Product.find(params[:id])
