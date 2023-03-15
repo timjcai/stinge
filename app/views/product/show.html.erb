@@ -31,16 +31,16 @@
 </div>
   <div class="d-flex justify-content-around flex-row">
     <div class="price-card">
-      <h2 class="secondary-header coles1">Coles</h2>
-      <div class="update">
+      <h2 class="d-flex justify-content-center secondary-header coles1">Coles</h2>
+      <div class="update2">
         <h3><strong>$<%= @allprices["Coles"].last[:price] %></strong><small> AUD</small></h3>
         <p><small>Last update: <%= @allprices["Coles"].last[:date] %></small></p>
       </div>
     </div>
 
     <div class="price-card">
-      <h2 class="secondary-header wooly1">Woolworths</h2>
-      <div class="update">
+      <h2 class="d-flex justify-content-center secondary-header wooly1">Woolworths</h2>
+      <div class="update2">
         <h3><strong>$<%= @allprices["Woolworths"].last[:price] %></strong><small> AUD</small></h3>
         <p><small>Last update: <%= @allprices["Woolworths"].last[:date] %></small></p>
       </div>
