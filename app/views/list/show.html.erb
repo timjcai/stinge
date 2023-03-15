@@ -1,22 +1,27 @@
 <div data-controller="view" class="container">
   <h1 class="my-header mt-2 mb-2" ><%= @list.name %></h1>
 
-    <div  class="d-flex justify-content-center mb-3" id="selector">
-      <%# <div data-filter="default" data-action="click->view#default" class="list-selector" hidden>Default</div> %>
-      <button data-filter="coles" data-action="click->view#filter" class="list-selector">Coles</button>
-      <button data-filter="woolworths" data-action="click->view#filter" class="list-selector">Woolworths</button>
-      <button data-action="click->view#filterByCheapest" class="list-selector">Cheapest</button>
-    </div>
+  <div class="d-flex justify-content-center mb-3" id="selector">
+    <%# <div data-filter="default" data-action="click->view#default" class="list-selector" hidden>Default</div> %>
+    <div data-filter="coles" data-action="click->view#filter" class="list-selector">Coles</div>
+    <div data-filter="woolworths" data-action="click->view#filter" class="list-selector">Woolworths</div>
+    <div data-action="click->view#filterByCheapest" class="list-selector">Cheapest</div>
+  </div>
+
   <div class="d-flex flex-column-reverse">
     <div id="shopping-list">
-     <% @listitems.each do |item| %>
-        <div class="border py-2 product-tile item">
+      <% @listitems.each do |item| %>
+        <div class="border py-2 product-tile item" style="position: relative;">
+          <%= link_to delete_list_item_path(item.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, style: 'position: absolute; top: 10px; right: 10px;' do %>
+            <i class="fa-solid fa-trash  delete-icon"></i>
+          <% end %>
           <% this_product = Product.find(item.product_id) %>
-          <div class="product-card">
+          <%= link_to product_path(this_product), class:"product-card" do %>
             <div class="image-area">
               <%= cl_image_tag this_product.photo.key, class:"product-image", width: 100, height: 150 %>
             </div>
             <div class="name-price-area">
+
               <div class="d-flex justify-content-between">
                 <a class="product-name"><%= this_product.name %> </a>
                 <%= link_to delete_list_item_path(item.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
@@ -36,19 +41,19 @@
                       <% @comparison[brand_name] = price_chart.price %>
                     </div>
                   <% end %>
-                  <div id="cheapest-price">
-                    <% @comparison['woolworths'] < @comparison['coles'] ? @cheapestprices << @comparison['woolworths'] : @cheapestprices << @comparison['coles'] %>
-                  </div>
+                  <% @comparison['woolworths'] < @comparison['coles'] ? @cheapestprices << @comparison['woolworths'] : @cheapestprices << @comparison['coles'] %>
                 </div>
               </div>
             </div>
-          </div>
+          <% end %>
+        </div>
       <% end.empty? && begin %>
         <p>List is empty. Please, go to the products and add.</p>
       <% end %>
     </div>
 
     <div id="price-calculator">
+
         <% @csum = @colesprices.sum  %>
         <% @wsum = @wooliesprices.sum %>
         <div data-view-target="filterItem" class="d-flex justify-content-between total-price-list coles" data-filter-value="coles"><div>Coles</div> <div>$<%= @csum.floor(2)  %></div></div>

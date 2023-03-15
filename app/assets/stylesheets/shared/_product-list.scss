@@ -44,7 +44,7 @@ main {
   // truncate the long name
   display: inline-block;
   width: auto;
-  width: 190px;
+  width: 177px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -62,6 +62,7 @@ main {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  text-decoration: none;
 
   p {
     padding-right: 20px;

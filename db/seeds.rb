@@ -71,10 +71,10 @@ end
 # store generator
 
 stores = [
-  { company_name: 'Woolworths', location_name: 'Balwyn', address: 'Cnr Whitehorse Road And Mangan Street, Balwyn VIC 3103' },
-  { company_name: 'Coles', location_name: 'Balwyn East', address: '342-344 Belmore Rd, Balwyn VIC 3103' }
-  # { company_name: 'Woolworths', location_name: 'Box Hill Central', address: 'Cnr Main &, Station St, Box Hill VIC 3128' },
-  # { company_name: 'Coles', location_name: 'Box Hill Central', address: '1 Main St, Box Hill VIC 3128' }
+  { company_name: 'Woolworths', location_name: 'Balwyn', address: '6 Mangan Street, Balwyn VIC 3103' },
+  { company_name: 'Coles', location_name: 'Balwyn East', address: '342-344 Belmore Rd, Balwyn VIC 3103' },
+  { company_name: 'Woolworths', location_name: 'Box Hill Central', address: '494 Station St, Carlton North VIC 3054' },
+  { company_name: 'Coles', location_name: 'Box Hill Central', address: '1 Main St, Box Hill VIC 3128' }
 ]
 
 def init_store_generator(array)
@@ -95,11 +95,9 @@ def init_store_product_generator(array)
     brand_name = ['Coles', 'Woolworths']
     brand_name.each do |brand|
       if brand == 'Coles'
-        id = Store.find_by(id: 2)
-        product_sproducts << StoreProduct.create(brand_name: brand, product_name: item[0], product: product, store: id)
+        product_sproducts << StoreProduct.create(brand_name: brand, product_name: item[0], product: product, store: Store.second)
       else
-        id = Store.find_by(id: 1)
-        product_sproducts << StoreProduct.create(brand_name: brand, product_name: item[0], product: product, store: id)
+        product_sproducts << StoreProduct.create(brand_name: brand, product_name: item[0], product: product, store: Store.first)
       end
     end
     all_sproducts << product_sproducts
