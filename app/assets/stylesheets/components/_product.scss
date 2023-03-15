@@ -1,18 +1,32 @@
-.product-list{
-  display:flex;
-  flex-direction:column;
-  padding: 16px;
 
-  .product {
-    margin-bottom: 8px;
+@media only screen and (min-width: 600px) {
+  .product-list{
+    width: 100%;
     display: flex;
-    text-align: left;
+    flex-direction: column;
     padding: 16px;
-    transition-duration: 0.4s;
 
-    &:hover {
-      background-color: #4CAF50; /* Green */
-      color: white;
+    .product {
+      margin-bottom: 8px;
+      display: flex;
+      text-align: left;
+      padding: 16px;
+      transition-duration: 0.4s;
+
+      &:hover {
+        background-color: #4CAF50; /* Green */
+        color: white;
+      }
     }
   }
+
+}
+
+@media only screen and (min-width: 768px) {
+  .product-list{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
 }
