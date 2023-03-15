@@ -19,9 +19,9 @@
               <%= image_tag "https://images.unsplash.com/photo-1577916082233-f97ed22e4df8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", class:"product-image" %>
             </div>
             <div class="name-price-area">
-              <div class="d-flex justify-content-between">
-                <p class="product-name"><%= this_product.name %></p>
-                <div class="prices">
+              <div>
+                <p class="product-name list-name"><%= this_product.name %></p>
+                <div class="prices list-prices">
                   <% @comparison = {} %>
                   <% price_charts_order_by_price = this_product.price_charts.where(date: this_product.price_charts.last.date).order(price: :asc) %>
                   <% price_charts_order_by_price.each_with_index do |price_chart, index| %>
