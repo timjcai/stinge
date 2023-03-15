@@ -4,6 +4,7 @@ class CreateListItems < ActiveRecord::Migration[7.0]
       t.references :list, null: false, foreign_key: true
       t.references :product, null: false, foreign_key: true
       t.integer :quantity
+      t.boolean :completed
 
       t.timestamps
     end
