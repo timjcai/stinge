@@ -99,7 +99,7 @@ main {
 
 a.add-btn {
   border: none;
-  background-color: #ED7117;
+  background-color: #FFB84C;
   border-radius: 3px;
   font-size: 18px;
   font-weight: 510;
@@ -132,4 +132,14 @@ a.disabled {
 .total-price-list.wooly {
   border: 1px solid $wooly-color;
   background-color: $wooly-color;
+}
+
+.price-card {
+  margin: 10px;
+  padding: 5px;
+  background-color: $color-orange;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px black;
 }

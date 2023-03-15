@@ -1,7 +1,16 @@
 <div class="container">
-  <h1 class="my-header">Details of <%= @product.name %></h1>
-  <div class="w-50">
-    <%= cl_image_tag @product.photo.key, class:"product-image d-flex justify-content-center", width: 100, height: 150 %>
+  <div class="d-flex flex-column justify-content-center mb-3">
+  <h1 class="my-header"><%= @product.name %></h1>
+  <div class="mx-auto" style="text-align:-webkit-center;">
+    <%= cl_image_tag @product.photo.key, class:"product-image d-flex justify-content-center" %>
+  </div>
+  <% if current_user %>
+    <% if current_user.default_list.has_product?(@product) %>
+      <a class='disabled add-btn'>Added</a>
+    <% else %>
+      <%= link_to 'Add', create_list_item_path(@product, list_id: current_user.default_list.id, quantity: 1), data: {turbo_method: :post}, class: 'add-btn' %>
+    <% end %>
+  <% end %>
   </div>
   <div class="calendar">
     <h2 class="d-flex justify-content-center">Pick a start date:</h2>
@@ -21,19 +30,19 @@
   <script type="module" src="chart_controller.js"></script>
 </div>
   <div class="d-flex justify-content-around flex-row">
-    <div>
+    <div class="price-card">
       <h2 class="secondary-header coles1">Coles</h2>
       <div class="update">
-        <p>$<%= @allprices["Coles"].last[:price] %><small> AUD</small></p>
-        <p>Last update: <%= @allprices["Coles"].last[:date] %></p>
+        <h3><strong>$<%= @allprices["Coles"].last[:price] %></strong><small> AUD</small></h3>
+        <p><small>Last update: <%= @allprices["Coles"].last[:date] %></small></p>
       </div>
     </div>
 
-    <div>
+    <div class="price-card">
       <h2 class="secondary-header wooly1">Woolworths</h2>
       <div class="update">
-        <p>$<%= @allprices["Woolworths"].last[:price] %><small> AUD</small></p>
-        <p>Last update: <%= @allprices["Woolworths"].last[:date] %></p>
+        <h3><strong>$<%= @allprices["Woolworths"].last[:price] %></strong><small> AUD</small></h3>
+        <p><small>Last update: <%= @allprices["Woolworths"].last[:date] %></small></p>
       </div>
     </div>
   </div>

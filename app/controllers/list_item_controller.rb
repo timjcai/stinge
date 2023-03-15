@@ -18,18 +18,16 @@ class ListItemController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
-
   end
 
   def destroy
     @listitem = ListItem.find(params[:id])
     list_id = @listitem.list_id
     @listitem.destroy
-    redirect_to list_path(list_id), status: :see_other
+    redirect_to list_path(list_id), status: :see_other, alert: "🎉 Successfully deleted #{@listitem.product.name} from #{current_user.default_list.name} 🎉"
   end
 
   private
