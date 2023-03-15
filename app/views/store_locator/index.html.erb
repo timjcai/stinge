@@ -8,13 +8,34 @@
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-  <% if @stores.present? %>
-    <div class="store-list">
-      <h3 class="store-list-title">Our locations</h3>
-      <ul>
-        <li class="coles-balwyn">Coles Balwyn East<br><small>342-344 Belmore Rd, Balwyn VIC 3103</small></li>
-        <li class="woolie-boxhill">Woolworths Box Hill Central<br><small class="no-berder">Cnr Main &, Station St, Box Hill VIC 3128</small></li>
-      </ul>
-    </div>
-  <% end %>
+
+  <form action="<%= products_path %>" method="get">
+    <fieldset class="form-group radio_buttons required snippet_category">
+      <legend class="col-form-label pt-0">Category <abbr title="required">*</abbr></legend>
+        <div class="category-wrapper">
+          <% @stores.each do |store| %>
+            <%# <input type="hidden" name="store_list" value=""> %>
+            <div class="category-item">
+              <input class="form-check-input radio_buttons required category-selector snippet_category_ruby" data-style="ruby" type="checkbox" value="<%= store.id %>" name="store_list[]" id="<%= dom_id(store) %>">
+              <label class="form-check-label collection_radio_buttons" for="<%= dom_id(store) %>">
+                <h4><%= store.company_name %></h4>
+                <p><%= store.location_name %></p>
+                <p><%= store.address %></p>
+              </label>
+            </div>
+
+
+
+          <%# <div class="store-list">
+            <h3 class="store-list-title">Our locations</h3>
+            <ul>
+              <li class="coles-balwyn">Coles Balwyn East<br><small>342-344 Belmore Rd, Balwyn VIC 3103</small></li>
+              <li class="woolie-boxhill">Woolworths Box Hill Central<br><small class="no-berder">Cnr Main &, Station St, Box Hill VIC 3128</small></li>
+            </ul>
+          </div> %>
+        <% end %>
+      </div>
+    </fieldset>
+    <button type="submit">Search</button>
+  </form>
 </div>

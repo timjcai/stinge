@@ -7,6 +7,11 @@ class ProductController < ApplicationController
     else
       @products = Product.all
     end
+    if params[:store_list]
+      @stores = Store.where(id: params[:store_list])
+      @products = @products.joins(:stores).where(stores: params[:store_list])
+      # @products = @products.where(stores: @stores)
+    end
   end
 
   # def index
