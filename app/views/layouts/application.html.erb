@@ -21,8 +21,7 @@
     <div class="content-wrapper">
       <%= render "shared/navbar" %>
       <%= yield %>
-        <p class="notice" style="margin: 0"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+      <%= render "shared/flashes" %>
       <%= render "shared/footer" %>
     </div>
 
