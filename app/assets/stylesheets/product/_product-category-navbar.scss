@@ -4,11 +4,17 @@
   justify-content: space-around;
   padding: 10px;
   border-radius: 30px;
+  margin-top: 20px;
 }
 
 .category-container a {
   text-decoration: none;
   color: black;
+
+  img {
+    height: 30px;
+    width: 30px;
+  }
 }
 
 .category-container a:hover {

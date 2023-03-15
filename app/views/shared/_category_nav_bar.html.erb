@@ -1,19 +1,13 @@
-<!--
-<% product_categories = [] %>
-<% products.each do |product| %>
-  <% if !product_categories.include? (product.category) %>
-    <% product_categories << product.category %>
-  <% end %>
-<% end %>
-<%= product_categories %>
--->
-<div class='category-container'>
-  <%= link_to 'Fruit & Veggies', fruit_path %>
-  <%= link_to 'Bakery', bakery_path %>
-  <%= link_to 'Deli', deli_path %>
-  <%= link_to 'Pantry', pantry_path %>
-  <%= link_to 'Frozen', frozen_path %>
-  <%= link_to 'Health & Self Care', health_path %>
-  <%= link_to 'Drinks', drinks_path %>
-  <%= link_to 'Meat & Seafood', meat_path %>
+<div class="container">
+<%= render "shared/search-bar"%>
+  <div class='category-container'>
+    <%= link_to image_tag('fruits-veggies.png'), fruit_path %>
+    <%= link_to image_tag('bread.png'), bakery_path %>
+    <%= link_to image_tag('deli.png'), deli_path %>
+    <%= link_to image_tag('pantry.png'), pantry_path %>
+    <%= link_to image_tag('frozen.png'), frozen_path %>
+    <%= link_to image_tag('vitamin.png'), health_path %>
+    <%= link_to image_tag('juice.png'), drinks_path %>
+    <%= link_to image_tag('chicken.png'), meat_path %>
+  </div>
 </div>
