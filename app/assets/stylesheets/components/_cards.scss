@@ -7,11 +7,12 @@
   padding: 0 20px 30px;
 }
 
-// .cards {
-//   display: grid;
-//   grid-template-columns: repeat(4, minmax(200px, 1fr));
-//   grid-gap: 40px;
-// }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  grid-gap: 30px;
+  height: 500px;
+}
 
 .category-header {
   color: $color-blue-800;
