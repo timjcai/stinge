@@ -26,19 +26,18 @@
   margin-left: 10px;
   margin-right: 10px;
 
-  .active {
-    background-color: $color-beige;
-    color:black;
-  }
-
   &:active {
     background-color: $color-beige;
   }
 
   &:hover {
-    background-color: $color-beige; /* Green */
+    background-color: $color-teal;/* Green */
     color: white;
   }
+}
+.list-selector:active {
+  background-color: $color-teal;
+  color:black;
 }
 
 .empty-list-message {
