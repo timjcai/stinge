@@ -38,7 +38,7 @@
     background-color: #fcc8a3;
     color:black;
   }
-
+  
   &:active {
     background-color: #fcc8a3;
     color:black;
@@ -48,6 +48,10 @@
     background-color: #fcc8a3;
     color:black;
   }
+}
+.list-selector:active {
+  background-color: $color-teal;
+  color:black;
 }
 
 .empty-list-message {

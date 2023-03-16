@@ -13,6 +13,15 @@ class ListController < ApplicationController
     @woolworths = Store.find_by(id: 1)
   end
 
+  def uncompleteall
+    @listitems = ListItem.all
+    @listitems.map do |item|
+      p item.completed = false
+      item.save!
+    end
+    redirect_to request.referrer, notice: "Added all items back to #{current_user.default_list.name} view 🎉"
+  end
+
   # def current
   #   @list = List.last
   #   redirect_to list_path(@list)

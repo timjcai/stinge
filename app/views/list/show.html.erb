@@ -1,27 +1,34 @@
-<div data-controller="view" class="container">
+<div data-controller="view" class="container" style="text-align:-webkit-center;">
   <h1 class="my-header mt-2 mb-2" ><%= @list.name %></h1>
+
   <div class="d-flex justify-content-center mb-3" id="selector">
     <%# <div data-filter="default" data-action="click->view#default" class="list-selector" hidden>Default</div> %>
     <div data-filter="coles" data-action="click->view#filter" class="list-selector">Coles</div>
     <div data-filter="woolworths" data-action="click->view#filter" class="list-selector">Woolworths</div>
     <div data-action="click->view#filterByCheapest" class="list-selector">Cheapest</div>
+    <div class="list-selector" style="text-decoration=none;" ><%= link_to 'Unhide Items', uncompleteall_list_item_path, data: {turbo_method: :patch}, style:"text-decoration:none; color:black;"%></div>
   </div>
+
   <div class="d-flex flex-column-reverse">
     <div id="shopping-list">
       <% @listitems.each do |item| %>
-        <div class="border py-2 product-tile item" style="position: relative;">
-          <%= link_to delete_list_item_path(item.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, style: 'position: absolute; top: 10px; right: 10px;' do %>
-            <i class="fa-solid fa-trash  delete-icon"></i>
-          <% end %>
-          <% this_product = Product.find(item.product_id) %>
-          <%= link_to product_path(this_product), class:"product-card" do %>
-            <div class="image-area">
-              <%= cl_image_tag this_product.photo.key, class:"product-image", width: 100, height: 150 %>
-            </div>
-            <div class="name-price-area">
-              <div>
-                <p class="product-name list-name"><%= this_product.name %></p>
-                <div class="prices list-prices">
+        <div <%= item.completed? ? 'class=d-none' : 'class=""' %>>
+          <div class="d-flex flex-row justify-content-around border py-2 product-tile item" style="position: relative;">
+            <% this_product = Product.find(item.product_id) %>
+              <div class="image-area">
+                <%= cl_image_tag this_product.photo.key, class:"product-image", width: 100, height: 150 %>
+              </div>
+              <div class="d-flex flex-column justify-content-center name-price-area">
+                <div class="d-flex justify-content-between">
+                  <a class="product-name"><%= this_product.name %></a>
+                  <%= link_to delete_list_item_path(item.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                    <i class="fa-solid fa-trash  delete-icon"></i>
+                  <% end %>
+                  <%= link_to complete_list_item_path(item.id), data: {turbo_method: :patch} do %>
+                    <i class="fa-solid fa-square-check delete-icon"></i>
+                  <% end %>
+                </div>
+                <div class="prices">
                   <% @comparison = {} %>
                   <% price_charts_order_by_price = this_product.price_charts.where(date: this_product.price_charts.last.date).order(price: :asc) %>
                   <% price_charts_order_by_price.each_with_index do |price_chart, index| %>
@@ -36,14 +43,12 @@
                   <% @comparison['woolworths'] < @comparison['coles'] ? @cheapestprices << @comparison['woolworths'] : @cheapestprices << @comparison['coles'] %>
                 </div>
               </div>
-            </div>
-          <% end %>
+          </div>
         </div>
       <% end.empty? && begin %>
         <p class="empty-list-message">List is empty. Please, go to the products and add.</p>
       <% end %>
     </div>
-
     <div id="price-calculator">
       <% @csum = @colesprices.sum  %>
       <% @wsum = @wooliesprices.sum %>

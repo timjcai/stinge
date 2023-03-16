@@ -26,8 +26,8 @@ p List.create(name: 'Shopping List', user_id: 1)
 
 #product generator
 
-####filepath = 'scraper/product_names.csv'
-filepath = 'scraper/product_names_test.csv'
+filepath = 'scraper/product_names.csv'
+# filepath = 'scraper/product_names_test.csv'
 
 p product_array = CSV.parse(File.read(filepath))
 
