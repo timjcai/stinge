@@ -14,7 +14,7 @@ class ListItemController < ApplicationController
   def create
     @listitem = ListItem.new(product_id: params[:id], list: current_user.default_list, quantity: params[:quantity])
     @listitem.save
-    redirect_to request.referrer, notice: "🎉 Successfully added #{@listitem.product.name} to #{current_user.default_list.name} 🎉"
+    redirect_to request.referrer, status: :see_other, notice: "🎉 Successfully added #{@listitem.product.name} to #{current_user.default_list.name} 🎉"
   end
 
   def edit
