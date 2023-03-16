@@ -64,7 +64,7 @@
           <div data-view-target="filterItem" data-filter-value="woolworths" style="display:none;" class="warning">Shopping at Woolworths is $<%= @difference = (@wsum - @csum).floor(2) %> more expensive</div>
         <% end %>
       </div>
-      <div data-view-target="filterItem" class="total-price-list" data-cheapest="true" style="display:none;" >
+      <div data-view-target="filterItem" class="total-price-list cheapest-price" data-cheapest="true" style="display:none;" >
         Cheapest shopping list total is <%= @cheapestprices.sum %>
       </div>
     </div>
