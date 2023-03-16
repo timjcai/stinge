@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'listitem/:id', to: 'list_item#show', as: 'list_item'
   post 'products/:id/listitem', to: 'list_item#create', as: 'create_list_item'
   get 'listitem/:id/edit', to: 'list_item#edit', as: 'edit_list_item'
+  patch 'listitem/:id', to: 'list_item#complete', as: 'complete_list_item'
   patch 'listitem/:id', to: 'list_item#update', as: 'update_list_item'
   delete 'listitem/:id', to: 'list_item#destroy', as: 'delete_list_item'
   get 'store_locator', to: 'store_locator#index', as: :store_locator

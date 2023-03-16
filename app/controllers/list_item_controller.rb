@@ -23,6 +23,14 @@ class ListItemController < ApplicationController
   def update
   end
 
+  def complete
+    p @listitem = ListItem.find(params[:id])
+    p list_id = @listitem.list_id
+    p @listitem[:completed] = true
+    p @listitem.save!
+    p redirect_to list_path(list_id)
+  end
+
   def destroy
     @listitem = ListItem.find(params[:id])
     list_id = @listitem.list_id

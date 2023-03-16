@@ -12,34 +12,37 @@
   <div class="d-flex flex-column-reverse">
     <div id="shopping-list">
       <% @listitems.each do |item| %>
-        <div class="d-flex flex-row justify-content-around border py-2 product-tile item" style="position: relative;">
-          <% this_product = Product.find(item.product_id) %>
-            <div class="image-area">
-              <%= cl_image_tag this_product.photo.key, class:"product-image", width: 100, height: 150 %>
-            </div>
-            <div class="d-flex flex-column justify-content-center name-price-area">
-              <div class="d-flex justify-content-between">
-                <a class="product-name"><%= this_product.name %></a>
-                <%= link_to delete_list_item_path(item.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-                  <i class="fa-solid fa-trash  delete-icon"></i>
-                <% end %>
+          <div class="d-flex flex-row justify-content-around border py-2 product-tile item" style="position: relative;">
+            <% this_product = Product.find(item.product_id) %>
+              <div class="image-area">
+                <%= cl_image_tag this_product.photo.key, class:"product-image", width: 100, height: 150 %>
               </div>
-              <div class="prices">
-                <% @comparison = {} %>
-                <% price_charts_order_by_price = this_product.price_charts.where(date: this_product.price_charts.last.date).order(price: :asc) %>
-                <% price_charts_order_by_price.each_with_index do |price_chart, index| %>
-                  <% brand_name = price_chart.store_product.brand_name.downcase %>
-                  <div data-view-target="filterItem" <%= 'data-cheapest="true"' if index == 0 %> data-filter-value="<%= brand_name.downcase %>" class="price-flex <%= brand_name %>">
-                    <p class="<%= brand_name %>-price"><%= brand_name.capitalize %>:</p>
-                    <span>$<%= price_chart.price %></span>
-                    <% brand_name == 'coles' ? @colesprices << price_chart.price : @wooliesprices << price_chart.price %>
-                    <% @comparison[brand_name] = price_chart.price %>
-                  </div>
-                <% end %>
-                <% @comparison['woolworths'] < @comparison['coles'] ? @cheapestprices << @comparison['woolworths'] : @cheapestprices << @comparison['coles'] %>
+              <div class="d-flex flex-column justify-content-center name-price-area">
+                <div class="d-flex justify-content-between">
+                  <a class="product-name"><%= this_product.name %></a>
+                  <%= link_to delete_list_item_path(item.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                    <i class="fa-solid fa-trash  delete-icon"></i>
+                  <% end %>
+                  <%= link_to complete_list_item_path(item.id), data: {turbo_method: :patch} do %>
+                    <i class="fa-solid fa-square-check delete-icon"></i>
+                  <% end %>
+                </div>
+                <div class="prices">
+                  <% @comparison = {} %>
+                  <% price_charts_order_by_price = this_product.price_charts.where(date: this_product.price_charts.last.date).order(price: :asc) %>
+                  <% price_charts_order_by_price.each_with_index do |price_chart, index| %>
+                    <% brand_name = price_chart.store_product.brand_name.downcase %>
+                    <div data-view-target="filterItem" <%= 'data-cheapest="true"' if index == 0 %> data-filter-value="<%= brand_name.downcase %>" class="price-flex <%= brand_name %>">
+                      <p class="<%= brand_name %>-price"><%= brand_name.capitalize %>:</p>
+                      <span>$<%= price_chart.price %></span>
+                      <% brand_name == 'coles' ? @colesprices << price_chart.price : @wooliesprices << price_chart.price %>
+                      <% @comparison[brand_name] = price_chart.price %>
+                    </div>
+                  <% end %>
+                  <% @comparison['woolworths'] < @comparison['coles'] ? @cheapestprices << @comparison['woolworths'] : @cheapestprices << @comparison['coles'] %>
+                </div>
               </div>
-            </div>
-        </div>
+          </div>
       <% end.empty? && begin %>
         <p>List is empty. Please, go to the products and add.</p>
       <% end %>
