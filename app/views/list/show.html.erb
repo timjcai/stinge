@@ -46,41 +46,31 @@
           </div>
         </div>
       <% end.empty? && begin %>
-        <p>List is empty. Please, go to the products and add.</p>
+        <p class="empty-list-message">List is empty. Please, go to the products and add.</p>
       <% end %>
     </div>
     <div id="price-calculator">
-        <% @csum = @colesprices.sum  %>
-        <% @wsum = @wooliesprices.sum %>
-        <div data-view-target="filterItem" class="d-flex justify-content-between total-price-list coles" data-filter-value="coles">
-          <div>Coles</div>
-          <div>$<%= @csum.floor(2) %></div>
-        </div>
-        <div data-view-target="filterItem" class="d-flex justify-content-between total-price-list wooly" data-filter-value="woolworths">
-          <div>Woolworths</div>
-          <div>$<%= @wsum.floor(2)  %></div>
-        </div>
-        <div class="mb-2">
-          <% if @csum > @wsum %>
-            <div data-view-target="filterItem" class="total-price-list wooly" data-filter-value="woolworths" style="display:none;">
-              Shop at Woolworths to save $<%= @difference = (@csum - @wsum).floor(2) %> and <%= ((@difference/@csum)*100).floor(2) %>% on your shop
-            </div>
-            <div data-view-target="filterItem" class="total-price-list coles" data-filter-value="coles" style="display:none;">
-              Shopping at Coles is $<%= @difference = (@csum - @wsum).floor(2) %> more expensive
-            </div>
-          <% elsif @wsum > @csum%>
-            <div data-view-target="filterItem" class="total-price-list coles" data-filter-value="coles" style="display:none;">
-              Shop at Coles to save $<%= @difference = (@wsum - @csum).floor(2) %> and <%= ((@difference/@wsum)*100).floor(2) %>% on your shop
-            </div>
-            <div data-view-target="filterItem" data-filter-value="woolworths" style="display:none;" class="total-price-list wooly">
-              Shopping at Woolworths is $<%= @difference = (@wsum - @csum).floor(2) %> more expensive
-            </div>
-          <% else %>
-          <% end %>
-        </div>
-        <div data-view-target="filterItem" class="total-price-list" data-cheapest="true" style="display:none;" >
-          Cheapest shopping list total is $<%= @cheapestprices.sum.floor(2)  %>
-        </div>
+      <% @csum = @colesprices.sum  %>
+      <% @wsum = @wooliesprices.sum %>
+      <div data-view-target="filterItem" class="d-flex justify-content-between total-price-list coles" data-filter-value="coles">
+        <div>Coles</div>
+        <div>$<%= @csum %></div>
+      </div>
+      <div data-view-target="filterItem" class="d-flex justify-content-between total-price-list wooly" data-filter-value="woolworths">
+        <div>Woolworths</div>
+        <div>$<%= @wsum %></div>
+      </div>
+      <div class="mb-2">
+        <% if @csum > @wsum %>
+          <div data-view-target="filterItem" class="total-price-list wooly" data-filter-value="woolworths" style="display:none;" class="success"> Shop at Woolworths to save $<%= @difference = (@csum - @wsum).floor(2) %> and <%= ((@difference/@csum)*100).floor(2) %>% on your shop</div>
+          <div data-view-target="filterItem" data-filter-value="coles" style="display:none;" class="warning">Shopping at Coles is $<%= @difference = (@csum - @wsum).floor(2) %> more expensive</div>
+        <% elsif @wsum > @csum%>
+          <div data-view-target="filterItem" class="total-price-list coles" data-filter-value="coles" style="display:none;" class="success">Shop at Coles to save $<%= @difference = (@wsum - @csum).floor(2) %> and <%= ((@difference/@wsum)*100).floor(2) %>% on your shop</div>
+          <div data-view-target="filterItem" data-filter-value="woolworths" style="display:none;" class="warning">Shopping at Woolworths is $<%= @difference = (@wsum - @csum).floor(2) %> more expensive</div>
+        <% end %>
+      </div>
+      <div data-view-target="filterItem" class="total-price-list cheapest-price" data-cheapest="true" style="display:none;" >
+        Cheapest shopping list total is <%= @cheapestprices.sum %>
       </div>
     </div>
   </div>
