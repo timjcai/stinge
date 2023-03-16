@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   # post 'list', to: 'list#create'
   get 'list/:id/edit', to: 'list#edit', as: 'edit_list'
+  patch 'list/:id', to: 'list#uncompleteall', as: 'uncompleteall_list_item'
   patch 'list/:id', to: 'list#update', as: 'update_list'
   delete 'list/:id', to: 'list#destroy', as: 'delete_list'
   get 'products/:id/store_products/:id', to: 'store_product#show', as: 'store_product'
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   get 'listitem/:id', to: 'list_item#show', as: 'list_item'
   post 'products/:id/listitem', to: 'list_item#create', as: 'create_list_item'
   get 'listitem/:id/edit', to: 'list_item#edit', as: 'edit_list_item'
+  patch 'listitem/:id', to: 'list_item#complete', as: 'complete_list_item'
   patch 'listitem/:id', to: 'list_item#update', as: 'update_list_item'
   delete 'listitem/:id', to: 'list_item#destroy', as: 'delete_list_item'
   get 'store_locator', to: 'store_locator#index', as: :store_locator
