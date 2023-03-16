@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   # post 'list', to: 'list#create'
   get 'list/:id/edit', to: 'list#edit', as: 'edit_list'
+  patch 'list/:id', to: 'list#uncompleteall', as: 'uncompleteall_list_item'
   patch 'list/:id', to: 'list#update', as: 'update_list'
   delete 'list/:id', to: 'list#destroy', as: 'delete_list'
   get 'products/:id/store_products/:id', to: 'store_product#show', as: 'store_product'

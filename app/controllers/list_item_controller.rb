@@ -24,11 +24,20 @@ class ListItemController < ApplicationController
   end
 
   def complete
-    p @listitem = ListItem.find(params[:id])
-    p list_id = @listitem.list_id
-    p @listitem[:completed] = true
-    p @listitem.save!
-    p redirect_to list_path(list_id)
+    @listitem = ListItem.find(params[:id])
+    list_id = @listitem.list_id
+    @listitem[:completed] = true
+    @listitem.save!
+    redirect_to list_path(list_id), alert: "👀 Removed #{@listitem.product.name} from #{current_user.default_list.name} view"
+  end
+
+  def uncompleteall
+    p @listitems = ListItem.all
+    p @listitems.each do |item|
+      p item[:completed] = false
+      item.save!
+    end
+    redirect_to request.referrer, notice: "Added all items back to #{current_user.default_list.name} view 🎉"
   end
 
   def destroy
