@@ -35,17 +35,18 @@
   margin-right: 10px;
 
   .active {
-    background-color: $color-beige;
+    background-color: #fcc8a3;
     color:black;
   }
 
   &:active {
-    background-color: $color-beige;
+    background-color: #fcc8a3;
+    color:black;
   }
 
   &:hover {
-    background-color: $color-beige; /* Green */
-    color: white;
+    background-color: #fcc8a3;
+    color:black;
   }
 }
 
@@ -61,4 +62,21 @@
 
 .delete-icon {
   color: $color-navy-700;
+}
+
+.total-price-list {
+  background-color: $pink-700;
+  border-color: $pink-700;
+  color: #fff;
+}
+
+.warning {
+  background-color: $warning;
+  border-radius: 3px;
+  padding: 2px;
+  padding-left: 5px;
+}
+
+.success {
+  background-color: $teal-200;
 }
