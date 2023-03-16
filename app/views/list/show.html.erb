@@ -3,10 +3,14 @@
 
   <div class="d-flex justify-content-center mb-3" id="selector">
     <%# <div data-filter="default" data-action="click->view#default" class="list-selector" hidden>Default</div> %>
-    <div data-filter="coles" data-action="click->view#filter" class="list-selector">Coles</div>
-    <div data-filter="woolworths" data-action="click->view#filter" class="list-selector">Woolworths</div>
-    <div data-action="click->view#filterByCheapest" class="list-selector">Cheapest</div>
-    <div class="list-selector" style="text-decoration=none;" ><%= link_to 'Unhide Items', uncompleteall_list_item_path, data: {turbo_method: :patch}, style:"text-decoration:none; color:black;"%></div>
+    <div class="row">
+      <div data-filter="coles" data-action="click->view#filter" class="list-selector">Coles</div>
+      <div data-filter="woolworths" data-action="click->view#filter" class="list-selector">Woolworths</div>
+    </div>
+    <div class="row">
+      <div data-action="click->view#filterByCheapest" class="list-selector">Cheapest</div>
+      <div class="list-selector" style="text-decoration=none;" ><%= link_to 'Unhide Items', uncompleteall_list_item_path, data: {turbo_method: :patch}, style:"text-decoration:none; color:black;"%></div>
+    </div>
   </div>
 
   <div class="d-flex flex-column-reverse">
