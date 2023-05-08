@@ -13,6 +13,7 @@ This can help users save money on their grocery shopping by identifying the best
 ## Technologies Used
 This app was built using:
 
+![Rails](https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
 Ruby on Rails
 Vanilla Javascript
 HTML/CSS
